@@ -1,0 +1,21 @@
+site_name: Advanced Configurations
+edit_uri: ""
+repo_url: https://github.com/quietsy/advanced-configurations
+theme:
+  palette:
+    scheme: default
+    primary: teal
+    accent: cyan
+  features:
+    - navigation.instant
+    - search.suggest
+  name: material
+  custom_dir: overrides
+  favicon: images/logo.png
+  logo: images/logo.png
+  font:
+    code: Roboto Mono
+  icon:
+    repo: fontawesome/brands/github
+extra:
+  homepage: https://virtualize.link
