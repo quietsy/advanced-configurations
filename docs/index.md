@@ -36,9 +36,9 @@ services:
 
 
 ## Internal Applications
-Internal applications can be proxied through SWAG in order to use app.mydomain.com instead of ip:port, and block them externally so only your local network could access them.
+Internal applications can be proxied through SWAG in order to use `app.mydomain.com` instead of ip:port, and block them externally so only your local network could access them.
 
-Create a file called nginx/internal.conf with the following configuration:
+Create a file called `nginx/internal.conf` with the following configuration:
 
 ```Nginx
 allow 192.168.1.0/24; #Replace with your LAN subnet
@@ -64,7 +64,7 @@ server {
     location / {
         include /config/nginx/internal.conf;
         include /config/nginx/proxy.conf;
-        resolver 127.0.0.11 valid=30s;
+        include /config/nginx/resolver.conf;
         set $upstream_app collabora;
         set $upstream_port 9980;
         set $upstream_proto https;
@@ -94,7 +94,7 @@ If the application has multiple log files with dates, mount the entire folder:
 ```
       - /path/to/jellyfin/log:/jellyfin:ro
 ```
-Recreate the container with the log mount, then create a file called nextcloud.local under fail2ban/filter.d:
+Recreate the container with the log mount, then create a file called `nextcloud.local` under `fail2ban/filter.d`:
 ```
 [Definition]
 failregex=^.*Login failed: '?.*'? \(Remote IP: '?<ADDR>'?\).*$
@@ -108,7 +108,7 @@ The configuration file containes a pattern by which failed login attempts are ma
 "userAgent":"Mozilla/5.0 (Linux; Android 11; Pixel 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/5.6.7.8 Mobile 
 Safari/537.36","version":"19.0.4.2"}
 ```
-Test the pattern in nextcloud.local by running the following command on the docker host:
+Test the pattern in `nextcloud.local` by running the following command on the docker host:
 ```
 docker exec swag fail2ban-regex /nextcloud/nextcloud.log /config/fail2ban/filter.d/nextcloud.local
 ```
@@ -117,7 +117,7 @@ If the pattern works, you will see matches corresponding to the amount of failed
 Lines: 92377 lines, 0 ignored, 2 matched, 92375 missed
 [processed in 7.51 sec]
 ```
-The final step is to activate the jail, add the following to fail2ban/jail.local:
+The final step is to activate the jail, add the following to `fail2ban/jail.local`:
 ```
 [nextcloud]
 enabled = true
@@ -148,7 +148,7 @@ This great mod sends a discord notification when Fail2Ban blocks an attack: [f2b
 ## Geoblock
 Geoblock reduces the attack surface of SWAG by restricting access based on countries.
 
-Enable geoblock by uncommenting the Geoip2 config line in nginx.conf:
+Enable geoblock by uncommenting the Geoip2 config line in `nginx.conf`:
 ```
 include /config/nginx/geoip2.conf;
 ```
@@ -161,7 +161,7 @@ Add the following environment variable to the compose yaml to automatically down
       - MAXMINDDB_LICENSE_KEY=<license key>
 ```
 
-Add the following configuration to geoip2.conf, below are 2 examples:
+Add the following configuration to `geoip2.conf`, below are 2 examples:
 
 Allow a single country and your LAN:
 ```Nginx
@@ -228,7 +228,7 @@ server {
 
     location / {
         include /config/nginx/proxy.conf;
-        resolver 127.0.0.11 valid=30s;
+        include /config/nginx/resolver.conf;
         set $upstream_app authelia;
         set $upstream_port 9091;
         set $upstream_proto http;
