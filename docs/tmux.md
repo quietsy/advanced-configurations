@@ -85,7 +85,8 @@ z             maximize/minimize pane
 ctrl-x        synchronize panes                     
 ```
 ## Automation Example
-```tmux new-window -n status
+```
+tmux new-window -n status
 tmux split-window -h
 tmux select-pane -t 0
 tmux send-keys "htop" C-m
@@ -104,6 +105,6 @@ alias tks='tmux kill-session -t'
 alias tka='tmux kill-server'
 ```
 ## Links
-Find more ways to use Tmux - https://github.com/rothgar/awesome-tmux
+Find more ways to use Tmux - [Awesome Tmux](https://github.com/rothgar/awesome-tmux)
 
  
