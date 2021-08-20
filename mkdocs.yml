@@ -9,6 +9,10 @@ theme:
   features:
     - navigation.instant
     - search.suggest
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.top
+    - search.highlight
   name: material
   custom_dir: overrides
   favicon: images/logo.png
@@ -19,3 +23,10 @@ theme:
     repo: fontawesome/brands/github
 extra:
   homepage: https://virtualize.link
+nav:
+  - Containers:
+    - Securing SWAG: index.md
+    - VPN Route: vpn.md
+    - VPS Proxy: vps.md
+  - Tools:
+    - Tmux: tmux.md
