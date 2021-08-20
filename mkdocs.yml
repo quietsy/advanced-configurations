@@ -30,4 +30,5 @@ nav:
     - VPS Proxy: vps.md
     - Consolidating Proxies: consolidation.md
   - Tools:
+    - Setup Template: setup.md
     - Tmux: tmux.md
