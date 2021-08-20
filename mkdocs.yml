@@ -28,5 +28,6 @@ nav:
     - Securing SWAG: index.md
     - VPN Route: vpn.md
     - VPS Proxy: vps.md
+    - Consolidating Proxies: consolidation.md
   - Tools:
     - Tmux: tmux.md
