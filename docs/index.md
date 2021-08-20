@@ -4,21 +4,21 @@ SWAG - Secure Web Application Gateway (formerly known as linuxserver/letsencrypt
 *This article assumes that you already have a functional SWAG setup. Following is the compose yaml used to create the SWAG container referenced in this article. Keep in mind your local mount paths will be different so adjust accordingly.*
 
 ```YAML
----
 version: "2.1"
 services:
   swag:
-    image: linuxserver/swag
+    image: ghcr.io/linuxserver/swag
     container_name: swag
     cap_add:
       - NET_ADMIN
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=America/New_York
-      - URL=linuxserver-test.com
-      - SUBDOMAINS=wildcard
-      - VALIDATION=dns
+      - TZ=Europe/London
+      - URL=yourdomain.url
+      - SUBDOMAINS=www,
+      - VALIDATION=http
+      - CERTPROVIDER= #optional
       - DNSPLUGIN=cloudflare #optional
       - PROPAGATION= #optional
       - DUCKDNSTOKEN= #optional
@@ -26,12 +26,14 @@ services:
       - ONLY_SUBDOMAINS=false #optional
       - EXTRA_DOMAINS= #optional
       - STAGING=false #optional
+      - MAXMINDDB_LICENSE_KEY= #optional
     volumes:
-      - /home/user/swag:/config
+      - /path/to/appdata/config:/config
     ports:
       - 443:443
       - 80:80 #optional
     restart: unless-stopped
+
 ```
 
 
