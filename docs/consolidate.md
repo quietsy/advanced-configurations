@@ -1,10 +1,10 @@
-# Consolidating Internal SWAG configuration
+# Consolidating Internal SWAG proxies
 
 It's possible to consolidate the majority of internal nginx proxies using mappings, these mappings get resolved when the mapped variables are used.
 
 **Note - This doesn't work for every app since some require special configuration, but it works for most of them.**
 
-## Consolidated configurations
+## Consolidated proxies
 
 ```Nginx
 map $internal_app $internal_port {

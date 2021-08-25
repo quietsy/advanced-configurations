@@ -13,6 +13,7 @@ The TLDR version is:
 - Configure Fail2ban to block attackers
 
 There are many ways to create this setup with many variations for many different purposes, in my opinion these containers are easy to work with and to maintain, every container in this setup can be used for other purposes **as well** as being used for the proxy without any compromises:
+
 - Home SWAG can be used as a reverse proxy for all of your other Home server containers.
 - Home Wireguard Client can be used to route any container through the VPS.
 - VPS SWAG can be used as a reverse proxy for all of your other VPS containers.
@@ -156,6 +157,7 @@ PersistentKeepalive = 25
 Save the changes and restart the container on your Home server with `docker restart wireguard`, validate that `docker logs wireguard` contains no errors.
 
 Validate that the tunnel is working by pinging both sides:
+
 - On the Home server run - `docker exec wireguard ping 10.13.13.1`
 - On the VPS run - `docker exec wireguard ping 10.13.13.2`
 
@@ -332,6 +334,7 @@ Restart Home SWAG by running `docker restart swag` to apply the changes.
 ### Restarting order
 
 If you're experiencing problems and you want to restart everything, the correct order is:
+
 - VPS - `docker restart wireguard`
 - VPS - `docker restart swag`
 - Home - `docker restart wireguard`
@@ -371,6 +374,7 @@ Restart the Home SWAG to apply the changes with `docker restart swag`.
 ### Exposing a resource only through one domain but not the other
 
 You control what gets exposed where in 2 ways:
+
 - Through the `listen <port>;` setting, 8080 is through the VPS and 443/80 is directly.
 - Through the `server_name something.public.com` setting, if you explicitely specify the full address.
 

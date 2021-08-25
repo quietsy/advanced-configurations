@@ -58,6 +58,7 @@ Once done start the container and validate that `docker logs vpn` contains no er
 ## Connecting the Wireguard Client to the VPN
 
 Copy the Wireguard configuration that you get from your VPN provider into a file called `wg0.conf` and place it in your VPN Wireguard Client's `config` folder, and make the following changes:
+
 - Remove IPv6 addresses (and ::/0) if you haven't enabled IPv6 in your docker network
 - Add the `PostUp` and `PreDown` lines listed below
 ```Nginx
@@ -79,6 +80,7 @@ The PreDown command cleans up these rules when the VPN goes down.
 Save the changes and restart the container with `docker restart vpn`, validate that `docker logs vpn` contains no errors.
 
 Perform the following validations to check that the VPN works:
+
 - Check that you have connectivity by running `docker exec vpn ping 1.1.1.1`
 - Check that your DNS matches the one in `wg0.conf` by running `docker exec vpn cat /etc/resolv.conf`
 - Check that the VPN is working by running `docker exec vpn curl -s https://am.i.mullvad.net/ip`, you should get an IP that is different from your internet's IP.
@@ -112,6 +114,7 @@ Add the port under the VPN Wireguard Client container:
 Recreate the VPN Wireguard Client container to apply the changes, then recreate the qBittorrent container which depends on the VPN.
 
 Perform the following validations to check that the VPN works:
+
 - Check that your DNS matches the one in `wg0.conf` by running `docker exec qbittorrent cat /etc/resolv.conf`
 - Check that the VPN is working by running `docker exec qbittorrent curl -s https://am.i.mullvad.net/ip` and make sure you don't get your internet's IP.
 - Check that qBittorrent's Web Administration interface is working by browsing http://`<server-ip>`:8080.
@@ -146,6 +149,7 @@ Copy the port number you got to `qBittorrent` > `Settings` > `Connection` > `Por
 ### Restarting order
 
 If you're experiencing problems and you want to restart everything, the correct order is:
+
 - VPN - `docker restart vpn`
 - Containers using the VPN - `docker restart <container>`
 
