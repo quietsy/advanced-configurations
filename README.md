@@ -1,3 +1,3 @@
 # advanced-configurations
 
-(Visit)[https://virtualize.link]
+[Visit](https://virtualize.link)
