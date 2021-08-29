@@ -41,9 +41,9 @@ server {
 
 ### Settings
 
-The settings file can be found under `/path/to/searx/settings.yml`, it can seem quite intimidating but the majority of it are the search engine configuration which can be enabled/disabled from the UI.
+The settings file is `/path/to/searx/settings.yml`, it can seem overwhelming but the majority of it are the search engine configuration which can be enabled/disabled from the UI.
 
-These settings may require changing from the file:
+These settings may require changing in the file:
 ```Yaml
 general:
   instance_name: "Searx" # The name that is displayed
