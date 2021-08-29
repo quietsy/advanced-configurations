@@ -30,6 +30,7 @@ nav:
     - VPN Route: vpn.md
     - VPS Proxy: vps.md
     - Consolidating Proxies: consolidate.md
+    - Searx: searx.md
   - Tools:
     - Setup Template: setup.md
     - Tmux: tmux.md
