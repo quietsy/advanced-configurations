@@ -5,6 +5,7 @@
 - [VPS Proxy](vps)
 - [Consolidating Proxies](consolidate)
 - [Searx](searx)
+- [Optimizing Nextcloud](nextcloud)
 
 ## Tools
 

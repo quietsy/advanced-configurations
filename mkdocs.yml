@@ -31,6 +31,7 @@ nav:
     - VPS Proxy: vps.md
     - Consolidating Proxies: consolidate.md
     - Searx: searx.md
+    - Optimizing Nextcloud: nextcloud.md
   - Tools:
     - Setup Template: setup.md
     - Tmux: tmux.md
