@@ -4,7 +4,7 @@ The following is a collection of ways to optimize Nextcloud's performance and re
 
 ## Optimization Steps
 
-- Use the LSIO image, not the official
+- Use the [LSIO image](https://github.com/linuxserver/docker-nextcloud), not the official
 - Use the php8 tag
 - Enable redis
 - Use mariadb (alpine) or postgres
