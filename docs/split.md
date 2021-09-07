@@ -3,6 +3,10 @@
 
 This setup allows your phone to **always** be connected to **both** your VPN provider and to your home.
 
+### TLDR
+
+Set the home Wireguard server to the same subnet as the IP you got from your VPN provider and split the allowed IPs with the [Wireguard AllowedIPs Calculator](https://www.procustodibus.com/blog/2021/03/wireguard-allowedips-calculator/).
+
 ## Requirements
 
 - A VPN provider that supports Wireguard
@@ -56,7 +60,7 @@ Edit the connection to the VPN provider > Add Peer:
 - Endpoint - `your.domain.com:51820` (replace with your domain and Wireguard server port)
 - Allowed IPs - The home network subnet, for example: `192.168.1.0/24`
 
-Navigate to this [Wireguard AllowedIPs Calculator](https://www.procustodibus.com/blog/2021/03/wireguard-allowedips-calculator/), set Allowed IPs to `0.0.0.0/0, ::/0` and Disallowed IPs to the home network subnet, for example: `192.168.1.0/24`, click Calculate and copy the result, for example:
+Navigate to the [Wireguard AllowedIPs Calculator](https://www.procustodibus.com/blog/2021/03/wireguard-allowedips-calculator/), set Allowed IPs to `0.0.0.0/0, ::/0` and Disallowed IPs to the home network subnet, for example: `192.168.1.0/24`, click Calculate and copy the result, for example:
 ```
 0.0.0.0/1, 128.0.0.0/2, 192.0.0.0/9, 192.128.0.0/11, 192.160.0.0/13, 192.168.0.0/24, 192.168.2.0/23, 192.168.4.0/22, 192.168.8.0/21, 192.168.16.0/20, 192.168.32.0/19, 192.168.64.0/18, 192.168.128.0/17, 192.169.0.0/16, 192.170.0.0/15, 192.172.0.0/14, 192.176.0.0/12, 192.192.0.0/10, 193.0.0.0/8, 194.0.0.0/7, 196.0.0.0/6, 200.0.0.0/5, 208.0.0.0/4, 224.0.0.0/3, ::/0
 ```
