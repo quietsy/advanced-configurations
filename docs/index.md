@@ -6,6 +6,7 @@
 - [Consolidating Proxies](consolidate)
 - [Searx](searx)
 - [Optimizing Nextcloud](nextcloud)
+- [Split Tunnel](split)
 
 ## Tools
 

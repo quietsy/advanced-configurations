@@ -32,6 +32,7 @@ nav:
     - Consolidating Proxies: consolidate.md
     - Searx: searx.md
     - Optimizing Nextcloud: nextcloud.md
+    - Split Tunnel: split.md
   - Tools:
     - Setup Template: setup.md
     - Tmux: tmux.md
