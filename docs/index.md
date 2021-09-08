@@ -1,12 +1,13 @@
 ## Containers
 
+- [Consolidating Proxies](consolidate)
+- [Optimizing Nextcloud](nextcloud)
+- [Searx](searx)
 - [Securing SWAG](secure)
+- [SOCKS Proxy](socks)
+- [Split Tunnel](split)
 - [VPN Route](vpn)
 - [VPS Proxy](vps)
-- [Consolidating Proxies](consolidate)
-- [Searx](searx)
-- [Optimizing Nextcloud](nextcloud)
-- [Split Tunnel](split)
 
 ## Tools
 

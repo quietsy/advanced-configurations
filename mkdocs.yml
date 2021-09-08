@@ -26,13 +26,14 @@ extra:
 nav:
   - Home: index.md
   - Containers:
+    - Consolidating Proxies: consolidate.md
+    - Optimizing Nextcloud: nextcloud.md
+    - Searx: searx.md
     - Securing SWAG: secure.md
+    - SOCKS Proxy: socks.md
+    - Split Tunnel: split.md
     - VPN Route: vpn.md
     - VPS Proxy: vps.md
-    - Consolidating Proxies: consolidate.md
-    - Searx: searx.md
-    - Optimizing Nextcloud: nextcloud.md
-    - Split Tunnel: split.md
   - Tools:
     - Setup Template: setup.md
     - Tmux: tmux.md

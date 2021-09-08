@@ -82,7 +82,6 @@ Save the changes and restart the container with `docker restart vpn`, validate t
 Perform the following validations to check that the VPN works:
 
 - Check that you have connectivity by running `docker exec vpn ping 1.1.1.1`
-- Check that your DNS matches the one in `wg0.conf` by running `docker exec vpn cat /etc/resolv.conf`
 - Check that the VPN is working by running `docker exec vpn curl -s https://am.i.mullvad.net/ip`, you should get an IP that is different from your internet's IP.
 
 ## Routing qBittorrent Through the VPN
