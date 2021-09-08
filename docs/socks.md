@@ -5,7 +5,7 @@ This setup allows you to route specific applications through randomized SOCKS pr
 
 ### TLDR
 
-Use [NGINX](https://github.com/linuxserver/docker-nginx) through a [Wireguard container](https://github.com/linuxserver/docker-wireguard) and configure applications to use the SOCKS proxy.
+Use [NGINX](https://github.com/linuxserver/docker-nginx) through a [Wireguard container](https://github.com/linuxserver/docker-wireguard) to load balance between the VPN provider's SOCKS5 proxies and configure applications to use the NGINX proxy.
 
 ## Initial VPN Wireguard Client Configuration
 
