@@ -2,6 +2,7 @@
 
 - [Consolidating Proxies](consolidate)
 - [Optimizing Nextcloud](nextcloud)
+- [Piped](piped)
 - [Searx](searx)
 - [Securing SWAG](secure)
 - [SOCKS Proxy](socks)
