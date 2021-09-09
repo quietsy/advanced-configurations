@@ -3,9 +3,18 @@ edit_uri: ""
 repo_url: https://github.com/quietsy/advanced-configurations
 theme:
   palette:
-    scheme: default
-    primary: teal
-    accent: cyan
+    - scheme: default
+      primary: teal
+      accent: cyan
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+    - scheme: slate
+      primary: teal
+      accent: cyan  
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
   features:
     - navigation.instant
     - search.suggest
