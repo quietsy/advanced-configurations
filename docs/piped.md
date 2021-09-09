@@ -29,7 +29,8 @@ Create the following containers:
   pipedfe:
     image: 1337kavin/piped-frontend
     container_name: pipedfe
-    entrypoint: ash -c 'sed -i s/pipedapi.kavin.rocks/pipedapi.mydomain.com/g /usr/share/nginx/html/js/* && /docker-entrypoint.sh && nginx -g "daemon off;"' # Replace pipedapi.mydomain.com with the API subdomain
+    # Replace pipedapi.mydomain.com with the API subdomain
+    entrypoint: ash -c 'sed -i s/pipedapi.kavin.rocks/pipedapi.mydomain.com/g /usr/share/nginx/html/js/* && /docker-entrypoint.sh && nginx -g "daemon off;"' 
     restart: always
 
   pipedapi:
