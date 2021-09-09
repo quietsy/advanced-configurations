@@ -97,7 +97,7 @@ If the application has multiple log files with dates, mount the entire folder:
       - /path/to/jellyfin/log:/jellyfin:ro
 ```
 Recreate the container with the log mount, then create a file called `nextcloud.local` under `fail2ban/filter.d`:
-```
+```nginx
 [Definition]
 failregex=^.*Login failed: '?.*'? \(Remote IP: '?<ADDR>'?\).*$
           ^.*\"remoteAddr\":\"<ADDR>\".*Trusted domain error.*$
@@ -120,22 +120,22 @@ Lines: 92377 lines, 0 ignored, 2 matched, 92375 missed
 [processed in 7.51 sec]
 ```
 The final step is to activate the jail, add the following to `fail2ban/jail.local`:
-```
+```nginx
 [nextcloud]
 enabled = true
-port     = http,https
-filter = nextcloud
+port    = http,https
+filter  = nextcloud
 logpath = /nextcloud/nextcloud.log
 action  = iptables-allports[name=nextcloud]
 ```
 The logpath is slightly different for applications that have multiple log files with dates:
-```
+```nginx
 [jellyfin]
 enabled  = true
 filter   = jellyfin
 port     = http,https
 logpath  = /jellyfin/log*.log
-action  =  iptables-allports[name=jellyfin]
+action   =  iptables-allports[name=jellyfin]
 ```
 
 Repeat the process for every external application, you can find Fail2Ban configurations for most applications on the internet.
@@ -205,12 +205,12 @@ map $geoip2_data_country_iso_code $denied_highrisk {
 Utilize the geoblock in your configuration by adding one of the following lines above your location section in every application you want to protect.
 
 **Note that when using an allowed filter, you also need to check if the source is a LAN IP, it's not required when using a denied filter.**
-```
+```nginx
     if ($lan-ip = yes) { set $allowed_mycountry yes; }
     if ($allowed_mycountry = no) { return 404; }
 ```
 Or
-```
+```nginx
     if ($denied_highrisk = no) { return 404; }
 ```
 

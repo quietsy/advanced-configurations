@@ -11,7 +11,7 @@ The following is a collection of ways to optimize Nextcloud's performance and re
 - Use nextcloud v22 or higher
 - Add the following to `/config/php/php-local.ini`
 
-```
+```INI
 memory_limit = -1
 opcache.enable = 1
 opcache.enable_cli = 1
@@ -23,7 +23,7 @@ opcache.revalidate_freq = 1
 ```
 
 - Add the following to `/config/php/www2.conf`
-```
+```INI
 pm = dynamic
 pm.max_children = 120
 pm.start_servers = 12
@@ -32,14 +32,14 @@ pm.max_spare_servers = 18
 ```
 - Disable Dark Reader extension on it, if you use it
 - For Nextcloud to identify filesystem changes, add the following to the config:
-```PHP
+```js
   'filesystem_check_changes' => 1,
 ```
 
 
 ## Example Nextcloud Config
 Located in `/config/www/nextcloud/config/config.php`
-```PHP
+```js
   'dbname' => 'nextcloud',
   'dbhost' => 'mariadb',
   'dbport' => '',
