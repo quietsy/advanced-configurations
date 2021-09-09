@@ -3,13 +3,15 @@ edit_uri: ""
 repo_url: https://github.com/quietsy/advanced-configurations
 theme:
   palette:
-    - scheme: slate
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
       primary: teal
-      accent: cyan  
+      accent: cyan
       toggle:
         icon: material/weather-sunny
         name: Switch to light mode
-    - scheme: default
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
       primary: teal
       accent: cyan
       toggle:
@@ -30,6 +32,9 @@ theme:
     code: Roboto Mono
   icon:
     repo: fontawesome/brands/github
+  font:
+    text: Roboto
+    code: Roboto Mono
 markdown_extensions:
   - pymdownx.highlight
   - pymdownx.inlinehilite
