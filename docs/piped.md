@@ -2,7 +2,7 @@
 
 [Piped](https://github.com/TeamPiped/Piped) is an alternative YouTube frontend which is efficient by design.
 
-## Initial VPN Wireguard Client Configuration
+## Compose
 
 Create the following containers:
 
