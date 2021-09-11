@@ -114,7 +114,6 @@ Recreate the VPN Wireguard Client container to apply the changes, then recreate 
 
 Perform the following validations to check that the VPN works:
 
-- Check that your DNS matches the one in `wg0.conf` by running `docker exec qbittorrent cat /etc/resolv.conf`
 - Check that the VPN is working by running `docker exec qbittorrent curl -s https://am.i.mullvad.net/ip` and make sure you don't get your internet's IP.
 - Check that qBittorrent's Web Administration interface is working by browsing http://`<server-ip>`:8080.
 
