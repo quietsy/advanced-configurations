@@ -243,10 +243,18 @@ Add the lines to every external application based on your needs.
 
 
 ## NGINX Configuration
+### Google FLoC
+Google will track any user visiting your website even if it doesn't have Google analytics or any other services related to Google. One easy way for users visiting websites to opt out of this is to not use Google Chrome and use browsers like Firefox, etc. However, website maintainers can also help against this new tracking technology by opting out of the FLoC network.
+
+Add the following config line to `ssl.conf` to opt out:
+```
+add_header Permissions-Policy "interest-cohort=()";
+```
+
 ### X-Robots-Tag
 You can prevent applications from appearing in results of search engines and web crawlers, regardless of whether other sites link to it. It doesn't work on all search engines and web crawlers, but it significantly reduces the amount.
 
-Add the X-Robots-Tag config line to ssl.conf to enable it on **all** of your applications:
+Add the X-Robots-Tag config line to `ssl.conf` to enable it on **all** of your applications:
 ```
 add_header X-Robots-Tag "noindex, nofollow, nosnippet, noarchive";
 ```
