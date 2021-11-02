@@ -7,30 +7,9 @@ This guide is the basic step-by-step version of great blog posts by [Spad](https
 
 qBittorrent and Mullvad are used in this guide as an example, but you can route any container the same way, and use any VPN service that supports Wireguard.
 
-## Initial qBittorrent Configuration
+## Requirements
 
-Configure your qBittorrent container according to the [qBittorrent documentation](https://github.com/linuxserver/docker-qbittorrent).
-
-```YAML
-  qbittorrent:
-    image: ghcr.io/linuxserver/qbittorrent
-    container_name: qbittorrent
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=Europe/London
-      - WEBUI_PORT=8080
-    volumes:
-      - /path/to/appdata/config:/config
-      - /path/to/downloads:/downloads
-    ports:
-      - 6881:6881
-      - 6881:6881/udp
-      - 8080:8080
-    restart: unless-stopped
-```
-
-Once done start the container and validate that qBittorrent is working.
+- A working instance of [qBittorrent](https://github.com/linuxserver/docker-qbittorrent)
 
 ## Initial VPN Wireguard Client Configuration
 

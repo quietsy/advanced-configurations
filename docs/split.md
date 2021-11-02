@@ -5,12 +5,12 @@ This setup allows your phone to **always** be connected to **both** your VPN pro
 
 ### TLDR
 
-Set the home Wireguard server to the same subnet as the IP you got from your VPN provider and split the allowed IPs with the [Wireguard AllowedIPs Calculator](https://www.procustodibus.com/blog/2021/03/wireguard-allowedips-calculator/).
+Set the home [Wireguard server](https://github.com/linuxserver/docker-wireguard/) to the same subnet as the IP you got from your VPN provider and split the allowed IPs with the [Wireguard AllowedIPs Calculator](https://www.procustodibus.com/blog/2021/03/wireguard-allowedips-calculator/).
 
 ## Requirements
 
 - A VPN provider that supports Wireguard
-- A home Wireguard server
+- A home [Wireguard server](https://github.com/linuxserver/docker-wireguard/)
 - An Android phone
 - The official Wireguard application
 

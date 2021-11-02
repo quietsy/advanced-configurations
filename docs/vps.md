@@ -19,65 +19,10 @@ There are many ways to create this setup with many variations for many different
 - VPS SWAG can be used as a reverse proxy for all of your other VPS containers.
 - VPS Wireguard Server can be used as your private cloud VPN server.
 
-## Initial VPS SWAG Configuration
+## Requirements
 
-We will use wildcard domains in this example, it is recommended but not required.
-
-Configure your VPS SWAG according to the [SWAG documentation](https://github.com/linuxserver/docker-swag).
-
-```YAML
-  swag:
-    image: ghcr.io/linuxserver/swag
-    container_name: swag
-    cap_add:
-      - NET_ADMIN
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=Europe/London
-      - URL=public.com
-      - EXTRA_DOMAINS=*.public.com
-      - SUBDOMAINS=wildcard
-      - VALIDATION=dns
-      - DNSPLUGIN=cloudflare
-    volumes:
-      - /path/to/appdata/config:/config
-    ports:
-      - 443:443
-      - 80:80
-    restart: unless-stopped
-```
-
-Once done start the container and validate that SWAG is working by browsing your domain, you should see the default NGINX page.
-
-## Initial Home SWAG Configuration
-
-Configure your Home SWAG according to the [SWAG documentation](https://github.com/linuxserver/docker-swag).
-
-```YAML
-  swag:
-    image: ghcr.io/linuxserver/swag
-    container_name: swag
-    cap_add:
-      - NET_ADMIN
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=Europe/London
-      - URL=external.com
-      - EXTRA_DOMAINS=*.external.com
-      - SUBDOMAINS=wildcard
-      - VALIDATION=dns
-      - DNSPLUGIN=cloudflare
-    volumes:
-      - /path/to/appdata/config:/config
-    ports:
-      - 443:443
-      - 80:80
-    restart: unless-stopped
-```
-
-Once done start the container and validate that SWAG is working by browsing your domain, you should see the default NGINX page.
+- A working instance of [SWAG](https://github.com/linuxserver/docker-swag) at home
+- A working instance of [SWAG](https://github.com/linuxserver/docker-swag) on the VPS
 
 ## Initial VPS Wireguard Server Configuration
 
