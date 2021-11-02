@@ -68,6 +68,25 @@ Paste the result into the first peer (the VPN provider peer) under Allowed IPs.
 
 Lastly, change the DNS servers field to the IP of the home DNS if needed (make sure the DNS address is within the Allowed IPs of the home Wireguard server peer).
 
+### Example Client Config
+
+```ini
+[Interface]
+Address = 10.167.26.220/32, fc00:bbbb:bbbb:bb05::2:d8db/128
+DNS = 10.1.1.1
+PrivateKey = redacted
+
+[Peer]
+AllowedIPs = 10.1.1.0/24
+Endpoint = home.com:51820
+PublicKey = redacted
+
+[Peer]
+AllowedIPs = 0.0.0.0/5, 8.0.0.0/7, 10.0.0.0/16, 10.1.0.0/24, 10.1.2.0/23, 10.1.4.0/22, 10.1.8.0/21, 10.1.16.0/20, 10.1.32.0/19, 10.1.64.0/18, 10.1.128.0/17, 10.2.0.0/15, 10.4.0.0/14, 10.8.0.0/13, 10.16.0.0/12, 10.32.0.0/11, 10.64.0.0/10, 10.128.0.0/9, 11.0.0.0/8, 12.0.0.0/6, 16.0.0.0/4, 32.0.0.0/3, 64.0.0.0/2, 128.0.0.0/1, ::/0
+Endpoint = 193.32.127.70:51820
+PublicKey = redacted
+```
+
 ## Additional Configuration
 
 ### DNS Access List
