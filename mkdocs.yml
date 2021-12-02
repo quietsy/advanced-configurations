@@ -45,6 +45,7 @@ extra:
 nav:
   - Home: index.md
   - Containers:
+    - Awesome LSIO: awesome-lsio.md
     - Consolidating Proxies: consolidate.md
     - Optimizing Nextcloud: nextcloud.md
     - Piped: piped.md
