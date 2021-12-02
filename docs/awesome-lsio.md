@@ -1,6 +1,6 @@
 # Awesome LSIO
 
-## Admin
+## Administration
 
 | Container | Description |
 | --------- | ----------- |
@@ -24,8 +24,10 @@
 
 | Container | Description |
 | --------- | ----------- |
+| [domoticz](https://github.com/linuxserver/docker-domoticz/) | [domoticz](https://www.domoticz.com) is a Home Automation System that lets you monitor and configure various devices like: Lights, Switches, various sensors/meters like Temperature, Rain, Wind, UV, Electra, Gas, Water and much more. Notifications/Alerts can be sent to any mobile device. |
 | [habridge](https://github.com/linuxserver/docker-habridge/) | [habridge](http://bwssystems.com/#/habridge) emulates Philips Hue API to other home automation gateways such as an Amazon Echo/Dot Gen 1 (gen 2 has issues discovering ha-bridge) or other systems that support Philips Hue. The Bridge handles basic commands such as "On", "Off" and "brightness" commands of the hue protocol. This bridge can control most devices that have a distinct API. |
 | [homeassistant](https://github.com/linuxserver/docker-homeassistant/) | [homeassistant](https://www.home-assistant.io/) is open source home automation that puts local control and privacy first. Powered by a worldwide community of tinkerers and DIY enthusiasts. Perfect to run on a Raspberry Pi or a local server.  |
+| [kanzi](https://github.com/linuxserver/docker-kanzi/) | [kanzi](https://lexigr.am/), formerly titled Kodi-Alexa, this custom skill is the ultimate voice remote control for navigating Kodi. It can do anything you can think of (100+ intents).  This container also contains lexigram-cli to setup Kanzi with an Amazon Developer Account and automatically deploy it to Amazon. |
 
 ## Backup
 
@@ -66,7 +68,6 @@
 | Container | Description |
 | --------- | ----------- |
 | [adguardhome-sync](https://github.com/linuxserver/docker-adguardhome-sync/) | [adguardhome-sync](https://github.com/bakito/adguardhome-sync/) is a tool to synchronize AdGuardHome config to replica instances. |
-| [cloud9](https://github.com/linuxserver/docker-cloud9/) | [cloud9](https://github.com/c9/core) Cloud9 is a complete web based IDE with terminal access. This container is for running their core SDK locally and developing plugins. |
 | [ddclient](https://github.com/linuxserver/docker-ddclient/) | [ddclient](https://github.com/ddclient/ddclient) is a Perl client used to update dynamic DNS entries for accounts on Dynamic DNS Network Service Provider. It was originally written by Paul Burry and is now mostly by wimpunk. It has the capability to update more than just dyndns and it can fetch your WAN-ipaddress in a few different ways. |
 | [duckdns](https://github.com/linuxserver/docker-duckdns/) | [duckdns](https://duckdns.org/) is a free service which will point a DNS (sub domains of duckdns.org) to an IP of your choice. The service is completely free, and doesn't require reactivation or forum posts to maintain its existence. |
 
@@ -103,7 +104,7 @@
 | [paperless-ng](https://github.com/linuxserver/docker-paperless-ng/) | [paperless-ng](https://github.com/jonaswinkler/paperless-ng) is an application by Daniel Quinn and contributors that indexes your scanned documents and allows you to easily search for documents and store metadata alongside your documents." |
 | [papermerge](https://github.com/linuxserver/docker-papermerge/) | [papermerge](https://www.papermerge.com/) is an open source document management system (DMS) primarily designed for archiving and retrieving your digital documents. Instead of having piles of paper documents all over your desk, office or drawers - you can quickly scan them and configure your scanner to directly upload to Papermerge DMS." |
 
-## Downloads
+## Downloaders
 
 | Container | Description |
 | --------- | ----------- |
@@ -112,6 +113,7 @@
 | [nzbget](https://github.com/linuxserver/docker-nzbget/) | [nzbget](http://nzbget.net/) is a usenet downloader, written in C++ and designed with performance in mind to achieve maximum download speed by using very little system resources. |
 | [pyload](https://github.com/linuxserver/docker-pyload/) | [pyload](https://pyload.net/) is a Free and Open Source download manager written in Python and designed to be extremely lightweight, easily extensible and fully manageable via web. |
 | [qbittorrent](https://github.com/linuxserver/docker-qbittorrent/) | The [qbittorrent](https://www.qbittorrent.org/) project aims to provide an open-source software alternative to µTorrent. qBittorrent is based on the Qt toolkit and libtorrent-rasterbar library. |
+| [sabnzbd](https://github.com/linuxserver/docker-sabnzbd/) | [sabnzbd](http://sabnzbd.org/) makes Usenet as simple and streamlined as possible by automating everything we can. All you have to do is add an .nzb. SABnzbd takes over from there, where it will be automatically downloaded, verified, repaired, extracted and filed away with zero human interaction. |
 | [transmission](https://github.com/linuxserver/docker-transmission/) | [transmission](https://www.transmissionbt.com/) is designed for easy, powerful use. Transmission has the features you want from a BitTorrent client: encryption, a web interface, peer exchange, magnet links, DHT, µTP, UPnP and NAT-PMP port forwarding, webseed support, watch directories, tracker editing, global and per-torrent speed limits, and more. |
 
 ## FTP
@@ -135,6 +137,7 @@
 | [pwndrop](https://github.com/linuxserver/docker-pwndrop/) | [pwndrop](https://github.com/kgretzky/pwndrop) is a self-deployable file hosting service for sending out red teaming payloads or securely sharing your private files over HTTP and WebDAV. |
 | [pydio-cells](https://github.com/linuxserver/docker-pydio-cells/) | [pydio-cells](https://pydio.com/) is the nextgen file sharing platform for organizations. It is a full rewrite of the Pydio project using the Go language following a micro-service architecture. |
 | [snapdrop](https://github.com/linuxserver/docker-snapdrop/) | [snapdrop](https://github.com/RobinLinus/snapdrop) A local file sharing in your browser. Inspired by Apple's Airdrop. |
+| [xbackbone](https://github.com/linuxserver/docker-xbackbone/) | [xbackbone](https://github.com/SergiX44/XBackBone) is a simple, self-hosted, lightweight PHP file manager that support the instant sharing tool ShareX and *NIX systems. It supports uploading and displaying images, GIF, video, code, formatted text, and file downloading and uploading. Also have a web UI with multi user management, past uploads history and search support. |
 
 ## Games
 
@@ -155,36 +158,36 @@
 | [thelounge](https://github.com/linuxserver/docker-thelounge/) | [thelounge](https://thelounge.github.io/) (a fork of shoutIRC) is a web IRC client that you host on your own server. |
 | [znc](https://github.com/linuxserver/docker-znc/) | [znc](http://wiki.znc.in/ZNC) is an IRC network bouncer or BNC. It can detach the client from the actual IRC server, and also from selected channels. Multiple clients from different locations can connect to a single ZNC account simultaneously and therefore appear under the same nickname on IRC. |
 
-## Indexer
+## Indexers
 
 | Container | Description |
 | --------- | ----------- |
 | [jackett](https://github.com/linuxserver/docker-jackett/) | [jackett](https://github.com/Jackett/Jackett) works as a proxy server: it translates queries from apps (Sonarr, SickRage, CouchPotato, Mylar, etc) into tracker-site-specific http queries, parses the html response, then sends results back to the requesting software. This allows for getting recent uploads (like RSS) and performing searches. Jackett is a single repository of maintained indexer scraping & translation logic - removing the burden from other apps. |
 | [nzbhydra2](https://github.com/linuxserver/docker-nzbhydra2/) | [nzbhydra2](https://github.com/theotherp/nzbhydra2) is a meta search application for NZB indexers, the "spiritual successor" to NZBmegasearcH, and an evolution of the original application [NZBHydra](https://github.com/theotherp/nzbhydra). |
 | [prowlarr](https://github.com/linuxserver/docker-prowlarr/) | No description |
-| [sabnzbd](https://github.com/linuxserver/docker-sabnzbd/) | [sabnzbd](http://sabnzbd.org/) makes Usenet as simple and streamlined as possible by automating everything we can. All you have to do is add an .nzb. SABnzbd takes over from there, where it will be automatically downloaded, verified, repaired, extracted and filed away with zero human interaction. |
 
-## Management
+## Media Management
 
 | Container | Description |
 | --------- | ----------- |
-| [rdesktop](https://github.com/linuxserver/docker-rdesktop/) | [rdesktop](http://xrdp.org/) - Ubuntu based containers containing full desktop environments in officially supported flavors accessible via RDP. |
-| [remmina](https://github.com/linuxserver/docker-remmina/) | [Remmina](https://remmina.org/) is a remote desktop client written in GTK, aiming to be useful for system administrators and travellers, who need to work with lots of remote computers in front of either large or tiny screens. Remmina supports multiple network protocols, in an integrated and consistent user interface. Currently RDP, VNC, SPICE, NX, XDMCP, SSH and EXEC are supported. |
+| [bazarr](https://github.com/linuxserver/docker-bazarr/) | [bazarr](https://www.bazarr.media/) is a companion application to Sonarr and Radarr. It can manage and download subtitles based on your requirements. You define your preferences by TV show or movie and Bazarr takes care of everything for you. |
+| [couchpotato](https://github.com/linuxserver/docker-couchpotato/) | [couchpotato](https://couchpota.to/) is an automatic NZB and torrent downloader. You can keep a `movies I want` list and it will search for NZBs/torrents of these movies every X hours. Once a movie is found, it will send it to SABnzbd or download the torrent to a specified directory. |
+| [kodi-headless](https://github.com/linuxserver/docker-kodi-headless/) | No description |
+| [medusa](https://github.com/linuxserver/docker-medusa/) | [medusa](https://pymedusa.com/) is an automatic Video Library Manager for TV Shows. It watches for new episodes of your favorite shows, and when they are posted it does its magic. |
+| [radarr](https://github.com/linuxserver/docker-radarr/) | [radarr](https://github.com/Radarr/Radarr) - A fork of Sonarr to work with movies à la Couchpotato. |
+| [sickchill](https://github.com/linuxserver/docker-sickchill/) | [sickchill](https://github.com/SickChill/SickChill) is an Automatic Video Library Manager for TV Shows. It watches for new episodes of your favorite shows, and when they are posted it does its magic.  |
+| [sickgear](https://github.com/linuxserver/docker-sickgear/) | [SickGear](https://github.com/sickgear/sickgear) provides management of TV shows and/or Anime, it detects new episodes, links downloader apps, and more.. |
+| [sonarr](https://github.com/linuxserver/docker-sonarr/) | [sonarr](https://sonarr.tv/) (formerly NZBdrone) is a PVR for usenet and bittorrent users. It can monitor multiple RSS feeds for new episodes of your favorite shows and will grab, sort and rename them. It can also be configured to automatically upgrade the quality of files already downloaded when a better quality format becomes available. |
 
-## Media
+## Media Players
 
 | Container | Description |
 | --------- | ----------- |
 | [emby](https://github.com/linuxserver/docker-emby/) | [emby](https://emby.media/) organizes video, music, live TV, and photos from personal media libraries and streams them to smart TVs, streaming boxes and mobile devices. This container is packaged as a standalone emby Media Server. |
-| [ffmpeg](https://github.com/linuxserver/docker-ffmpeg/) | No description |
-| [htpcmanager](https://github.com/linuxserver/docker-htpcmanager/) | [htpcmanager](https://github.com/HTPC-Manager/HTPC-Manager) is a front end for many htpc related applications. |
 | [jellyfin](https://github.com/linuxserver/docker-jellyfin/) | [jellyfin](https://jellyfin.github.io/) is a Free Software Media System that puts you in control of managing and streaming your media. It is an alternative to the proprietary Emby and Plex, to provide media from a dedicated server to end-user devices via multiple apps. Jellyfin is descended from Emby's 3.5.2 release and ported to the .NET Core framework to enable full cross-platform support. There are no strings attached, no premium licenses or features, and no hidden agendas: just a team who want to build something better and work together to achieve it. |
-| [kanzi](https://github.com/linuxserver/docker-kanzi/) | [kanzi](https://lexigr.am/), formerly titled Kodi-Alexa, this custom skill is the ultimate voice remote control for navigating Kodi. It can do anything you can think of (100+ intents).  This container also contains lexigram-cli to setup Kanzi with an Amazon Developer Account and automatically deploy it to Amazon. |
-| [kodi-headless](https://github.com/linuxserver/docker-kodi-headless/) | No description |
 | [plex](https://github.com/linuxserver/docker-plex/) | [plex](https://plex.tv) organizes video, music and photos from personal media libraries and streams them to smart TVs, streaming boxes and mobile devices. This container is packaged as a standalone Plex Media Server. has always been a top priority. Straightforward design and bulk actions mean getting things done faster. |
-| [synclounge](https://github.com/linuxserver/docker-synclounge/) | [synclounge](https://github.com/samcm/synclounge) is a third party tool that allows you to watch Plex in sync with your friends/family, wherever you are. |
 
-## Media Requests
+## Media Requesters
 
 | Container | Description |
 | --------- | ----------- |
@@ -192,27 +195,31 @@
 | [overseerr](https://github.com/linuxserver/docker-overseerr/) | [overseerr](https://overseerr.dev/) is a request management and media discovery tool built to work with your existing Plex ecosystem. |
 | [requestrr](https://github.com/linuxserver/docker-requestrr/) | [requestrr](https://github.com/darkalfx/requestrr) is a chatbot used to simplify using services like Sonarr/Radarr/Ombi via the use of chat. |
 
+## Media Tools
+
+| Container | Description |
+| --------- | ----------- |
+| [embystat](https://github.com/linuxserver/docker-embystat/) | [embystat](https://github.com/mregni/EmbyStat) is a personal web server that can calculate all kinds of statistics from your (local) Emby server. Just install this on your server and let him calculate all kinds of fun stuff. |
+| [ffmpeg](https://github.com/linuxserver/docker-ffmpeg/) | No description |
+| [htpcmanager](https://github.com/linuxserver/docker-htpcmanager/) | [htpcmanager](https://github.com/HTPC-Manager/HTPC-Manager) is a front end for many htpc related applications. |
+| [minisatip](https://github.com/linuxserver/docker-minisatip/) | [minisatip](https://github.com/catalinii/minisatip) is a multi-threaded satip server version 1.2 that runs under Linux and it was tested with DVB-S, DVB-S2, DVB-T, DVB-T2, DVB-C, DVB-C2, ATSC and ISDB-T cards. |
+| [oscam](https://github.com/linuxserver/docker-oscam/) | [oscam](http://www.streamboard.tv/oscam/) is an Open Source Conditional Access Module software used for descrambling DVB transmissions using smart cards. It's both a server and a client. |
+| [synclounge](https://github.com/linuxserver/docker-synclounge/) | [synclounge](https://github.com/samcm/synclounge) is a third party tool that allows you to watch Plex in sync with your friends/family, wherever you are. |
+| [tautulli](https://github.com/linuxserver/docker-tautulli/) | [tautulli](http://tautulli.com) is a python based web application for monitoring, analytics and notifications for Plex Media Server. |
+| [tvheadend](https://github.com/linuxserver/docker-tvheadend/) | [tvheadend](https://www.tvheadend.org/) works as a proxy server: is a TV streaming server and recorder for Linux, FreeBSD and Android supporting DVB-S, DVB-S2, DVB-C, DVB-T, ATSC, ISDB-T, IPTV, SAT>IP and HDHomeRun as input sources. |
+| [webgrabplus](https://github.com/linuxserver/docker-webgrabplus/) | [webgrabplus](http://www.webgrabplus.com) is a multi-site incremental xmltv epg grabber. It collects tv-program guide data from selected tvguide sites for your favourite channels. |
+
 ## Monitor
 
 | Container | Description |
 | --------- | ----------- |
 | [apprise-api](https://github.com/linuxserver/docker-apprise-api/) | [apprise-api](https://github.com/caronc/apprise-api) Takes advantage of [Apprise](https://github.com/caronc/apprise) through your network with a user-friendly API. |
-| [diskover](https://github.com/linuxserver/docker-diskover/) | [{{ project_name }}](https://github.com/diskoverdata/diskover-community) is an open source file system indexer that uses Elasticsearch to index and manage data across heterogeneous storage systems. |
-| [domoticz](https://github.com/linuxserver/docker-domoticz/) | [domoticz](https://www.domoticz.com) is a Home Automation System that lets you monitor and configure various devices like: Lights, Switches, various sensors/meters like Temperature, Rain, Wind, UV, Electra, Gas, Water and much more. Notifications/Alerts can be sent to any mobile device. |
-| [embystat](https://github.com/linuxserver/docker-embystat/) | [embystat](https://github.com/mregni/EmbyStat) is a personal web server that can calculate all kinds of statistics from your (local) Emby server. Just install this on your server and let him calculate all kinds of fun stuff. |
+| [diskover](https://github.com/linuxserver/docker-diskover/) | [diskover](https://github.com/diskoverdata/diskover-community) is an open source file system indexer that uses Elasticsearch to index and manage data across heterogeneous storage systems. |
 | [healthchecks](https://github.com/linuxserver/docker-healthchecks/) | [healthchecks](https://github.com/healthchecks/healthchecks) is a watchdog for your cron jobs. It's a web server that listens for pings from your cron jobs, plus a web interface. |
 | [librespeed](https://github.com/linuxserver/docker-librespeed/) | [librespeed](https://github.com/librespeed/speedtest) is a very lightweight Speedtest implemented in Javascript, using XMLHttpRequest and Web Workers. |
 | [scrutiny](https://github.com/linuxserver/docker-scrutiny/) | [scrutiny](https://github.com/AnalogJ/scrutiny) WebUI for smartd S.M.A.R.T monitoring. Scrutiny is a Hard Drive Health Dashboard & Monitoring solution, merging manufacturer provided S.M.A.R.T metrics with real-world failure rates from Backblaze. |
 | [smokeping](https://github.com/linuxserver/docker-smokeping/) | [smokeping](https://oss.oetiker.ch/smokeping/) keeps track of your network latency. For a full example of what this application is capable of visit [UCDavis](http://smokeping.ucdavis.edu/cgi-bin/smokeping.fcgi). |
 | [syslog-ng](https://github.com/linuxserver/docker-syslog-ng/) | [syslog-ng](https://www.syslog-ng.com/products/open-source-log-management/) allows you to flexibly collect, parse, classify, rewrite and correlate logs from across your infrastructure and store or route them to log analysis tools. |
-| [tautulli](https://github.com/linuxserver/docker-tautulli/) | [tautulli](http://tautulli.com) is a python based web application for monitoring, analytics and notifications for Plex Media Server. |
-
-## Movies
-
-| Container | Description |
-| --------- | ----------- |
-| [couchpotato](https://github.com/linuxserver/docker-couchpotato/) | [couchpotato](https://couchpota.to/) is an automatic NZB and torrent downloader. You can keep a `movies I want` list and it will search for NZBs/torrents of these movies every X hours. Once a movie is found, it will send it to SABnzbd or download the torrent to a specified directory. |
-| [radarr](https://github.com/linuxserver/docker-radarr/) | [radarr](https://github.com/Radarr/Radarr) - A fork of Sonarr to work with movies à la Couchpotato. |
 
 ## Music
 
@@ -225,7 +232,7 @@
 | [daapd](https://github.com/linuxserver/docker-daapd/) | [daapd](https://owntone.github.io/owntone-server/) (iTunes) media server with support for AirPlay devices, Apple Remote (and compatibles), Chromecast, MPD and internet radio. |
 | [headphones](https://github.com/linuxserver/docker-headphones/) | [headphones](https://github.com/rembo10/headphones) is an automated music downloader for NZB and Torrent, written in Python. It supports SABnzbd, NZBget, Transmission, µTorrent and Blackhole. |
 | [lidarr](https://github.com/linuxserver/docker-lidarr/) | [lidarr](https://github.com/lidarr/Lidarr) is a music collection manager for Usenet and BitTorrent users. It can monitor multiple RSS feeds for new tracks from your favorite artists and will grab, sort and rename them. It can also be configured to automatically upgrade the quality of files already downloaded when a better quality format becomes available. |
-| [mstream](https://github.com/linuxserver/docker-mstream/) | [{{ project_name }}](https://mstream.io/) is a personal music streaming server. You can use mStream to stream your music from your home computer to any device, anywhere.  There are mobile apps available for both Android and iPhone. |
+| [mstream](https://github.com/linuxserver/docker-mstream/) | [mstream](https://mstream.io/) is a personal music streaming server. You can use mStream to stream your music from your home computer to any device, anywhere.  There are mobile apps available for both Android and iPhone. |
 
 ## Network
 
@@ -250,6 +257,7 @@
 
 | Container | Description |
 | --------- | ----------- |
+| [cloud9](https://github.com/linuxserver/docker-cloud9/) | [cloud9](https://github.com/c9/core) Cloud9 is a complete web based IDE with terminal access. This container is for running their core SDK locally and developing plugins. |
 | [code-server](https://github.com/linuxserver/docker-code-server/) | [code-server](https://coder.com) is VS Code running on a remote server, accessible through the browser. |
 | [openvscode-server](https://github.com/linuxserver/docker-openvscode-server/) | [openvscode-server](https://github.com/gitpod-io/openvscode-server) provides a version of VS Code that runs a server on a remote machine and allows access through a modern web browser. |
 | [pylon](https://github.com/linuxserver/docker-pylon/) | [pylon](https://github.com/pylonide/pylon) is a web based integrated development environment built with Node.js as a backend and with a supercharged JavaScript/HTML5 frontend, licensed under GPL version 3. This project originates from Cloud9 v2 project. |
@@ -271,6 +279,8 @@
 | Container | Description |
 | --------- | ----------- |
 | [guacd](https://github.com/linuxserver/docker-guacd/) | [guacd](https://guacamole.apache.org/) - Apache Guacamole is a clientless remote desktop gateway. It supports standard protocols like VNC, RDP, and SSH. This container is only the backend server component needed to use The official or 3rd party HTML5 frontends. |
+| [rdesktop](https://github.com/linuxserver/docker-rdesktop/) | [rdesktop](http://xrdp.org/) - Ubuntu based containers containing full desktop environments in officially supported flavors accessible via RDP. |
+| [remmina](https://github.com/linuxserver/docker-remmina/) | [Remmina](https://remmina.org/) is a remote desktop client written in GTK, aiming to be useful for system administrators and travellers, who need to work with lots of remote computers in front of either large or tiny screens. Remmina supports multiple network protocols, in an integrated and consistent user interface. Currently RDP, VNC, SPICE, NX, XDMCP, SSH and EXEC are supported. |
 | [webtop](https://github.com/linuxserver/docker-webtop/) | [webtop](https://github.com/linuxserver/docker-webtop) - Alpine, Ubuntu, Fedora, and Arch based containers containing full desktop environments in officially supported flavors accessible via any modern web browser. |
 
 ## Science
@@ -280,35 +290,10 @@
 | [boinc](https://github.com/linuxserver/docker-boinc/) | [BOINC](https://boinc.berkeley.edu/) is a platform for high-throughput computing on a large scale (thousands or millions of computers). It can be used for volunteer computing (using consumer devices) or grid computing (using organizational resources). It supports virtualized, parallel, and GPU-based applications. |
 | [foldingathome](https://github.com/linuxserver/docker-foldingathome/) | [Folding@home](https://foldingathome.org/) is a distributed computing project for simulating protein dynamics, including the process of protein folding and the movements of proteins implicated in a variety of diseases. It brings together citizen scientists who volunteer to run simulations of protein dynamics on their personal computers. Insights from this data are helping scientists to better understand biology, and providing new opportunities for developing therapeutics. |
 
-## Shows
-
-| Container | Description |
-| --------- | ----------- |
-| [medusa](https://github.com/linuxserver/docker-medusa/) | [medusa](https://pymedusa.com/) is an automatic Video Library Manager for TV Shows. It watches for new episodes of your favorite shows, and when they are posted it does its magic. |
-| [sickchill](https://github.com/linuxserver/docker-sickchill/) | [sickchill](https://github.com/SickChill/SickChill) is an Automatic Video Library Manager for TV Shows. It watches for new episodes of your favorite shows, and when they are posted it does its magic.  |
-| [sickgear](https://github.com/linuxserver/docker-sickgear/) | [SickGear](https://github.com/sickgear/sickgear) provides management of TV shows and/or Anime, it detects new episodes, links downloader apps, and more.. |
-| [sonarr](https://github.com/linuxserver/docker-sonarr/) | [sonarr](https://sonarr.tv/) (formerly NZBdrone) is a PVR for usenet and bittorrent users. It can monitor multiple RSS feeds for new episodes of your favorite shows and will grab, sort and rename them. It can also be configured to automatically upgrade the quality of files already downloaded when a better quality format becomes available. |
-
-## Subtitles
-
-| Container | Description |
-| --------- | ----------- |
-| [bazarr](https://github.com/linuxserver/docker-bazarr/) | [bazarr](https://www.bazarr.media/) is a companion application to Sonarr and Radarr. It can manage and download subtitles based on your requirements. You define your preferences by TV show or movie and Bazarr takes care of everything for you. |
-
-## TV
-
-| Container | Description |
-| --------- | ----------- |
-| [minisatip](https://github.com/linuxserver/docker-minisatip/) | [minisatip](https://github.com/catalinii/minisatip) is a multi-threaded satip server version 1.2 that runs under Linux and it was tested with DVB-S, DVB-S2, DVB-T, DVB-T2, DVB-C, DVB-C2, ATSC and ISDB-T cards. |
-| [oscam](https://github.com/linuxserver/docker-oscam/) | [oscam](http://www.streamboard.tv/oscam/) is an Open Source Conditional Access Module software used for descrambling DVB transmissions using smart cards. It's both a server and a client. |
-| [tvheadend](https://github.com/linuxserver/docker-tvheadend/) | [tvheadend](https://www.tvheadend.org/) works as a proxy server: is a TV streaming server and recorder for Linux, FreeBSD and Android supporting DVB-S, DVB-S2, DVB-C, DVB-T, ATSC, ISDB-T, IPTV, SAT>IP and HDHomeRun as input sources. |
-| [webgrabplus](https://github.com/linuxserver/docker-webgrabplus/) | [webgrabplus](http://www.webgrabplus.com) is a multi-site incremental xmltv epg grabber. It collects tv-program guide data from selected tvguide sites for your favourite channels. |
-
 ## Tools
 
 | Container | Description |
 | --------- | ----------- |
-| [xbackbone](https://github.com/linuxserver/docker-xbackbone/) | [xbackbone](https://github.com/SergiX44/XBackBone) is a simple, self-hosted, lightweight PHP file manager that support the instant sharing tool ShareX and *NIX systems. It supports uploading and displaying images, GIF, video, code, formatted text, and file downloading and uploading. Also have a web UI with multi user management, past uploads history and search support. |
 | [yq](https://github.com/linuxserver/docker-yq/) | No description |
 
 ## VPN
