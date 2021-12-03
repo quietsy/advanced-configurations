@@ -1,5 +1,6 @@
 ## Containers
 
+- [Awesome LSIO](awesome-lsio)
 - [Consolidating Proxies](consolidate)
 - [Optimizing Nextcloud](nextcloud)
 - [Piped](piped)
