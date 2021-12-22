@@ -3,7 +3,7 @@
 
 This setup allows you to route containers through a VPN and protect yourself from your ISP.
 
-This guide is the basic step-by-step version of great blog posts by [Spad](https://spad.uk/wireguard-as-a-vpn-client-in-docker-using-pia/) and [Tokugero](https://bookstack.almueti.com/books/wireguard/page/docker-compose-with-mullvad-wireguard-arbitrary-service) which also contain more advanced information.
+This guide is the basic step-by-step version of great blog posts by [Spad](https://spad.uk/wireguard-as-a-vpn-client-in-docker-using-pia/) and [Tokugero](https://bs.tokugero.com/books/wireguard/page/docker-compose-with-mullvad-wireguard-arbitrary-service) which also contain more advanced information.
 
 qBittorrent and Mullvad are used in this guide as an example, but you can route any container the same way, and use any VPN service that supports Wireguard.
 
