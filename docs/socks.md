@@ -137,6 +137,6 @@ For example in Firefox:
 
 ## Notes
 
-- If there are other containers routed through the same VPN container, the SOCKS proxy will act as another hop meaning if connect to a VPN in one country and select a SOCKS proxy in another country, it will hop twice which is more secure.
+- If there are other containers routed through the same VPN container, the SOCKS proxy will act as another hop meaning if you connect to a VPN in one country and select a SOCKS proxy in another country, it will hop twice which is more secure.
 
-- The performance should almost identical to not having a SOCKS proxy, if you feel any slowness then select another proxy provided by your VPN provider.
+- The performance should be almost identical to not having a SOCKS proxy, if you feel any slowness then select another proxy provided by your VPN provider.
