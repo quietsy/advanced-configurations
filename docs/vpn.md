@@ -143,10 +143,10 @@ A DNS leak will have your local DNS under: `SERVER: 192.168.1.1#53(192.168.1.1)`
 You can try one of 2 solutions. (Replace `8.8.8.8` with your DNS of choice)
 
 1. Add the following to the vpn's compose:
-   ```yaml
-    dns:
-      - 8.8.8.8
-    ```
+  ```yaml
+  dns:
+    - 8.8.8.8
+  ```
 
 2. Add the following to the vpn's compose:
   ```yaml
