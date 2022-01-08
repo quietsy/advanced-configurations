@@ -133,3 +133,17 @@ If you're experiencing problems and you want to restart everything, the correct 
 ### Can't connect to the Web-UI of routed containers
 
 Make sure that you have added `PostUp` and `PreDown` to `wg0.conf` as detailed in [Connecting the Wireguard Client to the VPN](https://gist.github.com/quietsy/fa1d6899af13bd7ea9dea4059d1a7a65#connecting-the-wireguard-client-to-the-vpn).
+
+### DNS leaks
+
+If you want to make sure wireguard isn't using your local DNS, you can check it with `docker run --network="container:vpn" -it --rm tutum/dnsutils dig google.com`.
+If you are leaking DNS requests, you can try one of 2 solutions.
+1. Add the following to the vpn's compose:
+   ```yaml
+    dns:
+      - 8.8.8.8
+    ```
+2. Add the following to the vpn's compose:
+  ```yaml
+  command: bash -c "cp /etc/resolv.conf /tmp/resolv.conf && sed -i 's/127.0.0.11/8.8.8.8/g' /tmp/resolv.conf && cp /tmp/resolv.conf /etc/resolv.conf && /init"
+  ```
