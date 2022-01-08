@@ -141,11 +141,13 @@ If you want to make sure wireguard isn't using your local DNS, you can check it 
 A DNS leak will have your local DNS under: `SERVER: 192.168.1.1#53(192.168.1.1)`.
 
 You can try one of 2 solutions. (Replace `8.8.8.8` with your DNS of choice)
+
 1. Add the following to the vpn's compose:
    ```yaml
     dns:
       - 8.8.8.8
     ```
+
 2. Add the following to the vpn's compose:
   ```yaml
   command: bash -c "cp /etc/resolv.conf /tmp/resolv.conf && sed -i 's/127.0.0.11/8.8.8.8/g' /tmp/resolv.conf && cp /tmp/resolv.conf /etc/resolv.conf && /init"
