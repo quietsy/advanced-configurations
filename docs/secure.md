@@ -118,37 +118,20 @@ This great mod sends a discord notification when Fail2Ban blocks an attack: [f2b
 ## Geoblock
 Geoblock reduces the attack surface of SWAG by restricting access based on countries.
 
-Enable geoblock by uncommenting the Geoip2 config line in `nginx.conf`:
-```
-include /config/nginx/geoip2.conf;
-```
+Enable geoblock using either [DBIP mod](https://github.com/linuxserver/docker-mods/tree/swag-dbip) or [Maxmind mod](https://github.com/linuxserver/docker-mods/tree/swag-maxmind), follow the mod's instructions to set it up.
 
-Acquire a Maxmind license key [here](https://www.maxmind.com/en/geolite2/signup).
+The mods come with 3 definitions for `$geo-whitelist`, `$geo-blacklist`, `$lan-ip`.
 
-Add the following environment variable to the compose yaml to automatically download the Geolite2 database:
-
-```
-      - MAXMINDDB_LICENSE_KEY=<license key>
-```
-
-Add the following configuration to `geoip2.conf`, below are 2 examples:
-
-Allow a single country and your LAN:
+An example for allowing a single country:
 ```Nginx
-geo $lan-ip {
+map $geoip2_data_country_iso_code $geo-whitelist {
     default no;
-    192.168.1.0/24 yes; #Replace with your LAN subnet
-    127.0.0.1 yes;
-}
-
-map $geoip2_data_country_iso_code $allowed_mycountry {
-    default no;
-    US yes; #Replace with your country code list https://dev.maxmind.com/geoip/legacy/codes/iso3166/
+    UK yes; #Replace with your country code list https://dev.maxmind.com/geoip/legacy/codes/iso3166/
 }
 ```
-Allow everything except high risk countries: (GilbN's list based on the Spamhaus statistics and Aakamai’s state of the internet report)
+An example for blocking high risk countries: (GilbN's list based on the Spamhaus statistics and Aakamai’s state of the internet report)
 ```Nginx
-map $geoip2_data_country_iso_code $denied_highrisk {
+map $geoip2_data_country_iso_code $geo-blacklist {
     default yes; #If your country is listed below, remove it from the list
     CN no; #China
     RU no; #Russia
@@ -172,14 +155,14 @@ map $geoip2_data_country_iso_code $denied_highrisk {
 
 Utilize the geoblock in your configuration by adding one of the following lines above your location section in every application you want to protect.
 
-**Note that when using an allowed filter, you also need to check if the source is a LAN IP, it's not required when using a denied filter.**
+**Note that when using a whitelist filter, you also need to check if the source is a LAN IP, it's not required when using a blacklist filter.**
 ```nginx
-    if ($lan-ip = yes) { set $allowed_mycountry yes; }
-    if ($allowed_mycountry = no) { return 404; }
+    if ($lan-ip = yes) { set $geo-whitelist yes; }
+    if ($geo-whitelist = no) { return 404; }
 ```
 Or
 ```nginx
-    if ($denied_highrisk = no) { return 404; }
+    if ($geo-blacklist = no) { return 404; }
 ```
 
 Example:
@@ -193,8 +176,8 @@ server {
     include /config/nginx/ssl.conf;
     client_max_body_size 0;
 
-    if ($lan-ip = yes) { set $allowed_mycountry yes; } #Check for a LAN IP
-    if ($allowed_mycountry = no) { return 404; } #Check the country filter
+    if ($lan-ip = yes) { set $geo-whitelist yes; } #Check for a LAN IP
+    if ($geo-whitelist = no) { return 404; } #Check the country filter
 
     location / {
         include /config/nginx/proxy.conf;
