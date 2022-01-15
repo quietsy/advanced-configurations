@@ -5,6 +5,13 @@
 
 - A working instance of [SWAG](https://github.com/linuxserver/docker-swag)
 
+## Monitor SWAG
+Use monitoring solutions such as [SWAG Dashboard](https://github.com/linuxserver/docker-mods/tree/swag-dashboard) to keep an eye on the traffic going through SWAG and check for suspicious activity such as:
+- A lot of hits from a country unrelated to your users
+- A lot of requests to a specific page or static file
+- Referers that shouldn't refer to your domain
+- A lot of hits on status codes that are not 2xx
+
 ## Internal Applications
 Internal applications can be proxied through SWAG in order to use `app.mydomain.com` instead of ip:port, and block them externally so only your local network could access them.
 
