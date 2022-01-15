@@ -7,6 +7,7 @@
 
 ## Monitor SWAG
 Use monitoring solutions such as [SWAG Dashboard](https://github.com/linuxserver/docker-mods/tree/swag-dashboard) to keep an eye on the traffic going through SWAG and check for suspicious activity such as:
+
 - A lot of hits from a country unrelated to your users
 - A lot of requests to a specific page or static file
 - Referers that shouldn't refer to your domain
