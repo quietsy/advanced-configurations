@@ -1,4 +1,6 @@
 site_name: Advanced Configurations
+site_description: Advanced configurations for containers
+site_url: https://virtualize.link
 edit_uri: ""
 repo_url: https://github.com/quietsy/advanced-configurations
 theme:
@@ -39,8 +41,15 @@ markdown_extensions:
   - pymdownx.highlight
   - pymdownx.inlinehilite
   - pymdownx.superfences
+plugins:
+  - rss
 
 extra:
+  social:
+    - icon: fontawesome/solid/rss 
+      link: /feed_rss_created.xml
+  analytics:
+    provider: custom
   homepage: https://virtualize.link
 nav:
   - Home: index.md
