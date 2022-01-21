@@ -29,6 +29,8 @@ Configure your VPN Wireguard Client according to the [Wireguard documentation](h
     volumes:
       - /path/to/appdata/config:/config
       - /lib/modules:/lib/modules
+    sysctls:
+      - net.ipv4.conf.all.src_valid_mark=1
     restart: unless-stopped
 ```
 
