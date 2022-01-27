@@ -10,6 +10,7 @@
 - [Split Tunnel](split)
 - [VPN Route](vpn)
 - [VPS Proxy](vps)
+- [YAML Anchors](yaml-anchors)
 
 ## Tools
 
