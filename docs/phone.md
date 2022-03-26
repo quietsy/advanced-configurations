@@ -1,0 +1,79 @@
+# Periodic Phone Wipe Notes
+
+I got into the habit of wiping my phone every 6 months in order to:
+
+- Streamline the process
+- Validate the backups
+- Re-examine which apps should stay
+- Remove leftover data
+- Figure out the pains and find alternatives
+
+## Backup
+
+- Snapshot
+  - Homepages
+  - Toggles
+  - App drawer
+- Export
+  - Wireguard
+  - Aegis
+  - Gadgetbridge
+  - Newpipe subscriptions
+- Backup the entire phone to the PC
+
+## Install
+
+- Enable USB debugging on the phone
+- Get adb working on your PC, on ubuntu for example:
+  - Download [android platform tools](https://developer.android.com/studio/releases/platform-tools)
+  - Install udev rules `sudo apt install android-sdk-platform-tools-common`
+  - Reload udev rules `sudo udevadm control --reload-rules`
+  - Add the user to the group ``sudo usermod -a -G plugdev `whoami` ``
+  - Logout & login or reboot
+  - Check that adb works (`adb devices`)
+- Remove fingerprint and pattern
+- Download
+  - OS & recovery - I use [lineage with micro-g](https://lineage.microg.org/)
+  - Firmware - the latest official
+- Reboot to bootloader (`adb reboot bootloader`)
+- Install recovery (`fastboot flash recovery recovery.img`)
+- Reboot to recovery (`fastboot reboot recovery`)
+- Format data and cache from recovery
+- Install firmware (`adb sideload firmware.zip`)
+- Install OS (`adb sideload os.zip`)
+- Reboot to OS (`fastboot reboot`)
+
+## Configuration
+
+- Copy exports and snapshots back
+- Initial configuration
+- Apps
+  - Aegis (2FA)
+  - Aurora store (anonymized play store)
+  - Bitwarden (password manager)
+  - Davx5 (sync contacts)
+  - Discord
+  - F-droid (foss app store)
+  - Firefox
+  - Gadgetbridge (cloudless gadgets)
+  - Gcam
+  - Gelli (music)
+  - Gotify (server notifications)
+  - Jellyfin (media)
+  - Microsoft lens (scan documents)
+  - Newpipe with sponsorblock (youtube)
+  - Nextcloud (self-hosted cloud)
+  - Nextcloud news (rss reader)
+  - Nextcloud notes
+  - Nextcloud phonetrack (track phone)
+  - Proton calendar
+  - Protonmail
+  - VLC
+  - Waze (navigation)
+  - Wireguard ([always-on mullvad + home](/split/))
+- Configure all apps
+- Set folders to auto upload to [nextcloud](/nextcloud/)
+  - Photos
+  - Videos
+  - Call recordings
+  - Lens documents (auto upload to paperless-ngx)

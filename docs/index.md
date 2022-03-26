@@ -15,4 +15,5 @@
 ## Tools
 
 - [Setup Template](setup)
+- [Phone](phone)
 - [Tmux](tmux)

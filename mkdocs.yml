@@ -41,6 +41,7 @@ markdown_extensions:
   - pymdownx.highlight
   - pymdownx.inlinehilite
   - pymdownx.superfences
+  - mdx_truly_sane_lists
 plugins:
   - git-revision-date-localized
   - rss
@@ -69,4 +70,5 @@ nav:
     - YAML Anchors: yaml-anchors.md
   - Tools:
     - Setup Template: setup.md
+    - Phone: phone.md
     - Tmux: tmux.md
