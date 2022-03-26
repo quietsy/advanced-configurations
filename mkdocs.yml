@@ -64,6 +64,7 @@ nav:
     - Searx: searx.md
     - Securing SWAG: secure.md
     - SOCKS Proxy: socks.md
+    - Split DNS: split-dns.md
     - Split Tunnel: split.md
     - VPN Route: vpn.md
     - VPS Proxy: vps.md

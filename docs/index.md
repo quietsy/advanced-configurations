@@ -7,6 +7,7 @@
 - [Searx](searx)
 - [Securing SWAG](secure)
 - [SOCKS Proxy](socks)
+- [Split DNS](split-dns)
 - [Split Tunnel](split)
 - [VPN Route](vpn)
 - [VPS Proxy](vps)
