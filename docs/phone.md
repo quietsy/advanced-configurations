@@ -1,12 +1,16 @@
 # Periodic Phone Wipe Notes
 
-I got into the habit of wiping my phone every 6 months in order to:
+I got into the habit of wiping my phone every 6 months (takes about an hour) in order to:
 
 - Streamline the process
 - Validate the backups
 - Re-examine which apps should stay
 - Remove leftover data
 - Figure out the pains and find alternatives
+
+My phone is Poco X3 NFC with [lineage + micro-g](https://lineage.microg.org/), it has an [always-on mullvad + home VPN](/split/), and a lot of self-hosting related apps. 
+
+The main feature of this setup is great idle battery consumption with [up to 7 days on a single charge](https://files.virtualize.link/pics/microg.png).
 
 ## Backup
 
@@ -33,7 +37,7 @@ I got into the habit of wiping my phone every 6 months in order to:
   - Check that adb works (`adb devices`)
 - Remove fingerprint and pattern
 - Download
-  - OS & recovery - I use [lineage with micro-g](https://lineage.microg.org/)
+  - OS & recovery - I use [lineage + micro-g](https://lineage.microg.org/)
   - Firmware - the latest official
 - Reboot to bootloader (`adb reboot bootloader`)
 - Install recovery (`fastboot flash recovery recovery.img`)
@@ -70,7 +74,7 @@ I got into the habit of wiping my phone every 6 months in order to:
   - Protonmail
   - VLC
   - Waze (navigation)
-  - Wireguard ([always-on mullvad + home](/split/))
+  - Wireguard (vpn)
 - Configure all apps
 - Set folders to auto upload to [nextcloud](/nextcloud/)
   - Photos
