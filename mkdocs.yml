@@ -43,7 +43,11 @@ markdown_extensions:
   - pymdownx.superfences
   - mdx_truly_sane_lists
 plugins:
-  - git-revision-date-localized
+  - git-revision-date-localized:
+      type: timeago
+      fallback_to_build_date: true
+      enable_creation_date: true
+      enabled: true
   - rss
   - search
 
