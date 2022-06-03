@@ -1,19 +1,18 @@
-# Searx
+# SearXNG
 
-[Searx](https://github.com/searx/searx) is a free metasearch engine with the aim of protecting the privacy of its users. To this end, Searx does not share users' IP addresses or search history with the search engines from which it gathers results. Tracking cookies served by the search engines are blocked, preventing user-profiling-based results modification.
+[SearXNG](https://github.com/searxng/searxng) is a free metasearch engine with the aim of protecting the privacy of its users. To this end, Searx does not share users' IP addresses or search history with the search engines from which it gathers results. Tracking cookies served by the search engines are blocked, preventing user-profiling-based results modification.
 
 ## Installation
 ### Compose
 
 ```Yaml
-  searx:
+  searxng:
     image: searxng/searxng
-    container_name: searx
+    container_name: searxng
     volumes:
-      - /path/to/searx:/etc/searx
+      - /path/to/searxng:/etc/searxng
     environment:
       - BASE_URL=https://search.yourdomain.com/
-      - INSTANCE_NAME=Searx
     ports:
       - 8080:8080
     restart: always
@@ -31,7 +30,7 @@ server {
     location / {
         include /config/nginx/proxy.conf;
         include /config/nginx/resolver.conf;
-        set $upstream_app searx;
+        set $upstream_app searxng;
         set $upstream_port 8080;
         set $upstream_proto http;
         proxy_pass $upstream_proto://$upstream_app:$upstream_port;
@@ -45,77 +44,30 @@ The settings file is `/path/to/searx/settings.yml`, it can seem overwhelming but
 
 These settings may require changing in the file:
 ```Yaml
-general:
-  instance_name: "Searx" # The name that is displayed
-search:
-  safe_search: 1 # Otherwise you may get inappropriate image results
-  autocomplete: "google" # Or one of the other autocomplete sources
+# see https://docs.searxng.org/admin/engines/settings.html#use-default-settings
+use_default_settings: true
 server:
-  secret_key: "MUST CHANGE THIS"
-  http_protocol_version: "1.1"
+  secret_key: "CHANGE THIS"
+  limiter: false  # can be disabled for a private instance
+  image_proxy: true
 ui:
-  advanced_search: true # Show the advanced options by default
+  static_use_hash: true
+  default_theme: simple
   theme_args:
-    oscar_style: logicodev-dark # Dark theme
-enabled_plugins: # Enable plugins https://searx.github.io/searx/admin/plugins.html?highlight=plugins
-  - "Infinite scroll"
-  - "Tracker URL remover"
-  - "Search on category select"
-  - "Hash plugin"
-  - "Self Informations"
-engines:
-  - name: <some engine>
-    disabled: true # To disable any engine by default, add this line to it
+    simple_style: dark
+  infinite_scroll: true
+search:
+  autocomplete: "google"
 ```
 
-## Morty Proxy (Optional)
+## Rate Limiting (Optional)
 
-Morty rewrites web pages to exclude malicious HTML tags and attributes. It also replaces external resource references to prevent third party information leaks.
-
-### Compose
-
-```Yaml  
-morty:
-    image: dalf/morty
-    container_name: morty
-    environment:
-      - MORTY_ADDRESS=0.0.0.0:3000
-      - DEBUG=false
-    ports:
-      - 3000:3000
-    restart: always
-```
-
-### Reverse Proxy
-
-```Nginx
-server {
-    listen 443 ssl;
-    server_name proxy.yourdomain.com;
-    include /config/nginx/ssl.conf;
-    client_max_body_size 0;
-
-    location / {
-        include /config/nginx/proxy.conf;
-        include /config/nginx/resolver.conf;
-        set $upstream_app morty;
-        set $upstream_port 3000;
-        set $upstream_proto http;
-        proxy_pass $upstream_proto://$upstream_app:$upstream_port;
-    }
-}
-```
-
-### Settings
-
-Enable the proxy with the following settings:
+Rate limiting can be enabled by adding a redis container and setting these:
 ```Yaml
 server:
-  image_proxy: true
-result_proxy:
-  url: https://proxy.yourdomain.com/
+  limiter: true  # can be disabled for a private instance
+redis:
+  url: redis://redis:6379/0
 ```
 
-## Filtron (Optional)
-
-If you want to make your instance public, you may want to configure [Filtron](https://github.com/asciimoo/filtron), I won't go into it.
+An example compose can be found [here](https://github.com/searxng/searxng-docker).
