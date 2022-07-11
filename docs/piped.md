@@ -111,6 +111,14 @@ server {
         set $upstream_proto http;
         proxy_pass $upstream_proto://$upstream_app:$upstream_port;
     }
+    location /webhooks/pubsub {
+        include /config/nginx/proxy.conf;
+        include /config/nginx/resolver.conf;
+        set $upstream_app pipedapi;
+        set $upstream_port 8080;
+        set $upstream_proto http;
+        proxy_pass $upstream_proto://$upstream_app:$upstream_port;
+    }
 }
 
 server {
@@ -178,6 +186,19 @@ server {
     }
 }
 
+```
+
+All the sub-domains can remain internal-only except for the following domain that must be exposed for subscriptions to work:
+
+```nginx
+    location /webhooks/pubsub {
+        include /config/nginx/proxy.conf;
+        include /config/nginx/resolver.conf;
+        set $upstream_app pipedapi;
+        set $upstream_port 8080;
+        set $upstream_proto http;
+        proxy_pass $upstream_proto://$upstream_app:$upstream_port;
+    }
 ```
 
 And finally, add the following volume to SWAG:
