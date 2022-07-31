@@ -30,6 +30,7 @@ For example:
 ## Script
 
 The following script assumes the layout above and creates 2 VLANs:
+
 1. 227 - LAN ports 1-4, Main wifi 2.5Ghz, Main wifi 5Ghz
 2. 11 (with client isolation) - Guest wifi 2.5Ghz, Guest wifi 5Ghz
 
