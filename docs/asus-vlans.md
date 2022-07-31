@@ -1,6 +1,7 @@
 # Turning an Asus Router to a VLAN aware Access Point
 
 ## Steps
+
 - Install [Asus-Merlin](https://www.asuswrt-merlin.net/) on the router
 - Set the router to AP mode
 - Enable Administration > System > Enable JFFS custom scripts and configs
@@ -15,6 +16,7 @@
 Before editing the script we need to figure out the interface names, disconnect all ethernet cables except one and run `ip a` to check which interface is UP, keep switching between ports and running  `ip a` to map all ports.
 
 For example:
+
 - eth0 - LAN 1
 - eth1 - LAN 2
 - eth2 - LAN 3
@@ -64,6 +66,7 @@ eapd
 ## Recovery
 
 If the router doesn't boot after making the changes, you can revert it to factory defaults on most models:
+
 1. Power off the router
 2. Hold the WDS button on the back
 3. Turn the router on while still holding the WDS button
