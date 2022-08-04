@@ -62,6 +62,7 @@ nvram set wl0.1_ap_isolate="1"
 nvram set wl1.1_ap_isolate="1"
 killall eapd
 eapd
+ethswctl -c hw-switch
 ```
 
 ## Recovery
