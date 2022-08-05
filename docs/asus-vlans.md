@@ -1,4 +1,5 @@
 # Turning an Asus Router to a VLAN aware Access Point
+![asus-vlans](images/asus_vlans.png)
 
 ## Steps
 
