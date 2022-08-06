@@ -34,7 +34,7 @@ For example:
 - eth2 - LAN 3
 - eth3 - LAN 4
 - eth4 - WAN
-- eth5 - Main wifi 2.5Ghz
+- eth5 - Main wifi 2.4Ghz
 - eth6 - Main wifi 5Ghz
 - wl0.1 - Guest wifi 2.4Ghz
 - wl1.1 - Guest wifi 5Ghz
