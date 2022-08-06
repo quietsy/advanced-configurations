@@ -1,7 +1,18 @@
 # Turning an Asus Router to a VLAN aware Access Point
 ![asus-vlans](images/asus_vlans.png)
 
+## Reasons for using an Asus router
+
+- Not cloud connected
+- Doesn't require a controller
+- Supports mesh, wpa3
+- Cheap for a 2x2 Wi-Fi 6 AP with 5 LAN ports and VLAN support
+- Can act as a backup router if needed
+- Has a great community around it with asus-merlin
+
 ## Steps
+
+*Tested on the Asus RT-AX58U but could work on any asus-merlin router.*
 
 - Install [Asus-Merlin](https://www.asuswrt-merlin.net/) on the router
 - Set the router to AP mode
@@ -68,7 +79,7 @@ ethswctl -c hw-switch
 
 ## Recovery
 
-If the router doesn't boot after making the changes, you can revert it to factory defaults on most models:
+If the router doesn't boot after making the changes, you can revert it to factory defaults on most models by following these steps:
 
 1. Power off the router
 2. Hold the WDS button on the back
