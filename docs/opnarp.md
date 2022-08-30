@@ -12,7 +12,7 @@ OPN-Arp on OPNSense allows you to send alerts when new devices are spotted on th
 - Add a new entry under Service Tests Settings:
   - Name: `MAC pair`
   - Condition: `content = "MAC pair"`
-  - Action: `Alert` for an email alert or `/root/gotify.sh` for gotify (script below)
+  - Action: `Alert` for an email alert or `Execute` and `/root/gotify.sh` for gotify (script below)
 - Add a new entry under Service Settings:
   - Name: `MAC_PAIR`
   - Type: `File`
