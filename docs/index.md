@@ -13,9 +13,13 @@
 - [VPS Proxy](vps)
 - [YAML Anchors](yaml-anchors)
 
+## Network
+
+- [Asus VLANs](asus-vlans)
+- [OPN-Arp](opnarp)
+
 ## Tools
 
 - [Setup Template](setup)
 - [Phone](phone)
 - [Tmux](tmux)
-- [Asus VLANs](asus-vlans)

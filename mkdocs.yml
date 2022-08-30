@@ -73,8 +73,10 @@ nav:
     - VPN Route: vpn.md
     - VPS Proxy: vps.md
     - YAML Anchors: yaml-anchors.md
+  - Network:
+    - Asus VLANs: asus-vlans.md
+    - OPN-Arp: opnarp.md
   - Tools:
     - Setup Template: setup.md
     - Phone: phone.md
     - Tmux: tmux.md
-    - Asus VLANs: asus-vlans.md
