@@ -27,7 +27,7 @@ OPN-Arp on OPNSense allows you to send alerts when new devices are spotted on th
 
 - Connect to OPNSense via SSH
 - Execute `touch /root/gotify.sh && chmod +x /root/gotify.sh`
-- Paste the following script:
+- Paste the following script into `/root/gotify.sh`:
 
     ```bash
     #!/usr/local/bin/bash
@@ -47,3 +47,7 @@ OPN-Arp on OPNSense allows you to send alerts when new devices are spotted on th
     ```
 
 - Edit `gotify.domain.com` and `yourtoken` accordingly
+- Test it by running:
+  ```bash
+  echo "<29>1 2022-08-29T20:16:44+03:00 router.home root 59285 - [meta sequenceId=1] New IPv4/MAC pair seen: (10.1.3.22)3a:d1:ee:bc:20:2f" >> /var/log/system/latest.log
+  ```
