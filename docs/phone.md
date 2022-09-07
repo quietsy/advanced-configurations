@@ -22,7 +22,6 @@ The main feature of this setup is great idle battery consumption with [up to 7 d
   - Wireguard
   - Aegis
   - Gadgetbridge
-  - Newpipe subscriptions
 - Backup the entire phone to the PC
 
 ## Install
@@ -53,6 +52,7 @@ The main feature of this setup is great idle battery consumption with [up to 7 d
 - Initial configuration
 - Apps
   - Aegis (2FA)
+  - Audiobookshelf
   - Aurora store (anonymized play store)
   - Bitwarden (password manager)
   - Davx5 (sync contacts)
@@ -64,14 +64,16 @@ The main feature of this setup is great idle battery consumption with [up to 7 d
   - Gelli (music)
   - Gotify (server notifications)
   - Jellyfin (media)
+  - LibreTube (youtube)
   - Microsoft lens (scan documents)
-  - Newpipe with sponsorblock (youtube)
   - Nextcloud (self-hosted cloud)
   - Nextcloud news (rss reader)
   - Nextcloud notes
   - Nextcloud phonetrack (track phone)
   - Proton calendar
   - Protonmail
+  - Termux
+  - SimpleLogin
   - VLC
   - Waze (navigation)
   - Wireguard (vpn)
