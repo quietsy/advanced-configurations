@@ -58,7 +58,6 @@ The main feature of this setup is great idle battery consumption with [up to 7 d
   - Davx5 (sync contacts)
   - Discord
   - F-droid (foss app store)
-  - Firefox
   - Gadgetbridge (cloudless gadgets)
   - Gcam
   - Gelli (music)
@@ -66,6 +65,7 @@ The main feature of this setup is great idle battery consumption with [up to 7 d
   - Jellyfin (media)
   - LibreTube (youtube)
   - Microsoft lens (scan documents)
+  - Mull (browser)
   - Nextcloud (self-hosted cloud)
   - Nextcloud news (rss reader)
   - Nextcloud notes
