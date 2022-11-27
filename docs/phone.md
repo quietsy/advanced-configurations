@@ -52,6 +52,7 @@ The main feature of this setup is great idle battery consumption with [up to 7 d
 - Initial configuration
 - Apps
   - Aegis (2FA)
+  - AnySoftKeyboard (keyboard)
   - Audiobookshelf
   - Aurora store (anonymized play store)
   - Bitwarden (password manager)
@@ -71,7 +72,7 @@ The main feature of this setup is great idle battery consumption with [up to 7 d
   - Nextcloud notes
   - Nextcloud phonetrack (track phone)
   - Proton calendar
-  - Protonmail
+  - Proton mail
   - Termux
   - SimpleLogin
   - VLC
