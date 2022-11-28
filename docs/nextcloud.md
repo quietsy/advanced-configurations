@@ -61,7 +61,7 @@ Located in `/config/www/nextcloud/config/config.php`
 ## Example Compose
 ```Yaml
   nextcloud:
-    image: ghcr.io/linuxserver/nextcloud:php8
+    image: ghcr.io/linuxserver/nextcloud:latest
     container_name: nextcloud
     environment:
       - PUID=1000
