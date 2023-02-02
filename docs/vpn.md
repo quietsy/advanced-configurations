@@ -138,19 +138,8 @@ Make sure that you have added `PostUp` and `PreDown` to `wg0.conf` as detailed i
 
 ### DNS leaks
 
-If you want to make sure wireguard isn't using your local DNS, you can check it with `docker run --network="container:vpn" -it --rm tutum/dnsutils dig google.com`.
-
-A DNS leak will have your local DNS under: `SERVER: 192.168.1.1#53(192.168.1.1)`.
-
-You can try one of 2 solutions. (Replace `8.8.8.8` with your DNS of choice)
-
-1. Add the following to the vpn's compose:
+If you want to make sure wireguard isn't using your local DNS, add the following to the vpn's compose (Replace `8.8.8.8` with your DNS of choice):
   ```yaml
   dns:
     - 8.8.8.8
-  ```
-
-2. Add the following to the vpn's compose:
-  ```yaml
-  command: bash -c "cp /etc/resolv.conf /tmp/resolv.conf && sed -i 's/127.0.0.11/8.8.8.8/g' /tmp/resolv.conf && cp /tmp/resolv.conf /etc/resolv.conf && /init"
   ```
