@@ -213,7 +213,7 @@ add_header Permissions-Policy "interest-cohort=()";
 ### X-Robots-Tag
 You can prevent applications from appearing in results of search engines and web crawlers, regardless of whether other sites link to it. It doesn't work on all search engines and web crawlers, but it significantly reduces the amount.
 
-Add the X-Robots-Tag config line to `ssl.conf` to enable it on **all** of your applications:
+Add the X-Robots-Tag config line to `proxy.conf` to enable it on **all** of your applications:
 ```
 add_header X-Robots-Tag "noindex, nofollow, nosnippet, noarchive";
 ```
