@@ -10,6 +10,7 @@ The following is a collection of ways to optimize Nextcloud's performance and re
 - Use mariadb (alpine) or postgres
 - Use nextcloud v22 or higher
 - Add the following to `/config/php/php-local.ini`
+- Use imaginary to speed up thumbnail creation
 
 ```INI
 memory_limit = -1
@@ -51,6 +52,14 @@ Located in `/config/www/nextcloud/config/config.php`
   'memcache.local' => '\\OC\\Memcache\\APCu',
   'memcache.distributed' => '\\OC\\Memcache\\Redis',
   'memcache.locking' => '\\OC\\Memcache\\Redis',
+  'enable_previews' => true,
+  'enabledPreviewProviders' => 
+  array (
+    0 => 'OC\\Preview\\Imaginary',
+    1 => 'OC\\Preview\\Movie',
+    2 => 'OC\\Preview\\MP4',
+  ),
+  'preview_imaginary_url' => 'http://imaginary:9000',
   'redis' => 
   array (
     'host' => 'redis',
@@ -74,6 +83,11 @@ Located in `/config/www/nextcloud/config/config.php`
     depends_on:
       - mariadb
       - redis
+      - imaginary
+  imaginary:
+    image: nextcloud/aio-imaginary:latest
+    container_name: imaginary
+    restart: unless-stopped
   redis:
     image: redis:alpine
     container_name: redis
