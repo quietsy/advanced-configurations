@@ -47,7 +47,14 @@ OPN-Arp on OPNSense allows you to send alerts when new devices are spotted on th
     ```
 
 - Edit `gotify.domain.com` and `yourtoken` accordingly
-- Set `opnarp` to execute with `chmod +x /usr/local/etc/rc.d/opnarp` (otherwise the service doesn't come up automatically on reboot)
+- Create a file under `/usr/local/etc/rc.syshook.d/start/99-opnarp`:
+
+    ```sh
+    #!/bin/sh
+
+    chmod +x /usr/local/etc/rc.d/opnarp
+    ```
+
 - Test it by running:
   
   ```bash
