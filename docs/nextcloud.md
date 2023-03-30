@@ -9,8 +9,8 @@ The following is a collection of ways to optimize Nextcloud's performance and re
 - Enable redis
 - Use mariadb (alpine) or postgres
 - Use nextcloud v22 or higher
-- Add the following to `/config/php/php-local.ini`
 - Use imaginary to speed up thumbnail creation
+- Add the following to `/config/php/php-local.ini`
 
 ```INI
 memory_limit = -1
