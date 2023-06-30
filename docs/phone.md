@@ -52,7 +52,6 @@ The main feature of this setup is great idle battery consumption with [up to 7 d
 - Initial configuration
 - Apps
   - Aegis (2FA)
-  - AnySoftKeyboard (keyboard)
   - Audiobookshelf
   - Aurora store (anonymized play store)
   - Bitwarden (password manager)
@@ -65,6 +64,7 @@ The main feature of this setup is great idle battery consumption with [up to 7 d
   - Gotify (server notifications)
   - Jellyfin (media)
   - LibreTube (youtube)
+  - Magic earth (navigation)
   - Microsoft lens (scan documents)
   - Mull (browser)
   - Nextcloud (self-hosted cloud)
@@ -74,9 +74,9 @@ The main feature of this setup is great idle battery consumption with [up to 7 d
   - Proton calendar
   - Proton mail
   - Termux
+  - Signal
   - SimpleLogin
   - VLC
-  - Waze (navigation)
   - Wireguard (vpn)
 - Configure all apps
 - Set folders to auto upload to [nextcloud](/nextcloud/)
