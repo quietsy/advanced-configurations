@@ -36,6 +36,11 @@ pm.max_spare_servers = 18
 ```js
   'filesystem_check_changes' => 1,
 ```
+- Move `/config` to a fast disk such as nvme and mount it from there
+- After the initial run move `/data/appdata_INSTANCEID` to a fast disk such as nvme and mount it from there, add the following under `volumes:`: (the ID in the directory names will be different)
+```Yaml
+      - /path/to/appdata/appdata_ocytnd8b2l1b:/data/appdata_ocytnd8b2l1b
+```
 
 
 ## Example Nextcloud Config
@@ -79,6 +84,7 @@ Located in `/config/www/nextcloud/config/config.php`
     volumes:
       - /path/to/appdata:/config
       - /path/to/data:/data
+      - /path/to/appdata/appdata_ocytnd8b2l1b:/data/appdata_ocytnd8b2l1b
     restart: unless-stopped
     depends_on:
       - mariadb
