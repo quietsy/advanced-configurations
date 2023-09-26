@@ -55,8 +55,6 @@ extra:
   social:
     - icon: fontawesome/solid/rss 
       link: /feed_rss_created.xml
-  # analytics:
-  #   provider: custom
   homepage: https://virtualize.link
 nav:
   - Home: index.md
