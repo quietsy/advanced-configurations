@@ -57,16 +57,17 @@ x-vpnbase: &vpnbase
   <<: *base
   network_mode: "service:vpn"
 x-lsio: &lsio
-  environment:
-    - PUID=${PUID}
-    - PGID=${PGID}
-    - TZ=${TZ}
+  PUID: ${PUID}
+  PGID: ${PGID}
+  TZ: ${TZ}
 x-lsiobase: &lsiobase
   <<: *internalbase
-  <<: *lsio
+  environment:
+    <<: *lsio
 x-vpnlsiobase: &vpnlsiobase
   <<: *vpnbase
-  <<: *lsio
+  environment:
+    <<: *lsio
 
 services:
   radarr:
@@ -107,8 +108,8 @@ services:
     image: collabora/code
     container_name: collabora
     environment:
-      - domain=${CLBDOMAIN}
-      - dictionaries=en_US
+      domain: ${CLBDOMAIN}
+      dictionaries: en_US
 ```
 
 We easily associated 2 containers with `lsiobase`, 3 with `vpnlsiobase`, and 1 with `internalbase`.
@@ -116,22 +117,36 @@ We easily associated 2 containers with `lsiobase`, 3 with `vpnlsiobase`, and 1 w
 ## Overriding Anchors
 
 There may be a need to add environment variables beyond the ones defined in the base anchor, unfortunately when declaring the same section again it will override the base, not append to it.
+Instead, you need to make a separate anchor for the environment variables and use it directly.
 
 For example:
 
 ```yaml
+x-base: &base
+  mem_limit: 2000m
+  restart: always 
+x-internalbase: &internalbase
+  <<: *base
+  networks:
+    - internal
+x-lsio: &lsio
+  PUID: ${PUID}
+  PGID: ${PGID}
+  TZ: ${TZ}
+x-lsiobase: &lsiobase
+  <<: *internalbase
+  environment:
+    <<: *lsio
+
+services:
   mariadb:
-    <<: *lsiobase
+    <<: *internalbase
     image: lscr.io/linuxserver/mariadb
     container_name: mariadb
     environment:
-      - MYSQL_DIR=/config
-      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
-      - PUID=${PUID}
-      - PGID=${PGID}
-      - TZ=${TZ}
+      <<: *lsio
+      MYSQL_DIR: /config
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     volumes:
       - ${APPSDIR}/mariadb:/config
 ```
-
-We had to redeclare the base variables of `PUID`, `PGID`, and `TZ`, in order to append `MYSQL_DIR` and `MYSQL_ROOT_PASSWORD` to them.
