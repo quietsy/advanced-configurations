@@ -1,7 +1,7 @@
 # Wireguard Hub
 ![Hub](images/hub.png)
 
-Linuxserver's Wireguard container is extremely versatile, in this example we'll use it as a server that tunnels clients through multiple redundant vpn connections while maintaining access to your LAN.
+Linuxserver's Wireguard container is extremely versatile, in this example we'll use it as a server that tunnels clients through multiple redundant vpn connections while maintaining access to the LAN.
 
 VPN providers have a limit on the amount of devices, this setup will allow you to have an unlimited amount of devices tunneled through a single VPN connection while also supporting a failover backup connection!
 
@@ -53,14 +53,14 @@ Make the following changes:
 - Add `PostUp = ip rule add pref 10001 from 10.13.13.0/24 lookup 55111` to forward traffic from the wireguard server through the tunnel using table 55111 and priority 10001.
 - Add `PreDown = ip rule del from 10.13.13.0/24 lookup 55111` to remove the previous rule when the interface goes down.
 - Add `PersistentKeepalive = 25` to keep the tunnel alive.
-- Add `AllowedIPs = ` and calculate the value using a [Wireguard AllowedIPs Calculator](<https://www.procustodibus.com/blog/2021/03/wireguard-allowedips-calculator/>).
+- Add `AllowedIPs = ` and calculate the value using a [Wireguard AllowedIPs Calculator](https://www.procustodibus.com/blog/2021/03/wireguard-allowedips-calculator/).
   - Write `0.0.0.0/0` in the `Allowed IPs` field.
   - Write your LAN subnet and Wireguard server subnet in the `Disallowed IPs` field, for example: `192.168.0.0/24, 10.13.13.0/24`, make sure it doesn't include the VPN interface address (`10.65.156.233` in the example below).
 - Make sure you're using the `PrivateKey`, `Address`, `PublicKey`, and `Endpoint` that you got from your VPN provider (below is just an example).
 
 ![Hub2](images/hub2.png)
 
-```Nginx
+```ini
 [Interface]
 PrivateKey = ...
 Address = 10.65.156.233/32
@@ -84,10 +84,10 @@ Make the following changes:
 - Add `PostUp = ip rule add pref 10002 from 10.13.13.0/24 lookup 55112` to forward traffic from the wireguard server through the tunnel using table 55112 and priority 10002.
 - Add `PreDown = ip rule del from 10.13.13.0/24 lookup 55112` to remove the previous rule when the interface goes down.
 - Add `PersistentKeepalive = 25` to keep the tunnel alive.
-- Add `AllowedIPs = ` and calculate the value using a [Wireguard AllowedIPs Calculator](<https://www.procustodibus.com/blog/2021/03/wireguard-allowedips-calculator/>) (same as above).
+- Add `AllowedIPs = ` and calculate the value using a [Wireguard AllowedIPs Calculator](https://www.procustodibus.com/blog/2021/03/wireguard-allowedips-calculator/) (same as above).
 - Make sure you're using the `PrivateKey`, `Address`, `PublicKey`, and `Endpoint` that you got from your VPN provider (below is just an example).
 
-```Nginx
+```ini
 [Interface]
 PrivateKey = ...
 Address = 10.67.126.217/32
@@ -179,7 +179,7 @@ done
 
 Modify `/config/wg_confs/wg0.conf`, add the following PostUp/PreDown rules for the server to forward traffic to the VPN client tunnels and activate the failover script.
 
-```Nginx
+```ini
 [Interface]
 PrivateKey = ...
 Address = 10.13.13.1
