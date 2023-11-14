@@ -9,6 +9,7 @@
 - [SOCKS Proxy](socks)
 - [Split DNS](split-dns)
 - [Split Tunnel](split)
+- [VPN Hub](hub)
 - [VPN Route](vpn)
 - [VPS Proxy](vps)
 - [YAML Anchors](yaml-anchors)

@@ -68,6 +68,7 @@ nav:
     - SOCKS Proxy: socks.md
     - Split DNS: split-dns.md
     - Split Tunnel: split.md
+    - VPN Hub: hub.md
     - VPN Route: vpn.md
     - VPS Proxy: vps.md
     - YAML Anchors: yaml-anchors.md
