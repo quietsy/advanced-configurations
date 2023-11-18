@@ -56,8 +56,7 @@ Make the following changes:
 - Add `AllowedIPs = ` and calculate the value using a [Wireguard AllowedIPs Calculator](https://www.procustodibus.com/blog/2021/03/wireguard-allowedips-calculator/).
   - Write `0.0.0.0/0` in the `Allowed IPs` field.
   - Write your LAN subnet and Wireguard server subnet in the `Disallowed IPs` field, for example: `192.168.0.0/24, 10.13.13.0/24`, make sure it doesn't include the VPN interface address (`10.65.156.233` in the example below).
-  
-![Hub2](images/hub2.png)
+  ![Hub2](images/hub2.png)
 - Make sure you're using the `PrivateKey`, `Address`, `PublicKey`, and `Endpoint` that you got from your VPN provider (below is just an example).
 
 
