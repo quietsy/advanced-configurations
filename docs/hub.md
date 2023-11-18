@@ -56,9 +56,10 @@ Make the following changes:
 - Add `AllowedIPs = ` and calculate the value using a [Wireguard AllowedIPs Calculator](https://www.procustodibus.com/blog/2021/03/wireguard-allowedips-calculator/).
   - Write `0.0.0.0/0` in the `Allowed IPs` field.
   - Write your LAN subnet and Wireguard server subnet in the `Disallowed IPs` field, for example: `192.168.0.0/24, 10.13.13.0/24`, make sure it doesn't include the VPN interface address (`10.65.156.233` in the example below).
+  
+![Hub2](images/hub2.png)
 - Make sure you're using the `PrivateKey`, `Address`, `PublicKey`, and `Endpoint` that you got from your VPN provider (below is just an example).
 
-![Hub2](images/hub2.png)
 
 ```ini
 [Interface]
@@ -109,8 +110,8 @@ Perform the following validations to check that the VPN tunnels works:
 
 - Check that you have connectivity on wg1 by running `docker exec wireguard ping -c4 -I wg1 1.1.1.1`.
 - Check that you have connectivity on wg2 by running `docker exec wireguard ping -c4 -I wg2 1.1.1.1`.
-- Check that the details of your VPN tunnel on wg1 by running `docker exec wireguard curl --interface wg1 -s https://am.i.mullvad.net/json`, you should get an IP that is different from your WAN IP.
-- Check that the details of your VPN tunnel on wg2 by running `docker exec wireguard curl --interface wg2 -s https://am.i.mullvad.net/json`, you should get an IP that is different from your WAN IP.
+- Check the details of your VPN tunnel on wg1 by running `docker exec wireguard curl --interface wg1 -s https://am.i.mullvad.net/json`, you should get an IP that is different from your WAN IP.
+- Check the details of your VPN tunnel on wg2 by running `docker exec wireguard curl --interface wg2 -s https://am.i.mullvad.net/json`, you should get an IP that is different from your WAN IP.
 
 ## Failover Script
 
@@ -177,13 +178,9 @@ done
 
 ## Wireguard Server Configuration Changes
 
-Modify `/config/wg_confs/wg0.conf`, add the following PostUp/PreDown rules for the server to forward traffic to the VPN client tunnels and activate the failover script.
+Edit `/config/templates/server.conf`, replace the PostUp/PreDown rules with the rules listed below, these rules are required for the server to forward traffic to the VPN client tunnels and activate the fail-over script.
 
 ```ini
-[Interface]
-PrivateKey = ...
-Address = 10.13.13.1
-ListenPort = 51820
 PostUp = iptables -I FORWARD -i %i -o wg1 -j ACCEPT
 PostUp = iptables -I FORWARD -i %i -o wg2 -j ACCEPT
 PostUp = iptables -I FORWARD -i %i -d 10.0.0.0/8 -j ACCEPT
@@ -207,19 +204,8 @@ PreDown = iptables -D FORWARD -i %i -d 172.16.0.0/12 -j ACCEPT
 PreDown = iptables -D FORWARD -i %i -d 192.168.0.0/16 -j ACCEPT
 PreDown = iptables -D FORWARD -i %i -o wg1 -j ACCEPT
 PreDown = iptables -D FORWARD -i %i -o wg2 -j ACCEPT
-
-[Peer]
-# peer1
-PublicKey = ...
-AllowedIPs = 10.13.13.2/32
-
-[Peer]
-# peer2
-PublicKey = ...
-AllowedIPs = 10.13.13.3/32
-
 ```
 
-Save the changes and restart the container with `docker restart wireguard`, validate that `docker logs wireguard` contains no errors.
+Save the changes and delete `/config/wg_confs/wg0.conf` so it would be generated again, restart the container with `docker restart wireguard`, validate that `docker logs wireguard` contains no errors.
 
 Try navigating to `https://am.i.mullvad.net/json` on one of your client devices and verify that the Wireguard server is working properly and that you're tunneled through one the VPN tunnels.
