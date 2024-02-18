@@ -18,6 +18,7 @@
 
 - [Asus VLANs](asus-vlans)
 - [OPN-Arp](opnarp)
+- [VPS Geoblock](vps-geoblock)
 
 ## Tools
 

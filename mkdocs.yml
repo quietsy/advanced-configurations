@@ -75,6 +75,7 @@ nav:
   - Network:
     - Asus VLANs: asus-vlans.md
     - OPN-Arp: opnarp.md
+    - VPS Geoblock: vps-geoblock.md
   - Tools:
     - Setup Template: setup.md
     - Phone: phone.md
