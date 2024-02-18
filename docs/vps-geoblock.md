@@ -28,7 +28,7 @@ source .venv/bin/activate
 
 ## Geoblock Config
 
-Create a geoblock config according to the geoipsets documentation.
+Create a geoblock config according to the [geoipsets](https://github.com/chr0mag/geoipsets) documentation.
 
 For example `/home/user/geoipsets.conf`:
 
@@ -92,6 +92,8 @@ sudo ipset list RU.ipv4
 
 
 ## Cron Scheduling
+
+### **Warning - make sure you're not accidentally blocking your own access to the VPS before proceeding.**
 
 Run the geoblock script on reboot and weekly.
 
