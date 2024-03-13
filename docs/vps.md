@@ -39,7 +39,7 @@ Configure your VPS Wireguard Server according to the [Wireguard documentation](h
       - PUID=1000
       - PGID=1000
       - TZ=Europe/London
-      - SERVERURL=public.com
+      - SERVERURL=external.com
       - SERVERPORT=51820
       - PEERS=1
       - PEERDNS=auto
@@ -138,7 +138,7 @@ Add the following to the bottom of the VPS SWAG configuration under `config/ngin
 ```Nginx
 server {
     listen 443 ssl;
-    server_name *.public.com;
+    server_name *.external.com;
     include /config/nginx/ssl.conf;
     client_max_body_size 0;
 
@@ -219,7 +219,7 @@ server {
 
 Recreate the Home Wireguard Client container to apply the changes, then recreate the Home SWAG container which depends on the tunnel.
 
-Validate that the containers you exposed now work through the tunnel by browsing `https://<container>.public.com/`.
+Validate that the containers you exposed now work through the tunnel by browsing `https://<container>.external.com/`.
 
 ## Fail2ban
 
@@ -321,7 +321,7 @@ Restart the Home SWAG to apply the changes with `docker restart swag`.
 You control what gets exposed where in 2 ways:
 
 - Through the `listen <port>;` setting, 8080 is through the VPS and 443/80 is directly.
-- Through the `server_name something.public.com` setting, if you explicitely specify the full address.
+- Through the `server_name something.external.com` setting, if you explicitely specify the full address.
 
 If a resource isn't exposed, the default action under the main server block in your Home SWAG will apply.
 
