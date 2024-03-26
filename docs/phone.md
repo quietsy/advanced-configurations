@@ -139,113 +139,115 @@ My phone is a Pixel 8 with [GrapheneOS](https://grapheneos.org/), it has an [alw
       - Wireless debugging: off
       - Mobile data always active: off
       - Disable bluetooth LE audio hardware offload: off
+
 ## Apps
-  - Audiobookshelf
-    - Permissions: network
-    - Background usage: optimized
-  - Auditor
-    - Enable remote verification: on
-    - Permissions: network, notifications
-    - Background usage: unrestricted
-  - Bitwarden (password manager)
-    - Permissions: network, notifications
-    - Background usage: optimized
-  - Breezy weather
-    - Permissions: network, notifications, sensors
-    - Background usage: unrestricted
-  - Davx5 (sync contacts)
-    - Permissions: calendar, contacts, network, notifications
-    - Background usage: unrestricted
-  - Discord
-    - Permissions: network, notifications
-    - Background usage: optimized
-  - F-Droid (foss app store)
-    - Permissions: network, notifications
-    - Background usage: optimized
-  - Finamp (music)
-    - Permissions: network
-    - Background usage: optimized
-  - Findmydevice
-    - Permissions: camera, contacts, location, network, notifications, phone, sensors
-    - Background usage: unrestricted
-  - Floccus (bookmark sync)
-    - Permissions: network
-    - Background usage: off
-  - Gadgetbridge (cloudless gadgets)
-    - Permissions: calendar, call logs, contacts, location, nearby devices, network, notifications, phone, sensors, sms
-    - Background usage: unrestricted
-  - Gboard (without network permissions)
-    - Permissions: none
-    - Background usage: none
-  - Google Play Services (sandboxed)
-    - Permissions: network
-    - Background usage: unrestricted
-  - Google Play Store (sandboxed)
-    - Permissions: network, notifications
-    - Background usage: optimized
-  - Google Services Framework (sandboxed)
-    - Permissions: network
-    - Background usage: optimized
-  - Immich (photos)
-    - Permissions: network
-    - Background usage: optimized
-  - Jellyfin (media)
-    - Permissions: network
-    - Background usage: unrestricted
-  - Lawnchair (launcher)
-    - Permissions: nearby devices
-    - Background usage: optimized
-  - LibreTube (youtube)
-    - Permissions: network
-    - Background usage: unrestricted
-  - Linphone (voip)
-    - Permissions: contacts, microphone, network, notifications, phone, sensors
-    - Background usage: unrestricted
-  - Nextcloud news (rss reader)
-    - Permissions: network
-    - Background usage: none
-  - Nextcloud (self-hosted cloud)
-    - Permissions: network, notifications
-    - Background usage: unrestricted
-  - Nextcloud notes
-    - Permissions: network
-    - Background usage: none
-  - Ntfy (notifications)
-    - Permissions: network, notifications
-    - Background usage: unrestricted
-  - Organic maps (navigation)
-    - Permissions: location, network, sensors
-    - Background usage: none
-  - Pixel Camera
-    - Permissions: camera, microphone, notifications, photos and videos (storage scope /DCIM/), sensors
-    - Background usage: optimized
-  - Proton calendar
-    - Permissions: network, notifications
-    - Background usage: optimized
-  - Proton mail
-    - Permissions: network, notifications
-    - Background usage: optimized
-  - Signal
-    - Permissions: contacts, network, notifications, phone, sensors
-    - Background usage: optimized
-  - SimpleLogin
-    - Permissions: network
-    - Background usage: none
-  - Termux
-    - Permissions: files (storage scope /backup/), network, notifications
-    - Background usage: optimized
-  - Vanadium (browser)
-    - Permissions: network, notifications
-    - Background usage: optimized
-  - VLC
-    - Permissions: network
-    - Background usage: optimized
-  - Wavelet (equalizer)
-    - Permissions: notifications
-    - Background usage: unrestricted
-  - Wireguard (vpn)
-    - Permissions: network
-    - Background usage: optimized
+
+- Audiobookshelf
+  - Permissions: network
+  - Background usage: optimized
+- Auditor
+  - Enable remote verification: on
+  - Permissions: network, notifications
+  - Background usage: unrestricted
+- Bitwarden (password manager)
+  - Permissions: network, notifications
+  - Background usage: optimized
+- Breezy weather
+  - Permissions: network, notifications, sensors
+  - Background usage: unrestricted
+- Davx5 (sync contacts)
+  - Permissions: calendar, contacts, network, notifications
+  - Background usage: unrestricted
+- Discord
+  - Permissions: network, notifications
+  - Background usage: optimized
+- F-Droid (foss app store)
+  - Permissions: network, notifications
+  - Background usage: optimized
+- Finamp (music)
+  - Permissions: network
+  - Background usage: optimized
+- Findmydevice
+  - Permissions: camera, contacts, location, network, notifications, phone, sensors
+  - Background usage: unrestricted
+- Floccus (bookmark sync)
+  - Permissions: network
+  - Background usage: off
+- Gadgetbridge (cloudless gadgets)
+  - Permissions: calendar, call logs, contacts, location, nearby devices, network, notifications, phone, sensors, sms
+  - Background usage: unrestricted
+- Gboard (without network permissions)
+  - Permissions: none
+  - Background usage: none
+- Google Play Services (sandboxed)
+  - Permissions: network
+  - Background usage: unrestricted
+- Google Play Store (sandboxed)
+  - Permissions: network, notifications
+  - Background usage: optimized
+- Google Services Framework (sandboxed)
+  - Permissions: network
+  - Background usage: optimized
+- Immich (photos)
+  - Permissions: network
+  - Background usage: optimized
+- Jellyfin (media)
+  - Permissions: network
+  - Background usage: unrestricted
+- Lawnchair (launcher)
+  - Permissions: nearby devices
+  - Background usage: optimized
+- LibreTube (youtube)
+  - Permissions: network
+  - Background usage: unrestricted
+- Linphone (voip)
+  - Permissions: contacts, microphone, network, notifications, phone, sensors
+  - Background usage: unrestricted
+- Nextcloud news (rss reader)
+  - Permissions: network
+  - Background usage: none
+- Nextcloud (self-hosted cloud)
+  - Permissions: network, notifications
+  - Background usage: unrestricted
+- Nextcloud notes
+  - Permissions: network
+  - Background usage: none
+- Ntfy (notifications)
+  - Permissions: network, notifications
+  - Background usage: unrestricted
+- Organic maps (navigation)
+  - Permissions: location, network, sensors
+  - Background usage: none
+- Pixel Camera
+  - Permissions: camera, microphone, notifications, photos and videos (storage scope /DCIM/), sensors
+  - Background usage: optimized
+- Proton calendar
+  - Permissions: network, notifications
+  - Background usage: optimized
+- Proton mail
+  - Permissions: network, notifications
+  - Background usage: optimized
+- Signal
+  - Permissions: contacts, network, notifications, phone, sensors
+  - Background usage: optimized
+- SimpleLogin
+  - Permissions: network
+  - Background usage: none
+- Termux
+  - Permissions: files (storage scope /backup/), network, notifications
+  - Background usage: optimized
+- Vanadium (browser)
+  - Permissions: network, notifications
+  - Background usage: optimized
+- VLC
+  - Permissions: network
+  - Background usage: optimized
+- Wavelet (equalizer)
+  - Permissions: notifications
+  - Background usage: unrestricted
+- Wireguard (vpn)
+  - Permissions: network
+  - Background usage: optimized
 - Configure all apps
 - Set folders to auto upload to [nextcloud](/nextcloud/)
   - Photos
