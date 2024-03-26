@@ -8,9 +8,7 @@ I got into the habit of wiping my phone every 6 months (takes about an hour) in 
 - Remove leftover data
 - Figure out the pains and find alternatives
 
-My phone is Poco X3 NFC with [lineage + micro-g](https://lineage.microg.org/), it has an [always-on mullvad + home VPN](/split/), and a lot of self-hosting related apps. 
-
-The main feature of this setup is great idle battery consumption with [up to 7 days on a single charge](https://files.virtualize.link/pics/microg.png).
+My phone is a Pixel 8 with [GrapheneOS](https://grapheneos.org/), it has an [always-on VPN](/hub/), and a lot of self-hosting related apps.
 
 ## Backup
 
@@ -20,67 +18,238 @@ The main feature of this setup is great idle battery consumption with [up to 7 d
   - App drawer
 - Export
   - Wireguard
-  - Aegis
   - Gadgetbridge
+  - Lawnchair
+  - Ntfy
+  - Termux
 - Backup the entire phone to the PC
 
 ## Install
 
-- Enable USB debugging on the phone
-- Get adb working on your PC, on ubuntu for example:
-  - Download [android platform tools](https://developer.android.com/studio/releases/platform-tools)
-  - Install udev rules `sudo apt install android-sdk-platform-tools-common`
-  - Reload udev rules `sudo udevadm control --reload-rules`
-  - Add the user to the group ``sudo usermod -a -G plugdev `whoami` ``
-  - Logout & login or reboot
-  - Check that adb works (`adb devices`)
-- Remove fingerprint and pattern
-- Download
-  - OS & recovery - I use [lineage + micro-g](https://lineage.microg.org/)
-  - Firmware - the latest official
-- Reboot to bootloader (`adb reboot bootloader`)
-- Install recovery (`fastboot flash recovery recovery.img`)
-- Reboot to recovery (`fastboot reboot recovery`)
-- Format data and cache from recovery
-- Install firmware (`adb sideload firmware.zip`)
-- Install OS (`adb sideload os.zip`)
-- Reboot to OS (`fastboot reboot`)
+- Follow the [official documentation](https://grapheneos.org/install/cli).
 
 ## Configuration
 
 - Copy exports and snapshots back
 - Initial configuration
-- Apps
-  - Aegis (2FA)
+  - Network & Internet
+    - Private DNS: off
+    - Internet connectivity checks: off
+    - Internet
+      - Network preferences
+        - Turn on wi-fi automatically: off
+        - Notify for public networks: off
+    - SIMs
+      - VoLTE: off
+      - Preferred network type: LTE
+      - Allow 2G: off
+    - VPN
+      - Always-on VPN: on
+      - Block connections without VPN: off
+  - Connected devices
+    - Connection preferences
+      - NFC: off
+      - Printing: off
+  - Apps
+    - Sandboxed Google Play
+      - Reroute location requests to the OS: on
+      - Google location accuracy: off
+    - Special app access
+      - Special access to hardware accelerators for Google apps: on
+  - Notifications
+    - Wireless emergency alerts: off
+    - Hide silent notifications in status bar: on
+    - Notification dot on app icon: on
+    - Enhanced notifications: on
+  - Battery
+    - Battery percentage: on
+    - Battery share: off
+  - Sound & vibration
+    - Spatial audio: off
+    - Vibration & haptics: on
+    - Dial pad tones: off
+    - Screen locking sound: off
+    - Charging sounds and vibrations: off
+    - Tap & click sounds: off
+    - Always show icon when in vibrate mode: on
+  - Display
+    - Adaptive brightness: on
+    - Lock screen
+      - Shortcuts
+        - Flashlight
+        - Camera
+      - Dynamic clock: on
+      - Always show time and info: off
+      - Tap to check phone: on
+      - Lift to check phone: off
+      - Wake screen for notifications: on
+      - Screen timeout: 1 minute
+      - Dark theme: on
+      - Night light: off
+      - Auto-rotate screen: off
+      - Smooth display: off
+      - Increase touch sensitivity: off
+      - Screen saver: off
+  - Security
+    - Screen lock
+      - Enhanced PIN privacy: on
+      - Lock after screen timeout: 5 seconds
+      - Power button instantly locks: on
+    - Auto reboot: 18 hours
+    - USB peripherals: allow new USB peripherals when unlocked
+    - USB-C port: charging-only when locked, except before first unlock
+    - Secure app spawning: on
+    - Automatic exploit protection compatibility mode: on
+    - Memory tagging in third-party apps: on
+    - Native code debugging
+      - Block for third-party apps by default: on
+    - Scramble PIN input layout: on
+    - Allow camera access when the device is locked: on
+    - Notify about system process crashes: on
+  - Privacy
+    - Camera access: on
+    - Microphone access: on
+    - Allow sensors permission to apps by default: off
+    - Save screenshot timestamp to EXIF: off
+    - Show passwords: off
+    - Notifications on lock screen: all
+    - Show media on lock screen: on
+    - Show clipboard access: on
+  - Location
+    - Location services
+      - Wi-fi scanning: off
+      - Bluetooth scanning: off
+  - Safety & emergency
+    - Wireless emergency alerts: off
+  - System
+    - Gestures
+      - Quickly open camera: on
+      - Navigation mode: gesture navigation
+      - Tap to check phone: on
+      - Lift to check phone: off
+    - Date & time
+      - Use 24-hour format: on
+    - System updates
+      - Require battery above warning: on
+      - Require device to be charging: on
+      - Automatic reboot: on
+    - Developer options
+      - OEM unlocking: off
+      - USB debugging: off
+      - Wireless debugging: off
+      - Mobile data always active: off
+      - Disable bluetooth LE audio hardware offload: off
+## Apps
   - Audiobookshelf
-  - Aurora store (anonymized play store)
+    - Permissions: network
+    - Background usage: optimized
+  - Auditor
+    - Enable remote verification: on
+    - Permissions: network, notifications
+    - Background usage: unrestricted
   - Bitwarden (password manager)
+    - Permissions: network, notifications
+    - Background usage: optimized
+  - Breezy weather
+    - Permissions: network, notifications, sensors
+    - Background usage: unrestricted
   - Davx5 (sync contacts)
+    - Permissions: calendar, contacts, network, notifications
+    - Background usage: unrestricted
   - Discord
-  - F-droid (foss app store)
+    - Permissions: network, notifications
+    - Background usage: optimized
+  - F-Droid (foss app store)
+    - Permissions: network, notifications
+    - Background usage: optimized
+  - Finamp (music)
+    - Permissions: network
+    - Background usage: optimized
+  - Findmydevice
+    - Permissions: camera, contacts, location, network, notifications, phone, sensors
+    - Background usage: unrestricted
+  - Floccus (bookmark sync)
+    - Permissions: network
+    - Background usage: off
   - Gadgetbridge (cloudless gadgets)
-  - Gcam
-  - Gelli (music)
-  - Gotify (server notifications)
+    - Permissions: calendar, call logs, contacts, location, nearby devices, network, notifications, phone, sensors, sms
+    - Background usage: unrestricted
+  - Gboard (without network permissions)
+    - Permissions: none
+    - Background usage: none
+  - Google Play Services (sandboxed)
+    - Permissions: network
+    - Background usage: unrestricted
+  - Google Play Store (sandboxed)
+    - Permissions: network, notifications
+    - Background usage: optimized
+  - Google Services Framework (sandboxed)
+    - Permissions: network
+    - Background usage: optimized
+  - Immich (photos)
+    - Permissions: network
+    - Background usage: optimized
   - Jellyfin (media)
+    - Permissions: network
+    - Background usage: unrestricted
+  - Lawnchair (launcher)
+    - Permissions: nearby devices
+    - Background usage: optimized
   - LibreTube (youtube)
-  - Magic earth (navigation)
-  - Microsoft lens (scan documents)
-  - Mull (browser)
-  - Nextcloud (self-hosted cloud)
+    - Permissions: network
+    - Background usage: unrestricted
+  - Linphone (voip)
+    - Permissions: contacts, microphone, network, notifications, phone, sensors
+    - Background usage: unrestricted
   - Nextcloud news (rss reader)
+    - Permissions: network
+    - Background usage: none
+  - Nextcloud (self-hosted cloud)
+    - Permissions: network, notifications
+    - Background usage: unrestricted
   - Nextcloud notes
-  - Nextcloud phonetrack (track phone)
+    - Permissions: network
+    - Background usage: none
+  - Ntfy (notifications)
+    - Permissions: network, notifications
+    - Background usage: unrestricted
+  - Organic maps (navigation)
+    - Permissions: location, network, sensors
+    - Background usage: none
+  - Pixel Camera
+    - Permissions: camera, microphone, notifications, photos and videos (storage scope /DCIM/), sensors
+    - Background usage: optimized
   - Proton calendar
+    - Permissions: network, notifications
+    - Background usage: optimized
   - Proton mail
-  - Termux
+    - Permissions: network, notifications
+    - Background usage: optimized
   - Signal
+    - Permissions: contacts, network, notifications, phone, sensors
+    - Background usage: optimized
   - SimpleLogin
+    - Permissions: network
+    - Background usage: none
+  - Termux
+    - Permissions: files (storage scope /backup/), network, notifications
+    - Background usage: optimized
+  - Vanadium (browser)
+    - Permissions: network, notifications
+    - Background usage: optimized
   - VLC
+    - Permissions: network
+    - Background usage: optimized
+  - Wavelet (equalizer)
+    - Permissions: notifications
+    - Background usage: unrestricted
   - Wireguard (vpn)
+    - Permissions: network
+    - Background usage: optimized
 - Configure all apps
 - Set folders to auto upload to [nextcloud](/nextcloud/)
   - Photos
   - Videos
   - Call recordings
-  - Lens documents (auto upload to paperless-ngx)
+  - Snapshots
+  - Backup
