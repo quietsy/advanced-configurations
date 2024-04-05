@@ -1,13 +1,16 @@
 # Brave Settings
 
 brave://flags
+
 - Enable First Party Storage Cleanup support: enabled
 
 Get started
+
 - Continue where you left off: on
 - New tab page shows: homepage
 
 Appearance
+
 - Show home button: on
 - Show bookmarks button: on
 - Show bookmarks: always
@@ -18,6 +21,7 @@ Appearance
 - Always show full URLs: on
 
 Shields
+
 - Trackers & ads blocking: aggressive
 - Upgrade connections to HTTPS: strict
 - Block scripts: off
@@ -43,6 +47,7 @@ Shields
 - Allow linkedin embedded posts: off
 
 Privacy and security
+
 - WebRTC IP handling policy: disable
 - Use google services for push messaging: off
 - Allow privacy-preserving product analytics: off
@@ -61,6 +66,7 @@ Privacy and security
 - Private window with tor: off
 
 Web3
+
 - Default ethereum wallet: extensions (no fallback)
 - Default solana wallet: extensions (no fallback)
 - Enable NFT discovery: off
@@ -71,10 +77,12 @@ Web3
 - IPFS companion: off
 
 Leo
+
 - Show Leo icon in the sidebar: off
 - Show Leo in the context menu on websites: off
 
 Search engine
+
 - Normal Window - Search engine used in the address bar: searx
 - Private Window - Search engine used in the address bar: searx
 - Improve search suggestions: off
@@ -83,6 +91,7 @@ Search engine
 - Manage search engines: add searx and piped
 
 Extensions
+
 - Allow google login for extensions: off
 - Hangouts: off
 - Media router: off
@@ -105,8 +114,10 @@ Extensions
   - SmartProxy: import
 
 Autofill and passwords
+
 - All: off
 
 System
+
 - Continue running background apps when Brave is closed: off
 - Use graphics acceleration when available: on
