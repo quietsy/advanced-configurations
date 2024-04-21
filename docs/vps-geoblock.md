@@ -78,6 +78,8 @@ do
 	command=$(if [[ $name == *ipv4 ]]; then echo "/usr/sbin/iptables"; else echo "/usr/sbin/ip6tables"; fi)
 	$command -D FORWARD -m set --match-set $name src -j DROP &>/dev/null
 	$command -D INPUT -m set --match-set $name src -j DROP &>/dev/null
+	$command -D DOCKER-USER -m set --match-set $name src -j DROP &>/dev/null
+	$command -I DOCKER-USER 1 -m set --match-set $name src -j DROP >> $log
 	$command -I INPUT 1 -m set --match-set $name src -j DROP >> $log
 	$command -I FORWARD 1 -m set --match-set $name src -j DROP >> $log
 done
