@@ -208,3 +208,79 @@ PreDown = iptables -D FORWARD -i %i -o wg2 -j ACCEPT
 Save the changes and delete `/config/wg_confs/wg0.conf` so it would be generated again, restart the container with `docker restart wireguard`, validate that `docker logs wireguard` contains no errors.
 
 Try navigating to `https://am.i.mullvad.net/json` on one of your client devices and verify that the Wireguard server is working properly and that you're tunneled through one the VPN tunnels.
+
+## Excluding Sites from the VPN
+
+Some sites block VPNs, so we can exclude the IPs of these sites from the VPN tunnels.
+
+Add the following environment variables to wireguard's compose for installing the ipset package:
+
+```yaml
+      - DOCKER_MODS=linuxserver/mods:universal-package-install
+      - INSTALL_PACKAGES=ipset
+```
+
+Create a text file under `/config/domains.txt` for the domains we want to exclude, such as:
+
+```
+site.net
+othersite.com
+moresites.org
+```
+
+Create a shell script under `/config/domains.sh` for resolving the IPs of domains and adding them to the ipset:
+
+```bash
+#!/bin/bash
+
+DOMAINS=$(cat "/config/domains.txt")
+
+for DOMAIN in $DOMAINS
+do
+    if [[ $DOMAIN =~ ^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+        IPS=($DOMAIN)
+    else
+        IPS=$(nslookup $DOMAIN | grep -Eo "([0-9]{1,3}[\.]){3}[0-9]{1,3}" | grep -v "127.0.0.")
+    fi
+    
+
+    for IP in $IPS
+    do
+        echo "Rerouting $DOMAIN $IP"
+        ipset -exist add domains $IP
+    done
+done
+```
+
+Create a shell script under `/config/watch_domains.sh` for watching the domains text file and reloading the ipset on changes:
+
+```bash
+#!/bin/bash
+ 
+DIR_TO_WATCH="/config/domains.txt"
+COMMAND="/config/domains.sh"
+ 
+trap "echo Exited!; exit;" SIGINT SIGTERM
+while [[ 1=1 ]]
+do
+    watch --chgexit -n 1 "ls --all -l --recursive --full-time ${DIR_TO_WATCH} | sha256sum" && ${COMMAND}
+    sleep 1
+done
+```
+
+Add the following to `wg0.conf`:
+
+```ini
+PostUp = ipset -exist create domains hash:net
+PostUp = iptables -t mangle -A PREROUTING -m set --match-set domains dst -j MARK --set-mark 6
+PostUp = iptables -I FORWARD 1 -i %i -m set --match-set domains dst -j ACCEPT
+PostUp = ip rule add pref 5000 fwmark 6 lookup main
+PostUp = /config/domains.sh
+PostUp = /config/watch_domains.sh &
+PreDown = ip rule del fwmark 6 lookup main
+PreDown = ipset destroy domains
+PreDown = iptables -t mangle -D PREROUTING -m set --match-set domains dst -j MARK --set-mark 6
+PreDown = iptables -D FORWARD -i %i -m set --match-set domains dst -j ACCEPT
+```
+
+These rules route all IPs associated with the domains directly, bypassing the VPN.
