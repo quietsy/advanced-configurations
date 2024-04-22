@@ -284,3 +284,16 @@ PreDown = iptables -D FORWARD -i %i -m set --match-set domains dst -j ACCEPT
 ```
 
 These rules route all IPs associated with the domains directly, bypassing the VPN.
+
+
+## Traffic Overview
+
+![Hub3](images/hub3.png)
+
+The order of traffic is as follows:
+
+1. Local traffic - traffic made by the container.
+2. Excluded domains - bypasses the VPN and routes directly.
+3. Main VPN tunnel - the VPN tunnel in `wg1.conf`.
+4. Failover VPN tunnel - the VPN tunnel in `wg2.conf`.
+5. Subnets not in AllowedIPs - in our example `10.13.13.0/24` and `192.168.0.0/24` bypasses the VPN and gets routed directly.
