@@ -81,7 +81,7 @@ For example, add the following to `sudo crontab -e`:
 
 ```
 0 1 * * * /home/user/firehol/firehol.sh
-@reboot sleep 20 && /home/user/firehol/firehol.sh
+@reboot sleep 120 && /home/user/firehol/firehol.sh
 ```
 
-Verify that it runs on reboot and daily.
+Verify that it runs on reboot and daily. There's a 2 minute delay before it applies after reboots, to give you enough time to fix a lockout.

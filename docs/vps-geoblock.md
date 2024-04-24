@@ -104,7 +104,7 @@ For example, add the following to `sudo crontab -e`:
 
 ```
 20 0 * * 2 /home/user/geoblock.sh
-@reboot sleep 20 && /home/user/geoblock.sh
+@reboot sleep 120 && /home/user/geoblock.sh
 ```
 
-Verify that it runs on reboot and weekly.
+Verify that it runs on reboot and weekly. There's a 2 minute delay before it applies after reboots, to give you enough time to fix a lockout.
