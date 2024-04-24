@@ -74,6 +74,7 @@ nav:
   - Network:
     - Asus VLANs: asus-vlans.md
     - OPN-Arp: opnarp.md
+    - VPS Firehol: vps-firehol.md
     - VPS Geoblock: vps-geoblock.md
   - Tools:
     - Setup Template: setup.md

@@ -88,6 +88,7 @@ done
 Verify that it works and the ipsets have been filled:
 
 ```bash
+chmod +x /home/user/geoblock.sh
 sudo /home/user/geoblock.sh
 sudo ipset list RU.ipv4
 ```
