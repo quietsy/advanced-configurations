@@ -44,7 +44,7 @@ do
 	echo $NAME >> $LOG
 	FILE="/home/user/firehol/$NAME"
 	curl -s -k $URL > $FILE
-	# The following sed removes LAN ranges from the lists, you might block yourself if you remove it
+	# The following sed removes LAN ranges from the lists otherwise you might block yourself
 	sed -i -e 's#10.0.0.0/8##' -e 's#172.16.0.0/12##' -e 's#192.168.0.0/16##' -e 's#127.0.0.0/8##' $FILE
 	COUNT=$(/usr/bin/iprange -C $FILE)
 	COUNT=${COUNT/*,/}
