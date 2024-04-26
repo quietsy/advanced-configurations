@@ -20,6 +20,7 @@ For example:
 ```
 https://raw.githubusercontent.com/firehol/blocklist-ipsets/master/firehol_level1.netset
 https://raw.githubusercontent.com/firehol/blocklist-ipsets/master/firehol_level2.netset
+https://raw.githubusercontent.com/firehol/blocklist-ipsets/master/firehol_level3.netset
 https://raw.githubusercontent.com/firehol/blocklist-ipsets/master/firehol_abusers_1d.netset
 ```
 
@@ -30,34 +31,6 @@ Create a script to refresh the firehol ipsets and recreate the iptables rules.
 For example `/home/user/firehol/firehol.sh`:
 
 ```bash
-#!/bin/bash
-
-LOG="/home/quietsy/server/logs/vps_updates.txt"
-URLS=$(cat "/home/quietsy/server/firehol.conf")
-echo "Updating Firehol $(date)" >> $LOG
-
-for URL in $URLS
-do
-	echo $URL >> $LOG
-	NAME=$(basename $URL)
-	echo $NAME >> $LOG
-	FILE="/home/quietsy/server/firehol/$NAME"
-	/usr/bin/curl -s -k $URL > $FILE
-	sed -i -e 's#10.0.0.0/8##' -e 's#172.16.0.0/12##' -e 's#192.168.0.0/16##' -e 's#127.0.0.0/8##' $FILE
-	COUNT=$(/usr/bin/iprange -C $FILE)
-	COUNT=${COUNT/*,/}
-	echo $COUNT >> $LOG
-	/usr/sbin/ipset destroy $NAME > /dev/null 2>&1
-	/usr/bin/iprange $FILE --ipset-reduce 20 --ipset-reduce-entries 65535 --print-prefix "-A $NAME " > $FILE.ipset
-	/usr/sbin/ipset restore --exist --file $FILE.ipset >> $LOG
-	/usr/sbin/iptables -D FORWARD -m set --match-set $NAME src -j DROP > /dev/null 2>&1
-	/usr/sbin/iptables -D INPUT -m set --match-set $NAME src -j DROP > /dev/null 2>&1
-	/usr/sbin/iptables -D DOCKER-USER -m set --match-set $NAME src -j DROP > /dev/null 2>&1
-	/usr/sbin/iptables -I DOCKER-USER 1 -m set --match-set $NAME src -j DROP >> $LOG
-	/usr/sbin/iptables -I INPUT 1 -m set --match-set $NAME src -j DROP >> $LOG
-	/usr/sbin/iptables -I FORWARD 1 -m set --match-set $NAME src -j DROP >> $LOG
-done
-
 #!/bin/bash
 
 LOG="/home/user/firehol/firehol.log"
@@ -76,8 +49,8 @@ do
 	COUNT=$(/usr/bin/iprange -C $FILE)
 	COUNT=${COUNT/*,/}
 	echo $COUNT >> $LOG
-	/usr/sbin/ipset -exist create $NAME hash:net >> $LOG
-	/usr/sbin/ipset flush $NAME >> $LOG
+	/usr/sbin/ipset create --exist $NAME hash:net family inet maxelem 131072 >> $LOG
+	/usr/sbin/ipset flush $NAME > /dev/null 2>&1
 	/usr/bin/iprange $FILE --ipset-reduce 20 --ipset-reduce-entries 65535 --print-prefix "-A $NAME " > $FILE.ipset
 	/usr/sbin/ipset restore --exist --file $FILE.ipset >> $LOG
 	/usr/sbin/iptables -D FORWARD -m set --match-set $NAME src -j DROP &>/dev/null
@@ -87,6 +60,13 @@ do
 	/usr/sbin/iptables -I INPUT 1 -m set --match-set $NAME src -j DROP >> $LOG
 	/usr/sbin/iptables -I FORWARD 1 -m set --match-set $NAME src -j DROP >> $LOG
 done
+
+iptables -D INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT > /dev/null 2>&1
+iptables -D DOCKER-USER -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT > /dev/null 2>&1
+iptables -D FORWARD -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT > /dev/null 2>&1
+iptables -I FORWARD 1 -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT >> $LOG
+iptables -I INPUT 1 -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT >> $LOG
+iptables -I DOCKER-USER 1 -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT >> $LOG
 ```
 
 Verify that it works and the ipsets have been filled:
