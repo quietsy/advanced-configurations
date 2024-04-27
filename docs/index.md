@@ -25,5 +25,6 @@
 
 - [Setup Template](setup)
 - [Phone](phone)
+- [Atuin](atuin)
 - [Brave](brave)
 - [Tmux](tmux)

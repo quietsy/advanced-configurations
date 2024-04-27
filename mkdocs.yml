@@ -79,5 +79,6 @@ nav:
   - Tools:
     - Setup Template: setup.md
     - Phone: phone.md
+    - Atuin: atuin.md
     - Brave: brave.md
     - Tmux: tmux.md
