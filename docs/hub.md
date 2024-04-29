@@ -50,15 +50,9 @@ Copy the 2 Wireguard configs that you get from your VPN providers into files und
 Make the following changes:
 
 - Add `Table = 55111` to distinguish rules for this interface.
-- Add `PostUp = ip rule add pref 10001 from 10.13.13.0/24 lookup 55111` to forward traffic from the wireguard server through the tunnel using table 55111 and priority 10001.
-- Add `PreDown = ip rule del from 10.13.13.0/24 lookup 55111` to remove the previous rule when the interface goes down.
+- Add `PostUp` and `PreDown` rules to nat and firewall the traffic.
 - Add `PersistentKeepalive = 25` to keep the tunnel alive.
-- Add `AllowedIPs = ` and calculate the value using a [Wireguard AllowedIPs Calculator](https://www.procustodibus.com/blog/2021/03/wireguard-allowedips-calculator/).
-  - Write `0.0.0.0/0` in the `Allowed IPs` field.
-  - Write your LAN subnet and Wireguard server subnet in the `Disallowed IPs` field, for example: `192.168.0.0/24, 10.13.13.0/24`, make sure it doesn't include the VPN interface address (`10.65.156.233` in the example below).
-  ![Hub2](images/hub2.png)
 - Make sure you're using the `PrivateKey`, `Address`, `PublicKey`, and `Endpoint` that you got from your VPN provider (below is just an example).
-
 
 ```ini
 [Interface]
@@ -66,12 +60,16 @@ PrivateKey = ...
 Address = 10.65.156.233/32
 Table = 55111
 
-PostUp = ip rule add pref 10001 from 10.13.13.0/24 lookup 55111
+PostUp = iptables -I FORWARD -i wg0 -o %i -j ACCEPT
+PostUp = iptables -t nat -A POSTROUTING -o %i -j MASQUERADE
+PostUp = ip rule add pref 10000 from 10.13.13.0/24 lookup 55111
 PreDown = ip rule del from 10.13.13.0/24 lookup 55111
+PreDown = iptables -t nat -D POSTROUTING -o %i -j MASQUERADE
+PreDown = iptables -D FORWARD -i wg0 -o %i -j ACCEPT
 
 [Peer]
 PublicKey = ...
-AllowedIPs = 0.0.0.0/5, 8.0.0.0/7, 10.0.0.0/13, 10.8.0.0/14, 10.12.0.0/16, 10.13.0.0/21, 10.13.8.0/22, 10.13.12.0/24, 10.13.14.0/23, 10.13.16.0/20, 10.13.32.0/19, 10.13.64.0/18, 10.13.128.0/17, 10.14.0.0/15, 10.16.0.0/12, 10.32.0.0/11, 10.64.0.0/10, 10.128.0.0/9, 11.0.0.0/8, 12.0.0.0/6, 16.0.0.0/4, 32.0.0.0/3, 64.0.0.0/2, 128.0.0.0/2, 192.0.0.0/9, 192.128.0.0/11, 192.160.0.0/13, 192.168.1.0/24, 192.168.2.0/23, 192.168.4.0/22, 192.168.8.0/21, 192.168.16.0/20, 192.168.32.0/19, 192.168.64.0/18, 192.168.128.0/17, 192.169.0.0/16, 192.170.0.0/15, 192.172.0.0/14, 192.176.0.0/12, 192.192.0.0/10, 193.0.0.0/8, 194.0.0.0/7, 196.0.0.0/6, 200.0.0.0/5, 208.0.0.0/4, 224.0.0.0/3
+AllowedIPs = 0.0.0.0/0
 Endpoint = 169.150.217.215:51820
 PersistentKeepalive = 25
 ```
@@ -81,10 +79,8 @@ PersistentKeepalive = 25
 Make the following changes:
 
 - Add `Table = 55112` to distinguish rules for this interface.
-- Add `PostUp = ip rule add pref 10002 from 10.13.13.0/24 lookup 55112` to forward traffic from the wireguard server through the tunnel using table 55112 and priority 10002.
-- Add `PreDown = ip rule del from 10.13.13.0/24 lookup 55112` to remove the previous rule when the interface goes down.
+- Add `PostUp` and `PreDown` rules to nat and firewall the traffic.
 - Add `PersistentKeepalive = 25` to keep the tunnel alive.
-- Add `AllowedIPs = ` and calculate the value using a [Wireguard AllowedIPs Calculator](https://www.procustodibus.com/blog/2021/03/wireguard-allowedips-calculator/) (same as above).
 - Make sure you're using the `PrivateKey`, `Address`, `PublicKey`, and `Endpoint` that you got from your VPN provider (below is just an example).
 
 ```ini
@@ -93,12 +89,16 @@ PrivateKey = ...
 Address = 10.67.126.217/32
 Table = 55112
 
-PostUp = ip rule add pref 10002 from 10.13.13.0/24 lookup 55112
+PostUp = iptables -I FORWARD -i wg0 -o %i -j ACCEPT
+PostUp = iptables -t nat -A POSTROUTING -o %i -j MASQUERADE
+PostUp = ip rule add pref 10000 from 10.13.13.0/24 lookup 55112
 PreDown = ip rule del from 10.13.13.0/24 lookup 55112
+PreDown = iptables -t nat -D POSTROUTING -o %i -j MASQUERADE
+PreDown = iptables -D FORWARD -i wg0 -o %i -j ACCEPT
 
 [Peer]
 PublicKey = ...
-AllowedIPs = 0.0.0.0/5, 8.0.0.0/7, 10.0.0.0/13, 10.8.0.0/14, 10.12.0.0/16, 10.13.0.0/21, 10.13.8.0/22, 10.13.12.0/24, 10.13.14.0/23, 10.13.16.0/20, 10.13.32.0/19, 10.13.64.0/18, 10.13.128.0/17, 10.14.0.0/15, 10.16.0.0/12, 10.32.0.0/11, 10.64.0.0/10, 10.128.0.0/9, 11.0.0.0/8, 12.0.0.0/6, 16.0.0.0/4, 32.0.0.0/3, 64.0.0.0/2, 128.0.0.0/2, 192.0.0.0/9, 192.128.0.0/11, 192.160.0.0/13, 192.168.1.0/24, 192.168.2.0/23, 192.168.4.0/22, 192.168.8.0/21, 192.168.16.0/20, 192.168.32.0/19, 192.168.64.0/18, 192.168.128.0/17, 192.169.0.0/16, 192.170.0.0/15, 192.172.0.0/14, 192.176.0.0/12, 192.192.0.0/10, 193.0.0.0/8, 194.0.0.0/7, 196.0.0.0/6, 200.0.0.0/5, 208.0.0.0/4, 224.0.0.0/3
+AllowedIPs = 0.0.0.0/0
 Endpoint = 169.150.217.232:51820
 PersistentKeepalive = 25
 ```
@@ -126,7 +126,7 @@ FAILOVER_LIMIT=2
 # The subnets that should be tunneled through wireguard
 LOCAL_RANGES=("10.13.13.0/24")
 # An array of tunnel details corresponding to the tunnel conf: <tunnel-name>;<table-number>;<rule-priority>
-TUNNELS=("wg1;55111;10001" "wg2;55112;10002")
+TUNNELS=("wg1;55111;10000" "wg2;55112;10000")
 # Connectivity check interval in seconds
 PING_INTERVAL=20
 LOG_FILE="/config/wg_failover.log"
@@ -179,30 +179,26 @@ done
 
 Edit `/config/templates/server.conf`, replace the PostUp/PreDown rules with the rules listed below, these rules are required for the server to forward traffic to the VPN client tunnels and activate the fail-over script.
 
+Replace `192.168.10.0/24` with your LAN subnet.
+
 ```ini
-PostUp = iptables -I FORWARD -i %i -o wg1 -j ACCEPT
-PostUp = iptables -I FORWARD -i %i -o wg2 -j ACCEPT
+PostUp = ip rule add pref 100 to 10.13.13.0/24 lookup main
+PostUp = ip rule add pref 100 to 192.168.10.0/24 lookup main
 PostUp = iptables -I FORWARD -i %i -d 10.0.0.0/8 -j ACCEPT
 PostUp = iptables -I FORWARD -i %i -d 172.16.0.0/12 -j ACCEPT
 PostUp = iptables -I FORWARD -i %i -d 192.168.0.0/16 -j ACCEPT
 PostUp = iptables -I FORWARD -o %i -m state --state RELATED,ESTABLISHED -j ACCEPT
 PostUp = iptables -A FORWARD -j REJECT
-PostUp = iptables -t nat -A POSTROUTING -o wg1 -j MASQUERADE
-PostUp = iptables -t nat -A POSTROUTING -o wg2 -j MASQUERADE
 PostUp = iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
-PostUp = ip rule add pref 1000 lookup main suppress_prefixlength 0
 PostUp = /config/wg_failover.sh &
-PreDown = ip rule del lookup main suppress_prefixlength 0
 PreDown = iptables -t nat -D POSTROUTING -o eth0 -j MASQUERADE
-PreDown = iptables -t nat -D POSTROUTING -o wg1 -j MASQUERADE
-PreDown = iptables -t nat -D POSTROUTING -o wg2 -j MASQUERADE
 PreDown = iptables -D FORWARD -j REJECT
 PreDown = iptables -D FORWARD -o %i -m state --state RELATED,ESTABLISHED -j ACCEPT
 PreDown = iptables -D FORWARD -i %i -d 10.0.0.0/8 -j ACCEPT
 PreDown = iptables -D FORWARD -i %i -d 172.16.0.0/12 -j ACCEPT
 PreDown = iptables -D FORWARD -i %i -d 192.168.0.0/16 -j ACCEPT
-PreDown = iptables -D FORWARD -i %i -o wg1 -j ACCEPT
-PreDown = iptables -D FORWARD -i %i -o wg2 -j ACCEPT
+PreDown = ip rule del to 10.13.13.0/24 lookup main
+PreDown = ip rule del to 192.168.10.0/24 lookup main
 ```
 
 Save the changes and delete `/config/wg_confs/wg0.conf` so it would be generated again, restart the container with `docker restart wireguard`, validate that `docker logs wireguard` contains no errors.
@@ -259,8 +255,8 @@ Create a shell script under `/config/watch_domains.sh` for watching the domains 
  
 DIR_TO_WATCH="/config/domains.txt"
 COMMAND="/config/domains.sh"
- 
-trap "echo Exited!; exit;" SIGINT SIGTERM
+$COMMAND
+trap "echo Exited!; exit;" SIGINT SIGTERM > /dev/null 2>&1
 while [[ 1=1 ]]
 do
     watch --chgexit -n 1 "ls --all -l --recursive --full-time ${DIR_TO_WATCH} | sha256sum" && ${COMMAND}
@@ -275,7 +271,6 @@ PostUp = ipset -exist create domains hash:net
 PostUp = iptables -t mangle -A PREROUTING -m set --match-set domains dst -j MARK --set-mark 6
 PostUp = iptables -I FORWARD 1 -i %i -m set --match-set domains dst -j ACCEPT
 PostUp = ip rule add pref 5000 fwmark 6 lookup main
-PostUp = /config/domains.sh
 PostUp = /config/watch_domains.sh &
 PreDown = ip rule del fwmark 6 lookup main
 PreDown = ipset destroy domains
@@ -288,12 +283,13 @@ These rules route all IPs associated with the domains directly, bypassing the VP
 
 ## Traffic Overview
 
-![Hub3](images/hub3.png)
+![Hub3](images/hub2.png)
 
 The order of traffic is as follows:
 
-1. Local traffic - traffic made by the container.
-2. Excluded domains - bypasses the VPN and routes directly.
-3. Main VPN tunnel - the VPN tunnel in `wg1.conf`.
-4. Failover VPN tunnel - the VPN tunnel in `wg2.conf`.
-5. Subnets not in AllowedIPs - in our example `10.13.13.0/24` and `192.168.0.0/24` bypasses the VPN and gets routed directly.
+1. Localhost - traffic to the container.
+2. Local network - traffic the DNS and gateway.
+3. Wireguard clients - traffic to the wireguard clients.
+4. Excluded domains - bypasses the VPN and routes directly.
+5. Main VPN tunnel - the VPN tunnel in `wg1.conf`.
+6. Failover VPN tunnel - the VPN tunnel in `wg2.conf`.
