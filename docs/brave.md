@@ -9,6 +9,7 @@ Launch Options
 brave://flags
 
 - Enable First Party Storage Cleanup support: enabled
+- Enable Brave Wallet: disabled
 
 Get started
 
