@@ -264,7 +264,7 @@ do
 done
 ```
 
-Add the following to `wg0.conf`:
+Add the following to `/config/templates/server.conf`:
 
 ```ini
 PostUp = ipset -exist create domains hash:net
