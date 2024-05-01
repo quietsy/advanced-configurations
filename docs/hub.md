@@ -280,6 +280,44 @@ PreDown = iptables -D FORWARD -i %i -m set --match-set domains dst -j ACCEPT
 
 These rules route all IPs associated with the domains directly, bypassing the VPN.
 
+### Frontend for Excluding
+
+You can host a simple PHP web page for adding domains to `domains.txt` on any web server like SWAG.
+
+Mount `domains.txt` on both the web server and on the wireguard hub container.
+
+```html
+<!DOCTYPE html> 
+<html> 
+<head> 
+  <title>Unblock</title> 
+</head> 
+<body> 
+ 
+<form method="post"> 
+  <input type="text" name="URL" id="URL"> 
+  <button type="submit" name="Unblock">Unblock</button> 
+</form> 
+ 
+<?php 
+if(isset($_POST['Unblock'])) { 
+	$url = $_POST['URL'];
+	$file = 'domains.txt';
+	$parsed = parse_url($url, PHP_URL_HOST) ?: $url;
+	$current = file_get_contents($file);
+	if (str_contains($current, $parsed)) {
+		echo $parsed.' is already unblocked';
+	} else {
+		file_put_contents($file, PHP_EOL.$parsed, FILE_APPEND | LOCK_EX);
+		echo 'Unblocked '.$parsed;
+	}
+} 
+?> 
+ 
+</body> 
+</html> 
+```
+
 
 ## Traffic Overview
 
