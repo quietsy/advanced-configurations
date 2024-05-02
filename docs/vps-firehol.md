@@ -37,6 +37,13 @@ LOG="/home/user/firehol/firehol.log"
 URLS=$(cat "/home/user/firehol/firehol.conf")
 echo "Updating Firehol $(date)" >> $LOG
 
+iptables -D INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT > /dev/null 2>&1
+iptables -D DOCKER-USER -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT > /dev/null 2>&1
+iptables -D FORWARD -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT > /dev/null 2>&1
+iptables -I FORWARD 1 -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT >> $LOG
+iptables -I INPUT 1 -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT >> $LOG
+iptables -I DOCKER-USER 1 -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT >> $LOG
+
 for URL in $URLS
 do
 	echo $URL >> $LOG
@@ -56,17 +63,10 @@ do
 	/usr/sbin/iptables -D FORWARD -m set --match-set $NAME src -j DROP &>/dev/null
 	/usr/sbin/iptables -D INPUT -m set --match-set $NAME src -j DROP &>/dev/null
 	/usr/sbin/iptables -D DOCKER-USER -m set --match-set $NAME src -j DROP &>/dev/null
-	/usr/sbin/iptables -I DOCKER-USER 1 -m set --match-set $NAME src -j DROP >> $LOG
-	/usr/sbin/iptables -I INPUT 1 -m set --match-set $NAME src -j DROP >> $LOG
-	/usr/sbin/iptables -I FORWARD 1 -m set --match-set $NAME src -j DROP >> $LOG
+	/usr/sbin/iptables -I DOCKER-USER 2 -m set --match-set $NAME src -j DROP >> $LOG
+	/usr/sbin/iptables -I INPUT 2 -m set --match-set $NAME src -j DROP >> $LOG
+	/usr/sbin/iptables -I FORWARD 2 -m set --match-set $NAME src -j DROP >> $LOG
 done
-
-iptables -D INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT > /dev/null 2>&1
-iptables -D DOCKER-USER -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT > /dev/null 2>&1
-iptables -D FORWARD -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT > /dev/null 2>&1
-iptables -I FORWARD 1 -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT >> $LOG
-iptables -I INPUT 1 -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT >> $LOG
-iptables -I DOCKER-USER 1 -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT >> $LOG
 ```
 
 Verify that it works and the ipsets have been filled:
