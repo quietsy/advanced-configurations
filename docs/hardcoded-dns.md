@@ -16,7 +16,7 @@ The following rules were made using OPNSense and AdGuardHome to achieve it.
 
 ### Alias
 
-Navigate to Firewall > Aliases and create the following alias:
+Navigate to Firewall > Aliases and create the following aliases:
 
 ```
 Name: NAT_Ports
