@@ -73,7 +73,7 @@ Destination port range: HTTPS
 
 ### AdGuardHome
 
-The AGH blocklist blocks DoH and DoT domains.
+The AdGuardHome blocklist blocks DoH domains.
 
 Navigate to AGH > Filters > DNS blocklists and add the following blocklist:
 
