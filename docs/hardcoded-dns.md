@@ -7,8 +7,8 @@ Detailed in the paper [Characterizing Smart Home IoT Traffic in the Wild](https:
 Hardcoded DNS can be prevented with the following actions:
 
 - Catch all network traffic on ports 53, 853 and NAT it back to the local DNS.
-- Block all traffic to public DNS IPs that wasn't made by the local DNS.
-- Block all public DNS domains used by DoH using [DoH-IP-blocklists](https://github.com/dibdot/DoH-IP-blocklists).
+- Block all traffic to public DoH IPs using [DoH-IP-blocklists](https://github.com/dibdot/DoH-IP-blocklists).
+- Block all public DoH domains using [DoH-IP-blocklists](https://github.com/dibdot/DoH-IP-blocklists).
 
 The following rules were made using OPNSense and AdGuardHome to achieve it.
 
