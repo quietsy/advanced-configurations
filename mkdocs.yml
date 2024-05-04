@@ -65,7 +65,6 @@ nav:
     - Searx: searx.md
     - Securing SWAG: secure.md
     - SOCKS Proxy: socks.md
-    - Split DNS: split-dns.md
     - Split Tunnel: split.md
     - VPN Hub: hub.md
     - VPN Route: vpn.md
@@ -74,6 +73,8 @@ nav:
   - Network:
     - Asus VLANs: asus-vlans.md
     - OPN-Arp: opnarp.md
+    - Hardcoded DNS: hardcoded-dns.md
+    - Split DNS: split-dns.md
     - VPS Firehol: vps-firehol.md
     - VPS Geoblock: vps-geoblock.md
   - Tools:

@@ -7,7 +7,6 @@
 - [Searx](searx)
 - [Securing SWAG](secure)
 - [SOCKS Proxy](socks)
-- [Split DNS](split-dns)
 - [Split Tunnel](split)
 - [VPN Hub](hub)
 - [VPN Route](vpn)
@@ -18,6 +17,8 @@
 
 - [Asus VLANs](asus-vlans)
 - [OPN-Arp](opnarp)
+- [Hardcoded DNS](hardcoded-dns)
+- [Split DNS](split-dns)
 - [VPS Firehol](vps-firehol)
 - [VPS Geoblock](vps-geoblock)
 
