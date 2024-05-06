@@ -65,7 +65,6 @@ nav:
     - Searx: searx.md
     - Securing SWAG: secure.md
     - SOCKS Proxy: socks.md
-    - Split Tunnel: split.md
     - VPN Hub: hub.md
     - VPN Route: vpn.md
     - VPS Proxy: vps.md
@@ -75,9 +74,10 @@ nav:
     - OPN-Arp: opnarp.md
     - Hardcoded DNS: hardcoded-dns.md
     - Split DNS: split-dns.md
+    - Split Tunnel: split.md
     - Firehol: firehol.md
     - Geoblock: geoblock.md
-  - Tools:
+  - Other:
     - Setup Template: setup.md
     - Phone: phone.md
     - Atuin: atuin.md
