@@ -75,8 +75,8 @@ nav:
     - OPN-Arp: opnarp.md
     - Hardcoded DNS: hardcoded-dns.md
     - Split DNS: split-dns.md
-    - VPS Firehol: vps-firehol.md
-    - VPS Geoblock: vps-geoblock.md
+    - Firehol: firehol.md
+    - Geoblock: geoblock.md
   - Tools:
     - Setup Template: setup.md
     - Phone: phone.md

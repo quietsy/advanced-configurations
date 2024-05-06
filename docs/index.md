@@ -19,8 +19,8 @@
 - [OPN-Arp](opnarp)
 - [Hardcoded DNS](hardcoded-dns)
 - [Split DNS](split-dns)
-- [VPS Firehol](vps-firehol)
-- [VPS Geoblock](vps-geoblock)
+- [Firehol](firehol)
+- [Geoblock](geoblock)
 
 ## Tools
 

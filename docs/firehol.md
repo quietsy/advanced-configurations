@@ -1,8 +1,10 @@
-# VPS Firehol Blocklists
+# Firehol Blocklists
 
 Firehol blocklists are a collection of automatically updating ipsets from all available security IP Feeds, mainly related to on-line attacks, on-line service abuse, malwares, botnets, command and control servers and other cybercrime activities.
 
-## Installation
+## VPS
+
+### Installation
 
 Install the following packages:
 
@@ -10,7 +12,7 @@ Install the following packages:
 sudo apt install ipset iprange
 ```
 
-## Firehol Blocklists
+### Firehol Blocklists
 
 Navigate to [Firehol's website](https://iplists.firehol.org/) or [Firehol's github repo](https://github.com/firehol/blocklist-ipsets) and choose which blocklists you want to enable.
 
@@ -24,7 +26,7 @@ https://raw.githubusercontent.com/firehol/blocklist-ipsets/master/firehol_level3
 https://raw.githubusercontent.com/firehol/blocklist-ipsets/master/firehol_abusers_1d.netset
 ```
 
-## Firehol Script
+### Firehol Script
 
 Create a script to refresh the firehol ipsets and recreate the iptables rules.
 
@@ -77,10 +79,9 @@ sudo /home/user/firehol/firehol.sh
 sudo ipset list firehol_level1.netset
 ```
 
+### Cron Scheduling
 
-## Cron Scheduling
-
-### **Warning - make sure you're not accidentally blocking your own access to the VPS before proceeding.**
+#### **Warning - make sure you're not accidentally blocking your own access to the VPS before proceeding.**
 
 Run the firehol script on reboot and daily.
 
@@ -92,3 +93,61 @@ For example, add the following to `sudo crontab -e`:
 ```
 
 Verify that it runs on reboot and daily. There's a 2 minute delay before it applies after reboots, to give you enough time to fix a lockout.
+
+## OPNSense
+
+### Alias
+
+Navigate to Firewall > Aliases and create the following aliases:
+
+```
+Name: Firehol
+Type: URL IPs
+Content: 
+https://raw.githubusercontent.com/firehol/blocklist-ipsets/master/firehol_level1.netset
+https://raw.githubusercontent.com/firehol/blocklist-ipsets/master/firehol_level2.netset
+https://raw.githubusercontent.com/firehol/blocklist-ipsets/master/firehol_level3.netset
+https://raw.githubusercontent.com/firehol/blocklist-ipsets/master/firehol_abusers_1d.netset
+```
+
+```
+Name: External
+Type: Networks
+Content: !10.0.0.0/8, !172.16.0.0/12, !192.168.0.0/16, !127.0.0.1
+```
+
+```
+Name: Firehol_without_internal
+Type: Network group
+Content: External, Firehol
+```
+
+### Firewall
+
+Navigate to Firewall > Rules > WAN and create the following firewall rule:
+
+```
+Action: Block
+Interface: WAN
+Direction: in
+TCP/IP Version: IPv4
+Protocol: any
+Source: Firehol_without_internal
+Destination: any
+```
+
+### Cron
+
+Create a cron job to automatically update the blocklists every day.
+
+Navigate to System > Settings > Cron and add the following job:
+
+```
+Eabled: checked
+Minutes: 0
+Hours: 0
+Day of the month: *
+Months: *
+Days of the week: *
+Command: Update and reload firewall aliases
+```
