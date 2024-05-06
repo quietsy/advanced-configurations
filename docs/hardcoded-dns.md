@@ -80,3 +80,19 @@ Navigate to AGH > Filters > DNS blocklists and add the following blocklist:
 ```
 https://raw.githubusercontent.com/dibdot/DoH-IP-blocklists/master/doh-domains.txt
 ```
+
+### Cron
+
+Create a cron job to automatically update the blocklist every day.
+
+Navigate to System > Settings > Cron and add the following job:
+
+```
+Eabled: checked
+Minutes: 0
+Hours: 0
+Day of the month: *
+Months: *
+Days of the week: *
+Command: Update and reload firewall aliases
+```
