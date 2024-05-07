@@ -9,7 +9,7 @@ Objectives:
 
 - Implement this in a single wireguard server container
 - Allow unlimited clients to connect to the wireguard server container and utilize the same VPN connection
-- Support a fallback vpn connection for increased reliability
+- Support a fallback VPN connection for increased reliability
 - Support accessing LAN devices over wireguard
 - Support excluding domains that block VPNs
 - Support tunneling other containers through the same VPN connection (not covered in this guide)
