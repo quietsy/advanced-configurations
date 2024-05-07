@@ -1,15 +1,10 @@
 # Brave Settings
 
-Launch Options
-
-- Run `cp ~/.local/share/flatpak/exports/share/applications/com.brave.Browser.desktop ~/.local/share/applications/`
-- Edit `~/.local/share/applications/com.brave.Browser.desktop`
-- Add `--js-flags=--jitless` to all launch options
-
 brave://flags
 
 - Enable First Party Storage Cleanup support: enabled
 - Enable Brave Wallet: disabled
+- Strict-Origin-Isolation: enabled
 
 Get started
 
@@ -69,7 +64,7 @@ Privacy and security
   - Standard protection: enabled
   - Use secure DNS: disabled
   - Manage V8 security
-    - Sites can use the V8 optimizer: enabled
+    - Sites can use the V8 optimizer: disabled
 - Private window with tor: off
 
 Web3
