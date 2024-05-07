@@ -5,6 +5,16 @@ Linuxserver's Wireguard container is extremely versatile, in this example we'll 
 
 VPN providers have a limit on the amount of devices, this setup will allow you to have an unlimited amount of devices tunneled through a single VPN connection while also supporting a failover backup connection!
 
+Objectives:
+
+- Implement this in a single wireguard server container
+- Allow unlimited clients to connect to the wireguard server container and utilize the same VPN connection
+- Support a fallback vpn connection for increased reliability
+- Support accessing LAN devices over wireguard
+- Support excluding domains that block VPNs
+- Support tunneling other containers through the same VPN connection (not covered in this guide)
+- Support tunneling entire VLANs through the same VPN connection (not covered in this guide)
+
 ## Requirements
 
 - A working instance of our [Wireguard container](https://github.com/linuxserver/docker-wireguard) in server mode.
