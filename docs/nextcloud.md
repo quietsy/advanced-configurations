@@ -16,9 +16,9 @@ The following is a collection of ways to optimize Nextcloud's performance and re
 memory_limit = -1
 opcache.enable = 1
 opcache.enable_cli = 1
-opcache.interned_strings_buffer = 8
-opcache.max_accelerated_files = 10000
-opcache.memory_consumption = 128
+opcache.interned_strings_buffer = 16
+opcache.max_accelerated_files = 130987
+opcache.memory_consumption = 256
 opcache.save_comments = 1
 opcache.revalidate_freq = 1
 ```
@@ -53,6 +53,7 @@ Located in `/config/www/nextcloud/config/config.php`
   'mysql.utf8mb4' => true,
   'dbuser' => 'nextcloud_user',
   'dbpassword' => 'DATABASE_PASSWORD',
+  'trusted_proxies' => ['172.16.0.0/12'],
   'filesystem_check_changes' => 1,
   'memcache.local' => '\\OC\\Memcache\\APCu',
   'memcache.distributed' => '\\OC\\Memcache\\Redis',
