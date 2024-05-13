@@ -6,6 +6,7 @@
 - [Piped](piped)
 - [Searx](searx)
 - [Securing SWAG](secure)
+- [Simplelogin](simplelogin)
 - [SOCKS Proxy](socks)
 - [VPN Hub](hub)
 - [VPN Route](vpn)
