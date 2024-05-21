@@ -30,3 +30,4 @@
 - [Atuin](atuin)
 - [Brave](brave)
 - [Tmux](tmux)
+- [Smartd](smartd)
