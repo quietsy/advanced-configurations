@@ -6,11 +6,13 @@ The following creates a zfs pool with 2 mirrors of 2 disks each, with:
 - Linux ACLs
 - Larger record size for media
 - Snapshots with a retention policy:
+
     - 4 every 15 minutes in the last hour
     - 24 every hour in the last day
     - 31 every day in the last month
     - 8 every week in the last 2 months
     - 12 every month in the last year (disabled for `/mnt/pool/media`)
+
 - Scrub reports and alerts sent to ntfy
 
 ## Installation
