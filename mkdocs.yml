@@ -85,3 +85,4 @@ nav:
     - Brave: brave.md
     - Tmux: tmux.md
     - Smartd: smartd.md
+    - ZFS: zfs.md

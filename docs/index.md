@@ -31,3 +31,4 @@
 - [Brave](brave)
 - [Tmux](tmux)
 - [Smartd](smartd)
+- [ZFS](zfs)
