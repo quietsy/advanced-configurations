@@ -48,6 +48,15 @@ bash <(curl --proto '=https' --tlsv1.2 -sSf https://setup.atuin.sh)
 pkg install atuin
 ```
 
+### OPNSense
+
+Enable the freebsd repo in `/usr/local/etc/pkg/repos/FreeBSD.conf` and run:
+
+```bash
+pkg update
+pkg install atuin
+```
+
 ## Configuration
 
 Run:
