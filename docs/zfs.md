@@ -48,6 +48,7 @@ sudo zfs set compression=lz4 pool
 sudo zfs set acltype=posixacl pool
 sudo zfs set xattr=sa pool
 sudo zfs set aclinherit=passthrough pool
+sudo zfs set atime=off pool
 ```
 
 Create a filesystem under `/mnt/pool/media` to configure it for media (larger record size and no monthly snapshots):
