@@ -221,6 +221,10 @@ Recreate the Home Wireguard Client container to apply the changes, then recreate
 
 Validate that the containers you exposed now work through the tunnel by browsing `https://<container>.external.com/`.
 
+## Traffic Overview
+
+![VPS2](images/vps2.png)
+
 ## Fail2ban
 
 Now that everything is working, Fail2ban should ban the right IP of attackers, but they're coming in through the tunnel and iptables isn't blocking them, therefore we will block them through NGINX.
