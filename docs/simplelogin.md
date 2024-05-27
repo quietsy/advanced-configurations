@@ -1,5 +1,9 @@
 # Simplelogin
 
+## Strategy
+
+![simplelogin](images/simplelogin.png)
+
 ## Notes
 
 - Follow the [official documentation](https://github.com/simple-login/app) to set up the domain.
