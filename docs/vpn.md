@@ -21,14 +21,12 @@ Configure your VPN Wireguard Client according to the [Wireguard documentation](h
     container_name: vpn
     cap_add:
       - NET_ADMIN
-      - SYS_MODULE
     environment:
       - PUID=1000
       - PGID=1000
       - TZ=Europe/London
     volumes:
       - /path/to/appdata/config:/config
-      - /lib/modules:/lib/modules
     sysctls:
       - net.ipv4.conf.all.src_valid_mark=1
     restart: unless-stopped
@@ -38,10 +36,11 @@ Once done start the container and validate that `docker logs vpn` contains no er
 
 ## Connecting the Wireguard Client to the VPN
 
-Copy the Wireguard configuration that you get from your VPN provider into a file called `wg0.conf` and place it in your VPN Wireguard Client's `config` folder, and make the following changes:
+Copy the Wireguard configuration that you get from your VPN provider into a file called `wg0.conf` and place it in your VPN Wireguard Client's `config/wg_confs` folder, and make the following changes:
 
 - Remove IPv6 addresses (and ::/0) if you haven't enabled IPv6 in your docker network
 - Add the `PostUp` and `PreDown` lines listed below
+
 ```Nginx
 [Interface]
 PrivateKey = <private-key>
@@ -55,7 +54,8 @@ PublicKey = <public-key>
 AllowedIPs = 0.0.0.0/0
 Endpoint = <some-address>:<some-port>
 ```
-The PostUp command adds a killswitch using iptables rules to prevent connections on other interfaces. Connections from LAN networks are still allowed to be able to connect to the services in the containers.
+
+The PostUp command adds a killswitch using iptables rules to prevent connections on other interfaces, and maintains connections to the web-ui of the services in the containers.
 The PreDown command cleans up these rules when the VPN goes down.
 
 Save the changes and restart the container with `docker restart vpn`, validate that `docker logs vpn` contains no errors.
@@ -119,9 +119,7 @@ Under `Settings` > `Download Clients` > Click qBittorrent's Download Client > Se
 
 ### Port forwarding
 
-VPN providers like Mullvad support port forwarding, if your application needs it.
-
-For example in `Mullvad` > `My Account` > `Manage ports and Wireguard Keys` > Follow the instructions to get a port.
+VPN providers like Torguard support port forwarding, if your application needs it.
 
 Copy the port number you got to `qBittorrent` > `Settings` > `Connection` > `Port used for incoming connections`.
 
