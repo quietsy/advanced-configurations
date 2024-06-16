@@ -6,6 +6,7 @@
 
 ## Notes
 
+- [Check the reputation](https://www.uceprotect.net/en/rblcheck.php) of your VPS IP before proceeding.
 - Follow the [official documentation](https://github.com/simple-login/app) to set up the domain.
 - Read about each environment variable of [simplelogin](https://github.com/simple-login/app/blob/master/example.env) and [postfix](https://github.com/simple-login/simplelogin-postfix-docker).
 - Using SWAG to generate certs and then mounting the certs to postfix.
@@ -38,6 +39,7 @@
     docker exec slapp alembic upgrade head
     ```
 
+- [Check the spammyness](https://www.mail-tester.com/) once you finish setting everything up.
 
 ## Example Compose
 
