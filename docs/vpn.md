@@ -100,7 +100,7 @@ Perform the following validations to check that the VPN works:
 
 ## Configuring Other Containers
 
-Now that qBittorrent is routed through the VPN, other containers like radarr, sonarr, prowlarr need to be configured to use `vpn` instead of `qbittorrent` as the container name for reaching qBittorrent.
+Now that qBittorrent is routed through the VPN, other containers like swag, radarr, sonarr, prowlarr, etc, need to be configured to use `vpn` instead of `qbittorrent` as the container name for reaching qBittorrent.
 
 ### SWAG
 
