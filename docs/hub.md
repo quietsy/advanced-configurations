@@ -68,7 +68,7 @@ services:
     restart: unless-stopped
 ```
 
-Create the container and perform the following checks to check that the VPN tunnels works:
+Create the container and perform the following checks to verify that the VPN tunnels works:
 
 - Check that `docker logs wireguard` contains no errors, and check that the server is working properly by connecting a client to it.
 - Check that you have connectivity on wg1 by running `docker exec wireguard ping -c4 -I wg1 1.1.1.1`.
