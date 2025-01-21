@@ -12,8 +12,8 @@ Objectives:
 - Support a fallback VPN connection for increased reliability.
 - Support accessing LAN devices over wireguard.
 - Support excluding domains that block VPNs.
-- Support tunneling other containers through the same VPN connection (not covered in this guide).
-- Support tunneling entire VLANs through the same VPN connection (not covered in this guide).
+- Support tunneling other containers through the same VPN connection.
+- Support tunneling entire VLANs and hosts through the same VPN connection.
 
 ## Instructions
 
@@ -35,9 +35,9 @@ Replace CHANGETHIS with your LAN subnet under `wireguard/templates/server.conf`.
   * `wireguard/wg_confs/wg2.conf`
 
 
-### Wireguard Container
+### Wireguard Server Container
 
-Configure a Wireguard container according to the [Wireguard documentation](https://github.com/linuxserver/docker-wireguard) with the `wireguard` folder of the boilerplate mounted to `/config`.
+Configure a Wireguard server container according to the [Wireguard documentation](https://github.com/linuxserver/docker-wireguard) with the `wireguard` folder of the boilerplate mounted to `/config`.
 
 ```YAML
 services:
@@ -68,17 +68,16 @@ services:
     restart: unless-stopped
 ```
 
-Start the container and validate that `docker logs wireguard` contains no errors, and validate that the server is working properly by connecting a client to it.
+Create the container and perform the following checks to check that the VPN tunnels works:
 
-Perform the following validations to check that the VPN tunnels works:
-
+- Check that `docker logs wireguard` contains no errors, and check that the server is working properly by connecting a client to it.
 - Check that you have connectivity on wg1 by running `docker exec wireguard ping -c4 -I wg1 1.1.1.1`.
 - Check that you have connectivity on wg2 by running `docker exec wireguard ping -c4 -I wg2 1.1.1.1`.
 - Check the details of your VPN tunnel on wg1 by running `docker exec wireguard curl --interface wg1 -s https://am.i.mullvad.net/json`, you should get an IP that is different from your WAN IP.
 - Check the details of your VPN tunnel on wg2 by running `docker exec wireguard curl --interface wg2 -s https://am.i.mullvad.net/json`, you should get an IP that is different from your WAN IP.
 - Connect to the tunnel with a client device and navigate to `https://am.i.mullvad.net/json`, verify that the server is working properly and that you're tunneled through one the VPN tunnels.
 
-## Bypassing the VPN for specific sites
+## Bypassing the VPN for specific sites (optional)
 
 ### Manual
 
@@ -98,7 +97,55 @@ You can host it on [SWAG](https://github.com/linuxserver/docker-swag) by adding 
       - ./wireguard/unblock/unblock.subdomain.conf:/config/nginx/proxy-confs/unblock.subdomain.conf:ro
 ```
 
-Restart SWAG and navigate to `https://unblock.domain.com`, test that it adds domains to `wireguard/unblock/domains.txt`.
+Recreate SWAG and navigate to `https://unblock.domain.com`, test that it adds domains to `wireguard/unblock/domains.txt`.
+
+## Routing other containers through the tunnel (optional)
+
+Other containers can be routed through the hub by adding another wireguard container in client mode.
+
+### Wireguard Client Container
+
+- Add a new peer to the wireguard server container using the `PEERS` environment variable, and recreate it.
+- Create another wireguard container, this time in client mode, according to the [VPN Route guide](/vpn/).
+- Copy the peer's `./wireguard/peer#/peer#.conf` from the server to the client's `./wgclient/wg_confs/wg0.conf`.
+- Set the `Endpoint` to be the server container: `Endpoint = wireguard:51820`.
+- Add `PostUp` and `PreDown` rules according to the VPN Route guide.
+- Create the container for changes to take effect.
+
+### Port forwarding (optional)
+
+- Uncomment the port forwarding `PostUp` and `PreDown` rules in `wg1.conf` and `wg2.conf`.
+- Replace `10.13.13.2` with the wireguard client peer IP.
+- Replace `45678` with the port of the app.
+- Replace `12345` with the port you got from the vpn provider for each tunnel.
+- Restart the container for changes to take effect.
+
+## Routing on OPNSense (optional)
+
+VLANs and hosts can be routed through the hub via OPNSense.
+
+- Add a new peer to the wireguard server container using the `PEERS` environment variable, and recreate it.
+- Follow [https://docs.opnsense.org/manual/how-tos/wireguard-selective-routing.html](https://docs.opnsense.org/manual/how-tos/wireguard-selective-routing.html).
+
+Step 1:
+
+- Set `Public Key` to the server's public key from `./wireguard/server/publickey-server`.
+- Set `Allowed IPs` to `0.0.0.0/0`.
+- Set `Endpoint Address` to the server's LAN IP.
+- Set `Endpoint Port` to `51820`.
+- Set `Keepalive` to `25`.
+
+Step 2:
+
+- Set `Public Key` to the peer's public key from `./wireguard/peer#/publickey-peer#`.
+- Set `Private Key` to the peer's public key from `./wireguard/peer#/privatekey-peer#`.
+- Set `Listen Port` to `51820`.
+- Set `Tunnel Address` to the peer's address as listed under`[interface]` in `./wireguard/peer#/peer#.conf`.
+- Select your peer under `Peers`.
+- Check `Disable Routes`.
+- Set `Gateway` to `10.13.13.200`.
+
+Follow the rest of the guide.
 
 ## Traffic Overview
 
