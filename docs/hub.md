@@ -25,12 +25,12 @@ git clone https://github.com/quietsy/wireguard-hub.git
 
 ### Server Template
 
-Replace CHANGETHIS with your LAN subnet under `wireguard/templates/server.conf`.
+Replace `CHANGETHIS` with your LAN subnet under `wireguard/templates/server.conf`.
 
 ### Client Tunnels
 
 * Obtain 2 wireguard vpn configurations from your vpn provider (mullvad and torguard have been tested).
-* Replace CHANGETHIS with your vpn configurations under:
+* Replace `CHANGETHIS` with your vpn configurations under:
   * `wireguard/wg_confs/wg1.conf`
   * `wireguard/wg_confs/wg2.conf`
 
