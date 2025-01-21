@@ -122,3 +122,23 @@ DISABLE_ONBOARDING=true
 NAMESERVERS="1.1.1.1"
 DISABLE_REGISTRATION=0
 ```
+
+## Self Test
+
+Create `test` aliases for each domain and disable them so you won't get emails.
+Add the following to your host's cron, edit the targets and curl command accordingly.
+
+```bash
+#!/bin/bash
+
+TARGETS=("test@domain1.com" "test@domain2.com" "test@domain3.com")
+
+for TARGET in "${TARGETS[@]}"; do
+    docker exec postfix sendmail $TARGET
+    sleep 10
+    result=$(docker exec sldb psql -U sl_user simplelogin -AXqtc "SELECT COUNT(*) FROM email_log JOIN alias ON email_log.alias_id = alias.id WHERE alias.email = '$TARGET' AND email_log.created_at BETWEEN NOW() - INTERVAL '5 MINUTES' AND NOW();")
+    if [[ "$result" -lt 1 ]]; then
+        curl -d "Email test failed for $TARGET" "https://ntfy.domain1.com/topic"
+    fi
+done
+```
