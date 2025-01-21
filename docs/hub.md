@@ -118,6 +118,7 @@ Other containers can be routed through the hub by adding another wireguard conta
 - Replace `10.13.13.2` with the wireguard client peer IP.
 - Replace `45678` with the port of the app.
 - Replace `12345` with the port you got from the vpn provider for each tunnel.
+- Duplicate the rules for udp if needed.
 - Restart the container for changes to take effect.
 
 ## Routing on OPNSense (optional)
