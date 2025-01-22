@@ -289,34 +289,13 @@ If you're experiencing problems and you want to restart everything, the correct 
 - Home - `docker restart wireguard`
 - Home - `docker restart swag`
 
-### Authelia
+### Authelia / Authentik
 
-If you expose Authelia through the tunnel, you need to make a small adjustment for the redirects to work.
-This will make authelia always redirect to https, since traffic through the tunnel is coming over as http but the VPS exposes https.
+If you expose Authelia/Authentik through the tunnel, you need to make a small adjustment for the redirects to work.
 
-Edit `authelia-server.conf` under `config/nginx/` and change:
+The idea is to force https, since traffic through the tunnel is coming over as http but the VPS exposes https.
 
-```Nginx
-    proxy_set_header X-Original-URL $scheme://$http_host$request_uri;
-```
-
-To:
-
-```Nginx
-    proxy_set_header X-Original-URL https://$http_host$request_uri;
-```
-
-Edit `authelia-location.conf` under `config/nginx/` and change:
-
-```Nginx
-auth_request_set $target_url $scheme://$http_host$request_uri;
-```
-
-To:
-
-```Nginx
-auth_request_set $target_url https://$http_host$request_uri;
-```
+Edit Authelia/Authentik confs under `config/nginx/`, replace `$scheme` with `https`.
 
 Restart the Home SWAG to apply the changes with `docker restart swag`.
 
