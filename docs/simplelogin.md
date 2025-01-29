@@ -39,34 +39,26 @@
     docker exec slapp alembic upgrade head
     ```
 
+- [Check the dmarc](https://www.learndmarc.com/) once you finish setting everything up.
 - [Check the spammyness](https://www.mail-tester.com/) once you finish setting everything up.
 
 ## Example Compose
 
 
 ```yaml
-x-sl: &sl
-  # Run after upgrade: docker exec slapp alembic upgrade head
-  image: simplelogin/app-ci:v4.43.0
-  volumes:
-    - ./mail/sl:/sl
-    - ./mail/sl/upload:/code/static/upload
-    - ./mail/simplelogin.env:/code/.env
-    - ./mail/dkim.key:/dkim.key:ro
-    - ./mail/dkim.pub.key:/dkim.pub.key:ro
-  restart: always
-services:
-  slapp:
-    <<: *sl
-    container_name: slapp
-  slmail:
-    <<: *sl
-    container_name: slmail
-    command: python email_handler.py
-  sljob:
-    <<: *sl
-    container_name: sljob
-    command: python job_runner.py
+  simplelogin:
+    image: lscr.io/linuxserver-labs/simplelogin:latest
+    container_name: simplelogin
+    volumes:
+      - ./mail/sl:/config
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+      - DB_URI=postgresql://dbuser:dbpassword@sldb:5432/simplelogin
+    ports:
+      - 7777:7777
+    restart: unless-stopped
   sldb:
     image: postgres:12.1-alpine
     container_name: sldb
@@ -76,7 +68,7 @@ services:
       - POSTGRES_USER=dbuser
       - POSTGRES_PASSWORD=dbpassword
       - POSTGRES_DB=simplelogin
-    restart: always
+    restart: unless-stopped
   postfix:
     container_name: postfix
     image: simplelogin/postfix:4.2.0
@@ -92,7 +84,7 @@ services:
       - DB_USER=dbuser
       - DB_PASSWORD=dbpassword
       - DB_NAME=simplelogin
-      - EMAIL_HANDLER_HOST=slmail
+      - EMAIL_HANDLER_HOST=simplelogin
       - POSTFIX_FQDN=mail.domain.com
       - ALIASES_DEFAULT_DOMAIN=domain.com
       - LETSENCRYPT_EMAIL=support@domain.com
@@ -101,7 +93,7 @@ services:
       - RENEW_PATH=/etc/letsencrypt/postfix_renew
       - POSTFIX_DQN_KEY=dqnkey
       - SIMPLELOGIN_COMPATIBILITY_MODE=v4
-    restart: always
+    restart: unless-stopped
 ```
 
 ## Example ENV File
@@ -112,10 +104,10 @@ EMAIL_DOMAIN=domain.com
 SUPPORT_EMAIL=support@domain.com
 ADMIN_EMAIL=support@domain.com
 EMAIL_SERVERS_WITH_PRIORITY=[(10, "mail.domain.com.")]
-DKIM_PRIVATE_KEY_PATH=/dkim.key
+DKIM_PRIVATE_KEY_PATH=/config/dkim.key
 DB_URI=postgresql://dbuser:dbpassword@sldb:5432/simplelogin
 FLASK_SECRET=secret123
-GNUPGHOME=/sl/pgp
+GNUPGHOME=/config/gnupg
 LOCAL_FILE_UPLOAD=1
 POSTFIX_SERVER=postfix
 DISABLE_ONBOARDING=true
@@ -126,7 +118,7 @@ DISABLE_REGISTRATION=0
 ## Self Test
 
 Create `test` aliases for each domain and disable them so you won't get emails.
-Add the following to your host's cron, edit the targets and curl command accordingly.
+Add the following to your host's cron, edit the `TARGETS` and `curl` command accordingly.
 
 ```bash
 #!/bin/bash
