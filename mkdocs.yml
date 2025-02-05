@@ -60,7 +60,7 @@ nav:
   - Containers:
     - Awesome LSIO: awesome-lsio.md
     - Consolidating Proxies: consolidate.md
-    - DNS for Containers: container_dns.md
+    - DNS for Containers: container-dns.md
     - Optimizing Nextcloud: nextcloud.md
     - Piped: piped.md
     - Searx: searx.md
