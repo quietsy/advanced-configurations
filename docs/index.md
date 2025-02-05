@@ -2,6 +2,7 @@
 
 - [Awesome LSIO](awesome-lsio)
 - [Consolidating Proxies](consolidate)
+- [DNS for Containers](container_dns)
 - [Optimizing Nextcloud](nextcloud)
 - [Piped](piped)
 - [Searx](searx)
