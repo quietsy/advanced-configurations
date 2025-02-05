@@ -26,7 +26,7 @@ The most effective security you can implement is to stop exposing your apps enti
 - [Split DNS](https://docs.linuxserver.io/general/split-dns/) - the source IP on requests needs to be local for SWAG to work without being exposed.
 - [DNS Validation](https://docs.linuxserver.io/general/swag/#create-container-via-dns-validation-with-a-wildcard-cert) - allows you to get an SSL certificate without port forwarding.
 
-Once you've set up wireguard, split DNS, and DNS validation, you can remove the port forwarding on your router and change your domain's DNS records to `127.0.0.1` instead of your WAN IP on the DNS provider.
+Once you've set up wireguard, split DNS, and DNS validation, you can remove the port forwarding on your router and remove your domain's public DNS records on your public DNS provider (not the local DNS).
 
 ## Internal Applications
 
@@ -43,7 +43,8 @@ allow 192.168.1.0/24; # Replace with your LAN subnet
 deny all;
 ```
 
-Utilize the LAN filter in your configuration by adding the following line inside every location block for every application you want to protect.
+Utilize the LAN filter in your configuration by adding the following line inside the server block for every application you want to protect.
+
 ```
     include /config/nginx/internal.conf;
 ```
@@ -71,18 +72,26 @@ server {
 }
 ```
 
-Repeat the process for all internal applications and for every location block.
+Repeat the process for all internal applications.
 
 ## Brute-Force Protection
 
+Crowdsec and Fail2Ban can prevent brute-force attacks by monitoring the logs of apps and banning IPs that fail multiple login attempts.
+
+SWAG comes with Fail2Ban pre-configured with a few basic protections, you can fine-tune it specifically for your apps, or disable it and set up Crowdsec instead.
+
 ### Crowdsec
 
-[Crowdsec](https://www.linuxserver.io/blog/blocking-malicious-connections-with-crowdsec-and-swag) is a free, open-source and collaborative IPS; it's like fail2ban but you share your bans with all of the other users to try and pre-emptively block malicious hosts.
+[Crowdsec](https://www.crowdsec.net/) is a free, open-source and collaborative IPS; it's like fail2ban but you share your bans with all of the other users to try and pre-emptively block malicious hosts.
+
+Follow [this blog post](https://www.linuxserver.io/blog/blocking-malicious-connections-with-crowdsec-and-swag) to set it up in SWAG.
 
 ### Fail2Ban
 
 Fail2Ban is an intrusion prevention software that protects external applications from brute-force attacks. Attackers that fail to login to your applications a certain number of times will get blocked from accessing all of your applications.
 Fail2Ban looks for failed login attempts in log files, counts the failed attempts in a short period, and bans the IP address of the attacker.
+
+#### The following is an example of setting up Nextcloud in Fail2Ban, configure other apps in the same way.
 
 Mount the application logs to SWAG's container by adding a volume for the log to the compose yaml:
 
@@ -147,7 +156,7 @@ logpath  = /jellyfin/log*.log
 action   =  iptables-allports[name=jellyfin]
 ```
 
-Repeat the process for every external application, you can find Fail2Ban configurations for most applications on the internet.
+Repeat the process for every app you expose, you can find Fail2Ban configurations for most applications on the internet.
 
 If you need to unban an IP address that was blocked, run the following command on the docker host:
 
@@ -168,9 +177,7 @@ DBIP doesn't require an account, but Maxmind might be more accurate in some case
 
 ## Search Results
 
-### X-Robots-Tag
-
-You can prevent your apps from appearing in search engines results and being crawled by web crawlers. 
+You can prevent apps from appearing in search engines results and being crawled by web crawlers. 
 
 Note that not all search engines and web crawlers respect this tag, but it significantly reduces the amount.
 
