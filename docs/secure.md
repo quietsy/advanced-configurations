@@ -4,33 +4,21 @@
 
 We can mitigate some risks by fine-tuning SWAG and how we access it:
 
-- Access your apps through Wireguard instead of exposing them.
 - Prevent accessing some apps via the internet while exposing others.
 - Set up brute-force protection via Crowdsec/Fail2Ban.
 - Set up geoblock to whitelist/blacklist countries via DBIP/Maxmind.
 - Prevent your apps from appearing in search results.
 - Set up SSO via Authelia/Authentik.
 - Monitor SWAG via a dashboard.
+- Access your apps through Wireguard instead of exposing them.
 
 ## Requirements
 
 - A working instance of [SWAG](https://github.com/linuxserver/docker-swag).
 
-## VPN
-
-The most effective security you can implement is to stop exposing your apps entirely, and instead access them via [WireGuard](https://github.com/linuxserver/docker-wireguard).
-
-### Requirements
-
-- A working instance of [WireGuard](https://github.com/linuxserver/docker-wireguard).
-- [Split DNS](https://docs.linuxserver.io/general/split-dns/) - the source IP on requests needs to be local for SWAG to work without being exposed.
-- [DNS Validation](https://docs.linuxserver.io/general/swag/#create-container-via-dns-validation-with-a-wildcard-cert) - allows you to get an SSL certificate without port forwarding.
-
-Once you've set up wireguard, split DNS, and DNS validation, you can remove the port forwarding on your router and remove your domain's public DNS records on your public DNS provider (not the local DNS).
-
 ## Internal Applications
 
-If you want to share some apps with others and don't want to give them full VPN access, only expose what you must expose, keep the rest internal.
+Only expose apps you want to share with others and must expose, keep the rest internal and use [WireGuard](https://github.com/linuxserver/docker-wireguard) to access them.
 
 ### Requirements
 
@@ -177,7 +165,7 @@ DBIP doesn't require an account, but Maxmind might be more accurate in some case
 
 ## Search Results
 
-You can prevent apps from appearing in search engines results and being crawled by web crawlers. 
+You can prevent apps from appearing in search engine results and being crawled by web crawlers. 
 
 Note that not all search engines and web crawlers respect this tag, but it significantly reduces the amount.
 
@@ -210,3 +198,15 @@ Use monitoring solutions such as [SWAG Dashboard](https://github.com/linuxserver
 - Many requests to a specific page or static file.
 - Referers that shouldn't refer to your domain.
 - Many hits on status codes that are not 2xx.
+
+## VPN
+
+The most effective security you can implement is to stop exposing your apps entirely, and instead access them via [WireGuard](https://github.com/linuxserver/docker-wireguard).
+
+### Requirements
+
+- A working instance of [WireGuard](https://github.com/linuxserver/docker-wireguard).
+- [Split DNS](https://docs.linuxserver.io/general/split-dns/) - the source IP on requests needs to be local for SWAG to work without being exposed.
+- [DNS Validation](https://docs.linuxserver.io/general/swag/#create-container-via-dns-validation-with-a-wildcard-cert) - allows you to get an SSL certificate without port forwarding.
+
+Once you've set up wireguard, split DNS, and DNS validation, you can remove the port forwarding on your router and remove your domain's public DNS records on your public DNS provider (not the local DNS).
