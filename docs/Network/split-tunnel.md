@@ -100,7 +100,7 @@ The Wireguard server subnet may need to be added to the DNS access list, for exa
 
 ### Reverse Proxy
 
-The Wireguard server subnet may need to be added to the reverse proxy's LAN IP ranges, for example in SWAG it should be added to [Allow/Deny](/secure/#internal-applications) and to [Geoblock](/secure/#geoblock).
+The Wireguard server subnet may need to be added to the reverse proxy's LAN IP ranges, for example in SWAG it should be added to [Allow/Deny](https://www.linuxserver.io/blog/securing-swag#internal-applications) and to [Geoblock](https://www.linuxserver.io/blog/securing-swag#geoblock).
 
 ### Always-on
 

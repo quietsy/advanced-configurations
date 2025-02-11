@@ -15,7 +15,7 @@ I got into the habit of wiping my phone every 6 months (takes about an hour) in 
 - Remove leftover data
 - Figure out the pains and find alternatives
 
-My phone is a Pixel 8 with [GrapheneOS](https://grapheneos.org/), it has an [always-on VPN](/hub/), and a lot of self-hosting related apps.
+My phone is a Pixel 8 with [GrapheneOS](https://grapheneos.org/), it has an [always-on VPN](../Containers/wireguard-hub.md), and a lot of self-hosting related apps.
 
 ## Backup
 
@@ -292,7 +292,7 @@ App store priority for installation: google play store > obtainium (github) > ob
   - Permissions: network
   - Background usage: optimized
 - Configure all apps
-- Set folders to auto upload to [nextcloud](/nextcloud/)
+- Set folders to auto upload to [nextcloud](../Containers/optimizing-nextcloud.md)
   - Photos
   - Videos
   - Call recordings

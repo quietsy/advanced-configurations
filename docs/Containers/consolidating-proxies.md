@@ -71,6 +71,6 @@ We created 3 mappings:
 
 When a request comes in, it gets processed by the regular expression `~^(?<internal_app>.*?)\..*$` which sets `$internal_app` with the subdomain, for example radarr in the case of `radarr.domain.com`.
 
-It then checks if the request is local, which requires [defining what is the local network](/secure/#geoblock).
+It then checks if the request is local, which requires [defining what is the local network](https://www.linuxserver.io/blog/securing-swag#geoblock).
 
 The final part: `proxy_pass $internal_proto://$internal_container:$internal_port` figures out where to proxy the request based on the `$internal_app` variable, for example radarr gets proxied to `http://radarr:7878`.

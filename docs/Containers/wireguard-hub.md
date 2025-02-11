@@ -111,7 +111,7 @@ Other containers can be routed through the hub by adding another wireguard conta
 ### Wireguard Client Container
 
 - Add a new peer to the wireguard server container using the `PEERS` environment variable, and recreate it.
-- Create another wireguard container, this time in client mode, according to the [VPN Route guide](/vpn/).
+- Create another wireguard container, this time in client mode, according to the [VPN Route guide](vpn-route.md).
 - Copy the peer's `./wireguard/peer#/peer#.conf` from the server to the client's `./wgclient/wg_confs/wg0.conf`.
 - Set the `Endpoint` to be the server container: `Endpoint = wireguard:51820`.
 - Add `PostUp` and `PreDown` rules according to the VPN Route guide.

@@ -37,7 +37,7 @@ tags:
     fi
     ```
 
-- Setting up [Crowdsec](https://www.linuxserver.io/blog/blocking-malicious-connections-with-crowdsec-and-swag), [Geoblock](/geoblock/), and [Firehol](/firehol/) is highly recommended.
+- Setting up [Crowdsec](https://www.linuxserver.io/blog/blocking-malicious-connections-with-crowdsec-and-swag), [Geoblock](../Network/geoblock.md), and [Firehol](../Network/firehol.md) is highly recommended.
 - After upgrading simplelogin run:
 
     ```bash
