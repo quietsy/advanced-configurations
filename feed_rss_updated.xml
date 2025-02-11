@@ -13,8 +13,8 @@
     <language>en</language>
 
     
-    <pubDate>Tue, 11 Feb 2025 12:13:12 -0000</pubDate>
-    <lastBuildDate>Tue, 11 Feb 2025 12:13:12 -0000</lastBuildDate>
+    <pubDate>Tue, 11 Feb 2025 12:56:54 -0000</pubDate>
+    <lastBuildDate>Tue, 11 Feb 2025 12:56:54 -0000</lastBuildDate>
     <ttl>1440</ttl>
 
     
@@ -44,10 +44,104 @@
       <description>&lt;h1&gt;Consolidating Proxies&lt;/h1&gt;
 &lt;p&gt;You can consolidate the majority of internal nginx proxies using mappings, these mappings get resolved when the mapped variables are...&lt;/p&gt;</description>
       <link>https://virtualize.link/Containers/consolidating-proxies/</link>
-      <pubDate>Tue, 11 Feb 2025 12:11:06 +0000</pubDate>
+      <pubDate>Tue, 11 Feb 2025 12:56:28 +0000</pubDate>
       <source url="https://virtualize.link/feed_rss_updated.xml">Advanced Configurations</source>
       
       <guid isPermaLink="true">https://virtualize.link/Containers/consolidating-proxies/</guid>
+      
+    </item>
+    
+    <item>
+      <title>Simplelogin</title>
+      
+      
+      
+      
+        
+      <category>Containers</category>
+        
+      
+      <description>&lt;h1&gt;Simplelogin&lt;/h1&gt;
+&lt;h2&gt;Strategy&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;simplelogin&#34; src=&#34;images/simplelogin.png&#34;&gt;&lt;/p&gt;
+&lt;h2&gt;Notes&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.uceprotect.net/en/rblcheck.php&#34;&gt;Check the reputation&lt;/a&gt; of your VP...&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <link>https://virtualize.link/Containers/simplelogin/</link>
+      <pubDate>Tue, 11 Feb 2025 12:56:28 +0000</pubDate>
+      <source url="https://virtualize.link/feed_rss_updated.xml">Advanced Configurations</source>
+      
+      <guid isPermaLink="true">https://virtualize.link/Containers/simplelogin/</guid>
+      
+    </item>
+    
+    <item>
+      <title>Wireguard Hub</title>
+      
+      
+      
+      
+        
+      <category>Containers</category>
+        
+      
+      <description>&lt;h1&gt;Wireguard Hub&lt;/h1&gt;
+&lt;p&gt;&lt;img alt=&#34;Hub&#34; src=&#34;images/hub.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Linuxserver&#39;s Wireguard container is extremely versatile, in this example we&#39;ll use it as a server that tunnels clien...&lt;/p&gt;</description>
+      <link>https://virtualize.link/Containers/wireguard-hub/</link>
+      <pubDate>Tue, 11 Feb 2025 12:56:28 +0000</pubDate>
+      <source url="https://virtualize.link/feed_rss_updated.xml">Advanced Configurations</source>
+      
+      <guid isPermaLink="true">https://virtualize.link/Containers/wireguard-hub/</guid>
+      
+    </item>
+    
+    <item>
+      <title>Split Tunnel</title>
+      
+      
+      
+      
+        
+      <category>Network</category>
+        
+      
+      <description>&lt;h1&gt;Split Tunnel&lt;/h1&gt;
+&lt;p&gt;&lt;img alt=&#34;split&#34; src=&#34;images/split.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;This setup allows your phone to &lt;strong&gt;always&lt;/strong&gt; be connected to &lt;strong&gt;both&lt;/strong&gt; your VPN provider and to your home.&lt;/p&gt;
+&lt;h3&gt;TLDR&lt;/h3&gt;
+&lt;p&gt;...&lt;/p&gt;</description>
+      <link>https://virtualize.link/Network/split-tunnel/</link>
+      <pubDate>Tue, 11 Feb 2025 12:56:28 +0000</pubDate>
+      <source url="https://virtualize.link/feed_rss_updated.xml">Advanced Configurations</source>
+      
+      <guid isPermaLink="true">https://virtualize.link/Network/split-tunnel/</guid>
+      
+    </item>
+    
+    <item>
+      <title>Phone</title>
+      
+      
+      
+      
+        
+      <category>Other</category>
+        
+      
+      <description>&lt;h1&gt;Phone&lt;/h1&gt;
+&lt;h2&gt;Periodic Phone Wipe Notes&lt;/h2&gt;
+&lt;p&gt;I got into the habit of wiping my phone every 6 months (takes about an hour) in order to:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Streamline the process&lt;/li&gt;
+&lt;li&gt;...&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <link>https://virtualize.link/Other/phone/</link>
+      <pubDate>Tue, 11 Feb 2025 12:56:28 +0000</pubDate>
+      <source url="https://virtualize.link/feed_rss_updated.xml">Advanced Configurations</source>
+      
+      <guid isPermaLink="true">https://virtualize.link/Other/phone/</guid>
       
     </item>
     
@@ -140,31 +234,6 @@
     </item>
     
     <item>
-      <title>Simplelogin</title>
-      
-      
-      
-      
-        
-      <category>Containers</category>
-        
-      
-      <description>&lt;h1&gt;Simplelogin&lt;/h1&gt;
-&lt;h2&gt;Strategy&lt;/h2&gt;
-&lt;p&gt;&lt;img alt=&#34;simplelogin&#34; src=&#34;images/simplelogin.png&#34;&gt;&lt;/p&gt;
-&lt;h2&gt;Notes&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.uceprotect.net/en/rblcheck.php&#34;&gt;Check the reputation&lt;/a&gt; of your VP...&lt;/li&gt;
-&lt;/ul&gt;</description>
-      <link>https://virtualize.link/Containers/simplelogin/</link>
-      <pubDate>Tue, 11 Feb 2025 12:11:06 +0000</pubDate>
-      <source url="https://virtualize.link/feed_rss_updated.xml">Advanced Configurations</source>
-      
-      <guid isPermaLink="true">https://virtualize.link/Containers/simplelogin/</guid>
-      
-    </item>
-    
-    <item>
       <title>SOCKS Proxy</title>
       
       
@@ -225,27 +294,6 @@
       <source url="https://virtualize.link/feed_rss_updated.xml">Advanced Configurations</source>
       
       <guid isPermaLink="true">https://virtualize.link/Containers/vps-proxy/</guid>
-      
-    </item>
-    
-    <item>
-      <title>Wireguard Hub</title>
-      
-      
-      
-      
-        
-      <category>Containers</category>
-        
-      
-      <description>&lt;h1&gt;Wireguard Hub&lt;/h1&gt;
-&lt;p&gt;&lt;img alt=&#34;Hub&#34; src=&#34;images/hub.png&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Linuxserver&#39;s Wireguard container is extremely versatile, in this example we&#39;ll use it as a server that tunnels clien...&lt;/p&gt;</description>
-      <link>https://virtualize.link/Containers/wireguard-hub/</link>
-      <pubDate>Tue, 11 Feb 2025 12:11:06 +0000</pubDate>
-      <source url="https://virtualize.link/feed_rss_updated.xml">Advanced Configurations</source>
-      
-      <guid isPermaLink="true">https://virtualize.link/Containers/wireguard-hub/</guid>
       
     </item>
     
@@ -404,29 +452,6 @@
     </item>
     
     <item>
-      <title>Split Tunnel</title>
-      
-      
-      
-      
-        
-      <category>Network</category>
-        
-      
-      <description>&lt;h1&gt;Split Tunnel&lt;/h1&gt;
-&lt;p&gt;&lt;img alt=&#34;split&#34; src=&#34;images/split.png&#34;&gt;&lt;/p&gt;
-&lt;p&gt;This setup allows your phone to &lt;strong&gt;always&lt;/strong&gt; be connected to &lt;strong&gt;both&lt;/strong&gt; your VPN provider and to your home.&lt;/p&gt;
-&lt;h3&gt;TLDR&lt;/h3&gt;
-&lt;p&gt;...&lt;/p&gt;</description>
-      <link>https://virtualize.link/Network/split-tunnel/</link>
-      <pubDate>Tue, 11 Feb 2025 12:11:06 +0000</pubDate>
-      <source url="https://virtualize.link/feed_rss_updated.xml">Advanced Configurations</source>
-      
-      <guid isPermaLink="true">https://virtualize.link/Network/split-tunnel/</guid>
-      
-    </item>
-    
-    <item>
       <title>Atuin</title>
       
       
@@ -443,32 +468,6 @@
       <source url="https://virtualize.link/feed_rss_updated.xml">Advanced Configurations</source>
       
       <guid isPermaLink="true">https://virtualize.link/Other/atuin/</guid>
-      
-    </item>
-    
-    <item>
-      <title>Brave</title>
-      
-      
-      
-      
-        
-      <category>Other</category>
-        
-      
-      <description>&lt;h1&gt;Brave&lt;/h1&gt;
-&lt;h2&gt;Settings&lt;/h2&gt;
-&lt;p&gt;brave://flags&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Enable First Party Storage Cleanup support: enabled&lt;/li&gt;
-&lt;li&gt;Enable Brave Wallet: disabled&lt;/li&gt;
-&lt;li&gt;Strict-Origin-Isolation: enabled...&lt;/li&gt;
-&lt;/ul&gt;</description>
-      <link>https://virtualize.link/Other/brave/</link>
-      <pubDate>Tue, 11 Feb 2025 12:11:06 +0000</pubDate>
-      <source url="https://virtualize.link/feed_rss_updated.xml">Advanced Configurations</source>
-      
-      <guid isPermaLink="true">https://virtualize.link/Other/brave/</guid>
       
     </item>
     

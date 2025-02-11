@@ -14,10 +14,58 @@
             "title": "Consolidating Proxies",
             "content_html": "<h1>Consolidating Proxies</h1>\n<p>You can consolidate the majority of internal nginx proxies using mappings, these mappings get resolved when the mapped variables are...</p>",
             "image": null,
-            "date_modified": "2025-02-11T12:11:06+00:00",
+            "date_modified": "2025-02-11T12:56:28+00:00",
             "authors": [],
             "tags": [
                 "Containers"
+            ]
+        },
+        {
+            "id": "https://virtualize.link/Containers/simplelogin/",
+            "url": "https://virtualize.link/Containers/simplelogin/",
+            "title": "Simplelogin",
+            "content_html": "<h1>Simplelogin</h1>\n<h2>Strategy</h2>\n<p><img alt=\"simplelogin\" src=\"images/simplelogin.png\"></p>\n<h2>Notes</h2>\n<ul>\n<li><a href=\"https://www.uceprotect.net/en/rblcheck.php\">Check the reputation</a> of your VP...</li>\n</ul>",
+            "image": null,
+            "date_modified": "2025-02-11T12:56:28+00:00",
+            "authors": [],
+            "tags": [
+                "Containers"
+            ]
+        },
+        {
+            "id": "https://virtualize.link/Containers/wireguard-hub/",
+            "url": "https://virtualize.link/Containers/wireguard-hub/",
+            "title": "Wireguard Hub",
+            "content_html": "<h1>Wireguard Hub</h1>\n<p><img alt=\"Hub\" src=\"images/hub.png\"></p>\n<p>Linuxserver's Wireguard container is extremely versatile, in this example we'll use it as a server that tunnels clien...</p>",
+            "image": null,
+            "date_modified": "2025-02-11T12:56:28+00:00",
+            "authors": [],
+            "tags": [
+                "Containers"
+            ]
+        },
+        {
+            "id": "https://virtualize.link/Network/split-tunnel/",
+            "url": "https://virtualize.link/Network/split-tunnel/",
+            "title": "Split Tunnel",
+            "content_html": "<h1>Split Tunnel</h1>\n<p><img alt=\"split\" src=\"images/split.png\"></p>\n<p>This setup allows your phone to <strong>always</strong> be connected to <strong>both</strong> your VPN provider and to your home.</p>\n<h3>TLDR</h3>\n<p>...</p>",
+            "image": null,
+            "date_modified": "2025-02-11T12:56:28+00:00",
+            "authors": [],
+            "tags": [
+                "Network"
+            ]
+        },
+        {
+            "id": "https://virtualize.link/Other/phone/",
+            "url": "https://virtualize.link/Other/phone/",
+            "title": "Phone",
+            "content_html": "<h1>Phone</h1>\n<h2>Periodic Phone Wipe Notes</h2>\n<p>I got into the habit of wiping my phone every 6 months (takes about an hour) in order to:</p>\n<ul>\n<li>Streamline the process</li>\n<li>...</li>\n</ul>",
+            "image": null,
+            "date_modified": "2025-02-11T12:56:28+00:00",
+            "authors": [],
+            "tags": [
+                "Other"
             ]
         },
         {
@@ -69,18 +117,6 @@
             ]
         },
         {
-            "id": "https://virtualize.link/Containers/simplelogin/",
-            "url": "https://virtualize.link/Containers/simplelogin/",
-            "title": "Simplelogin",
-            "content_html": "<h1>Simplelogin</h1>\n<h2>Strategy</h2>\n<p><img alt=\"simplelogin\" src=\"images/simplelogin.png\"></p>\n<h2>Notes</h2>\n<ul>\n<li><a href=\"https://www.uceprotect.net/en/rblcheck.php\">Check the reputation</a> of your VP...</li>\n</ul>",
-            "image": null,
-            "date_modified": "2025-02-11T12:11:06+00:00",
-            "authors": [],
-            "tags": [
-                "Containers"
-            ]
-        },
-        {
             "id": "https://virtualize.link/Containers/socks-proxy/",
             "url": "https://virtualize.link/Containers/socks-proxy/",
             "title": "SOCKS Proxy",
@@ -109,18 +145,6 @@
             "url": "https://virtualize.link/Containers/vps-proxy/",
             "title": "VPS Proxy",
             "content_html": "<h1>VPS Proxy</h1>\n<p><img alt=\"VPS\" src=\"images/vps.png\"></p>\n<p>This setup allows you to hide your home IP, protect your privacy and protect your home server against DDOS attacks while...</p>",
-            "image": null,
-            "date_modified": "2025-02-11T12:11:06+00:00",
-            "authors": [],
-            "tags": [
-                "Containers"
-            ]
-        },
-        {
-            "id": "https://virtualize.link/Containers/wireguard-hub/",
-            "url": "https://virtualize.link/Containers/wireguard-hub/",
-            "title": "Wireguard Hub",
-            "content_html": "<h1>Wireguard Hub</h1>\n<p><img alt=\"Hub\" src=\"images/hub.png\"></p>\n<p>Linuxserver's Wireguard container is extremely versatile, in this example we'll use it as a server that tunnels clien...</p>",
             "image": null,
             "date_modified": "2025-02-11T12:11:06+00:00",
             "authors": [],
@@ -213,34 +237,10 @@
             ]
         },
         {
-            "id": "https://virtualize.link/Network/split-tunnel/",
-            "url": "https://virtualize.link/Network/split-tunnel/",
-            "title": "Split Tunnel",
-            "content_html": "<h1>Split Tunnel</h1>\n<p><img alt=\"split\" src=\"images/split.png\"></p>\n<p>This setup allows your phone to <strong>always</strong> be connected to <strong>both</strong> your VPN provider and to your home.</p>\n<h3>TLDR</h3>\n<p>...</p>",
-            "image": null,
-            "date_modified": "2025-02-11T12:11:06+00:00",
-            "authors": [],
-            "tags": [
-                "Network"
-            ]
-        },
-        {
             "id": "https://virtualize.link/Other/atuin/",
             "url": "https://virtualize.link/Other/atuin/",
             "title": "Atuin",
             "content_html": "<h1>Atuin</h1>\n<p><a href=\"https://docs.atuin.sh/\">Atuin</a> replaces your existing shell history with a SQLite database, and records additional context for your commands. With ...</p>",
-            "image": null,
-            "date_modified": "2025-02-11T12:11:06+00:00",
-            "authors": [],
-            "tags": [
-                "Other"
-            ]
-        },
-        {
-            "id": "https://virtualize.link/Other/brave/",
-            "url": "https://virtualize.link/Other/brave/",
-            "title": "Brave",
-            "content_html": "<h1>Brave</h1>\n<h2>Settings</h2>\n<p>brave://flags</p>\n<ul>\n<li>Enable First Party Storage Cleanup support: enabled</li>\n<li>Enable Brave Wallet: disabled</li>\n<li>Strict-Origin-Isolation: enabled...</li>\n</ul>",
             "image": null,
             "date_modified": "2025-02-11T12:11:06+00:00",
             "authors": [],
