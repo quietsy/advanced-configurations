@@ -1,4 +1,9 @@
-# SearXNG
+---
+tags:
+  - Containers
+---
+
+# Searx-NG
 
 [SearXNG](https://github.com/searxng/searxng) is a free metasearch engine with the aim of protecting the privacy of its users. To this end, Searx does not share users' IP addresses or search history with the search engines from which it gathers results. Tracking cookies served by the search engines are blocked, preventing user-profiling-based results modification.
 

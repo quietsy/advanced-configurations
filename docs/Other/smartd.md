@@ -1,3 +1,8 @@
+---
+tags:
+  - Other
+---
+
 # Smartd
 
 `smartd` is a daemon that monitors the Self-Monitoring, Analysis and Reporting Technology (SMART) system built into many ATA-3 and later ATA, IDE and SCSI-3 hard drives. The purpose of SMART is to monitor the reliability of the hard drive and predict drive failures, and to carry out different types of drive self-tests.

@@ -1,3 +1,8 @@
+---
+tags:
+  - Network
+---
+
 # Geoblock
 
 ## VPS

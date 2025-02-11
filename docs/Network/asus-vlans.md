@@ -1,4 +1,9 @@
-# Turning an Asus Router to a VLAN aware Access Point
+---
+tags:
+  - Network
+---
+
+# Asus VLANs
 ![asus-vlans](images/asus_vlans.png)
 
 ## Reasons for using an Asus router

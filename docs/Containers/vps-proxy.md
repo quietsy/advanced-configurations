@@ -1,3 +1,8 @@
+---
+tags:
+  - Containers
+---
+
 # VPS Proxy
 
 ![VPS](images/vps.png)

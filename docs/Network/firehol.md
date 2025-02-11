@@ -1,4 +1,9 @@
-# Firehol Blocklists
+---
+tags:
+  - Network
+---
+
+# Firehol
 
 Firehol blocklists are a collection of automatically updating ipsets from all available security IP Feeds, mainly related to on-line attacks, on-line service abuse, malwares, botnets, command and control servers and other cybercrime activities.
 

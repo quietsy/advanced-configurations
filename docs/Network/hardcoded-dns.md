@@ -1,3 +1,8 @@
+---
+tags:
+  - Network
+---
+
 # Hardcoded DNS
 
 Smart home IoT devices are often configured with hardcoded DNS servers such as Google public DNS. 98% of smart assistants and 72% of smart TVs use hardcoded Google DNS servers to resolve DNS queries instead of using the default DNS server configured at the home gateway.

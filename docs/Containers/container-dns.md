@@ -1,3 +1,8 @@
+---
+tags:
+  - Containers
+---
+
 # DNS for Containers
 
 ## Problem

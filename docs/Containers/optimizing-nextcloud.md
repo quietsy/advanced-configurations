@@ -1,3 +1,8 @@
+---
+tags:
+  - Containers
+---
+
 # Optimizing Nextcloud
 
 The following is a collection of ways to optimize Nextcloud's performance and responsiveness.
