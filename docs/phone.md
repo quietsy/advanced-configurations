@@ -33,7 +33,7 @@ My phone is a Pixel 8 with [GrapheneOS](https://grapheneos.org/), it has an [alw
 - Copy exports and snapshots back
 - Initial configuration
   - Network & Internet
-    - Private DNS: off
+    - Private DNS: quietsy.dns.domain.tld
     - Internet connectivity checks: off
     - Internet
       - Network preferences
@@ -56,14 +56,14 @@ My phone is a Pixel 8 with [GrapheneOS](https://grapheneos.org/), it has an [alw
       - Google location accuracy: off
     - Special app access
       - Special access to hardware accelerators for Google apps: on
+      - Unrestricted mobile data: Linphone, FindMyDevice
   - Notifications
     - Wireless emergency alerts: off
     - Hide silent notifications in status bar: on
     - Notification dot on app icon: on
     - Enhanced notifications: on
-  - Battery
-    - Battery percentage: on
-    - Battery share: off
+    - Notifications on lock screen: off
+    - Bubbles: on
   - Sound & vibration
     - Spatial audio: off
     - Vibration & haptics: on
@@ -72,9 +72,11 @@ My phone is a Pixel 8 with [GrapheneOS](https://grapheneos.org/), it has an [alw
     - Charging sounds and vibrations: off
     - Tap & click sounds: off
     - Always show icon when in vibrate mode: on
+    - Set ringtone and notification sound
   - Display
     - Adaptive brightness: on
     - Lock screen
+      - Privacy: don't show notifications at all
       - Shortcuts
         - Flashlight
         - Camera
@@ -83,45 +85,37 @@ My phone is a Pixel 8 with [GrapheneOS](https://grapheneos.org/), it has an [alw
       - Tap to check phone: on
       - Lift to check phone: off
       - Wake screen for notifications: on
-      - Screen timeout: 1 minute
-      - Dark theme: on
-      - Night light: off
-      - Auto-rotate screen: off
-      - Smooth display: off
-      - Increase touch sensitivity: off
-      - Screen saver: off
-  - Security
-    - Screen lock
-      - Enhanced PIN privacy: on
-      - Lock after screen timeout: 5 seconds
-      - Power button instantly locks: on
-    - Auto reboot: 18 hours
-    - USB peripherals: allow new USB peripherals when unlocked
-    - USB-C port: charging-only when locked, except before first unlock
-    - Secure app spawning: on
-    - Automatic exploit protection compatibility mode: on
-    - Memory tagging in third-party apps: on
-    - Native code debugging
-      - Block for third-party apps by default: on
-    - Scramble PIN input layout: on
-    - Allow camera access when the device is locked: on
-    - Notify about system process crashes: on
-  - Privacy
-    - Camera access: on
-    - Microphone access: on
-    - Allow sensors permission to apps by default: off
-    - Save screenshot timestamp to EXIF: off
-    - Show passwords: off
-    - Notifications on lock screen: all
-    - Show media on lock screen: on
-    - Show clipboard access: on
-  - Location
-    - Location services
-      - Wi-fi scanning: off
-      - Bluetooth scanning: off
-  - Safety & emergency
-    - Wireless emergency alerts: off
+    - Screen timeout: 1 minute
+    - Dark theme: on
+    - Night light: off
+    - Auto-rotate screen: off
+    - Smooth display: off
+    - Increase touch sensitivity: off
+    - Screen saver: off
+  - Wallpaper & style
+    - Set wallpaper
+    - Show notifications on the lock screen: off
+  - Battery
+    - Battery saver: off
+    - Charging optimization: limit to 80%
+    - Battery percentage: on
+    - Battery share: off
   - System
+    - Keyboard
+      - Futo
+        - Keyboard & Typing
+          - Show number row: on
+          - Show action/suggestions bar: on
+          - Automatic spaces mode: automatically insert spaces only after inserting suggestions
+          - Swipe typing: on
+          - Auto-correction: on
+          - Auto-capitalization: on
+          - Double-space period: on
+          - Sound on keypress: off
+          - Popup on keypress: on
+          - Vibrate on keypress: on
+          - Vibration: minimum
+          - Clipboard history: on
     - Gestures
       - Quickly open camera: on
       - Navigation mode: gesture navigation
@@ -131,16 +125,58 @@ My phone is a Pixel 8 with [GrapheneOS](https://grapheneos.org/), it has an [alw
       - Use 24-hour format: on
     - System updates
       - Require battery above warning: on
-      - Require device to be charging: on
+      - Require device to be charging: off
       - Automatic reboot: on
     - Developer options
       - OEM unlocking: off
       - USB debugging: off
       - Wireless debugging: off
       - Mobile data always active: off
-      - Disable bluetooth LE audio hardware offload: off
+      - Disable bluetooth LE audio hardware offload: on
+  - Security & privacy
+    - Security
+      - Screen lock
+        - Scramble PIN input layout: on
+        - Enhanced PIN privacy: on
+        - Lock after screen timeout: 5 seconds
+        - Power button instantly locks: on
+        - Allow camera access when locked: on
+      - Fingerprint unlock
+        - Add both hands
+        - Use for screen unlocking: on
+    - Privacy
+      - Camera access: on
+      - Microphone access: on
+      - Show clipboard access: on
+      - Show passwords: off
+      - Allow sensors permission to apps by default: off
+      - Save screenshot timestamp to EXIF: off
+      - Notifications on lock screen: all
+      - Show media on lock screen: on
+    - Exploit protection
+      - Auto reboot: 18 hours
+      - USB-C port: charging-only when locked, except before first unlock
+      - Hardened memory allocator: disable camera
+      - Memory tagging: check
+      - Native code debugging: check, disable protonmail
+      - Webview JIT: check, disable PDF viewer
+      - DCL via memory: check, allow google play services, vanadium
+      - DCL via storage: off
+      - Secure app spawning: on
+    - More privacy & security
+      - Allow sensors permission to apps by default: off
+      - Notify about system process crashes: on
+      - Automatic exploit protection compatibility mode: on
+  - Location
+    - Location services
+      - Wi-fi scanning: off
+      - Bluetooth scanning: off
+  - Safety & emergency
+    - Wireless emergency alerts: off
 
 ## Apps
+
+App store priority for installation: google play store > obtainium (github) > obtainium (f-droid)
 
 - Audiobookshelf
   - Permissions: network
@@ -161,9 +197,6 @@ My phone is a Pixel 8 with [GrapheneOS](https://grapheneos.org/), it has an [alw
 - Discord
   - Permissions: network, notifications
   - Background usage: optimized
-- F-Droid (foss app store)
-  - Permissions: network, notifications
-  - Background usage: optimized
 - Finamp (music)
   - Permissions: network
   - Background usage: optimized
@@ -173,12 +206,12 @@ My phone is a Pixel 8 with [GrapheneOS](https://grapheneos.org/), it has an [alw
 - Floccus (bookmark sync)
   - Permissions: network
   - Background usage: off
+- FUTO keyboard
+  - Permissions: microphone
+  - Background usage: optimized
 - Gadgetbridge (cloudless gadgets)
   - Permissions: calendar, call logs, contacts, location, nearby devices, network, notifications, phone, sensors, sms
   - Background usage: unrestricted
-- Gboard (without network permissions)
-  - Permissions: none
-  - Background usage: none
 - Google Play Services (sandboxed)
   - Permissions: network
   - Background usage: unrestricted
@@ -215,9 +248,15 @@ My phone is a Pixel 8 with [GrapheneOS](https://grapheneos.org/), it has an [alw
 - Ntfy (notifications)
   - Permissions: network, notifications
   - Background usage: unrestricted
+- Obtainium
+  - Permissions: network, notifications
+  - Background usage: optimized
 - Organic maps (navigation)
   - Permissions: location, network, sensors
   - Background usage: none
+- OSS document scanner
+  - Permissions: none
+  - Background usage: optimized
 - Pixel Camera
   - Permissions: camera, microphone, notifications, photos and videos (storage scope /DCIM/), sensors
   - Background usage: optimized
@@ -242,9 +281,6 @@ My phone is a Pixel 8 with [GrapheneOS](https://grapheneos.org/), it has an [alw
 - VLC
   - Permissions: network
   - Background usage: optimized
-- Wavelet (equalizer)
-  - Permissions: notifications
-  - Background usage: unrestricted
 - Wireguard (vpn)
   - Permissions: network
   - Background usage: optimized
