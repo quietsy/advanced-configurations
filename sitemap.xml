@@ -3,141 +3,105 @@
     <url>
          <loc>https://virtualize.link/</loc>
          <lastmod>2025-02-11</lastmod>
-         <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://virtualize.link/asus-vlans/</loc>
+         <loc>https://virtualize.link/Containers/consolidating-proxies/</loc>
          <lastmod>2025-02-11</lastmod>
-         <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://virtualize.link/atuin/</loc>
+         <loc>https://virtualize.link/Containers/container-dns/</loc>
          <lastmod>2025-02-11</lastmod>
-         <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://virtualize.link/awesome-lsio/</loc>
+         <loc>https://virtualize.link/Containers/optimizing-nextcloud/</loc>
          <lastmod>2025-02-11</lastmod>
-         <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://virtualize.link/brave/</loc>
+         <loc>https://virtualize.link/Containers/piped/</loc>
          <lastmod>2025-02-11</lastmod>
-         <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://virtualize.link/consolidate/</loc>
+         <loc>https://virtualize.link/Containers/searx-ng/</loc>
          <lastmod>2025-02-11</lastmod>
-         <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://virtualize.link/container-dns/</loc>
+         <loc>https://virtualize.link/Containers/simplelogin/</loc>
          <lastmod>2025-02-11</lastmod>
-         <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://virtualize.link/firehol/</loc>
+         <loc>https://virtualize.link/Containers/socks-proxy/</loc>
          <lastmod>2025-02-11</lastmod>
-         <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://virtualize.link/geoblock/</loc>
+         <loc>https://virtualize.link/Containers/vpn-route/</loc>
          <lastmod>2025-02-11</lastmod>
-         <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://virtualize.link/hardcoded-dns/</loc>
+         <loc>https://virtualize.link/Containers/vps-proxy/</loc>
          <lastmod>2025-02-11</lastmod>
-         <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://virtualize.link/hub/</loc>
+         <loc>https://virtualize.link/Containers/wireguard-hub/</loc>
          <lastmod>2025-02-11</lastmod>
-         <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://virtualize.link/nextcloud/</loc>
+         <loc>https://virtualize.link/Containers/yaml-anchors/</loc>
          <lastmod>2025-02-11</lastmod>
-         <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://virtualize.link/opnarp/</loc>
+         <loc>https://virtualize.link/Network/asus-vlans/</loc>
          <lastmod>2025-02-11</lastmod>
-         <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://virtualize.link/phone/</loc>
+         <loc>https://virtualize.link/Network/firehol/</loc>
          <lastmod>2025-02-11</lastmod>
-         <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://virtualize.link/piped/</loc>
+         <loc>https://virtualize.link/Network/geoblock/</loc>
          <lastmod>2025-02-11</lastmod>
-         <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://virtualize.link/searx/</loc>
+         <loc>https://virtualize.link/Network/hardcoded-dns/</loc>
          <lastmod>2025-02-11</lastmod>
-         <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://virtualize.link/secure/</loc>
+         <loc>https://virtualize.link/Network/opn-arp/</loc>
          <lastmod>2025-02-11</lastmod>
-         <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://virtualize.link/setup/</loc>
+         <loc>https://virtualize.link/Network/split-dns/</loc>
          <lastmod>2025-02-11</lastmod>
-         <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://virtualize.link/simplelogin/</loc>
+         <loc>https://virtualize.link/Network/split-tunnel/</loc>
          <lastmod>2025-02-11</lastmod>
-         <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://virtualize.link/smartd/</loc>
+         <loc>https://virtualize.link/Other/atuin/</loc>
          <lastmod>2025-02-11</lastmod>
-         <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://virtualize.link/socks/</loc>
+         <loc>https://virtualize.link/Other/brave/</loc>
          <lastmod>2025-02-11</lastmod>
-         <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://virtualize.link/split-dns/</loc>
+         <loc>https://virtualize.link/Other/phone/</loc>
          <lastmod>2025-02-11</lastmod>
-         <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://virtualize.link/split/</loc>
+         <loc>https://virtualize.link/Other/setup/</loc>
          <lastmod>2025-02-11</lastmod>
-         <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://virtualize.link/tmux/</loc>
+         <loc>https://virtualize.link/Other/smartd/</loc>
          <lastmod>2025-02-11</lastmod>
-         <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://virtualize.link/vpn/</loc>
+         <loc>https://virtualize.link/Other/tmux/</loc>
          <lastmod>2025-02-11</lastmod>
-         <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://virtualize.link/vps/</loc>
+         <loc>https://virtualize.link/Other/zfs/</loc>
          <lastmod>2025-02-11</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://virtualize.link/yaml-anchors/</loc>
-         <lastmod>2025-02-11</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://virtualize.link/zfs/</loc>
-         <lastmod>2025-02-11</lastmod>
-         <changefreq>daily</changefreq>
     </url>
 </urlset>

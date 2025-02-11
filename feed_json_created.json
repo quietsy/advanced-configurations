@@ -1,0 +1,252 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "Advanced Configurations",
+    "home_page_url": "https://virtualize.link/",
+    "feed_url": "https://virtualize.link/feed_json_created.json",
+    "description": "Advanced configurations for containers",
+    "icon": "https://virtualize.link/images/logo.png",
+    "authors": [],
+    "language": "en",
+    "items": [
+        {
+            "id": "https://virtualize.link/Containers/consolidating-proxies/",
+            "url": "https://virtualize.link/Containers/consolidating-proxies/",
+            "title": "Consolidating Proxies",
+            "content_html": "<h1>Consolidating Proxies</h1>\n<p>You can consolidate the majority of internal nginx proxies using mappings, these mappings get resolved when the mapped variables are...</p>",
+            "image": null,
+            "date_published": "2025-02-11T12:11:06+00:00",
+            "authors": [],
+            "tags": [
+                "Containers"
+            ]
+        },
+        {
+            "id": "https://virtualize.link/Containers/container-dns/",
+            "url": "https://virtualize.link/Containers/container-dns/",
+            "title": "DNS for Containers",
+            "content_html": "<h1>DNS for Containers</h1>\n<h2>Problem</h2>\n<p>The common setup is to have a server with many containers, and a network DNS such as pihole or adguardhome.</p>\n<p>The issue is t...</p>",
+            "image": null,
+            "date_published": "2025-02-11T12:11:06+00:00",
+            "authors": [],
+            "tags": [
+                "Containers"
+            ]
+        },
+        {
+            "id": "https://virtualize.link/Containers/optimizing-nextcloud/",
+            "url": "https://virtualize.link/Containers/optimizing-nextcloud/",
+            "title": "Optimizing Nextcloud",
+            "content_html": "<h1>Optimizing Nextcloud</h1>\n<p>The following is a collection of ways to optimize Nextcloud's performance and responsiveness.</p>\n<h2>Optimization Steps</h2>\n<ul>\n<li>Use the [LSIO...</li>\n</ul>",
+            "image": null,
+            "date_published": "2025-02-11T12:11:06+00:00",
+            "authors": [],
+            "tags": [
+                "Containers"
+            ]
+        },
+        {
+            "id": "https://virtualize.link/Containers/piped/",
+            "url": "https://virtualize.link/Containers/piped/",
+            "title": "Piped",
+            "content_html": "<h1>Piped</h1>\n<p><a href=\"https://github.com/TeamPiped/Piped\">Piped</a> is an alternative YouTube frontend which is efficient by design.</p>\n<h2>Compose</h2>\n<p>Create the following conta...</p>",
+            "image": null,
+            "date_published": "2025-02-11T12:11:06+00:00",
+            "authors": [],
+            "tags": [
+                "Containers"
+            ]
+        },
+        {
+            "id": "https://virtualize.link/Containers/searx-ng/",
+            "url": "https://virtualize.link/Containers/searx-ng/",
+            "title": "Searx-NG",
+            "content_html": "<h1>Searx-NG</h1>\n<p><a href=\"https://github.com/searxng/searxng\">SearXNG</a> is a free metasearch engine with the aim of protecting the privacy of its users. To this end, Searx...</p>",
+            "image": null,
+            "date_published": "2025-02-11T12:11:06+00:00",
+            "authors": [],
+            "tags": [
+                "Containers"
+            ]
+        },
+        {
+            "id": "https://virtualize.link/Containers/simplelogin/",
+            "url": "https://virtualize.link/Containers/simplelogin/",
+            "title": "Simplelogin",
+            "content_html": "<h1>Simplelogin</h1>\n<h2>Strategy</h2>\n<p><img alt=\"simplelogin\" src=\"images/simplelogin.png\"></p>\n<h2>Notes</h2>\n<ul>\n<li><a href=\"https://www.uceprotect.net/en/rblcheck.php\">Check the reputation</a> of your VP...</li>\n</ul>",
+            "image": null,
+            "date_published": "2025-02-11T12:11:06+00:00",
+            "authors": [],
+            "tags": [
+                "Containers"
+            ]
+        },
+        {
+            "id": "https://virtualize.link/Containers/socks-proxy/",
+            "url": "https://virtualize.link/Containers/socks-proxy/",
+            "title": "SOCKS Proxy",
+            "content_html": "<h1>SOCKS Proxy</h1>\n<p><img alt=\"socks\" src=\"images/socks.png\"></p>\n<p>This setup allows you to route specific applications through randomized SOCKS proxies by your VPN provider without ...</p>",
+            "image": null,
+            "date_published": "2025-02-11T12:11:06+00:00",
+            "authors": [],
+            "tags": [
+                "Containers"
+            ]
+        },
+        {
+            "id": "https://virtualize.link/Containers/vpn-route/",
+            "url": "https://virtualize.link/Containers/vpn-route/",
+            "title": "VPN Route",
+            "content_html": "<h1>VPN Route</h1>\n<p><img alt=\"VPN\" src=\"images/vpn.png\"></p>\n<p>This setup allows you to route containers through a VPN and protect yourself from your ISP.</p>\n<p>This guide is the basic step...</p>",
+            "image": null,
+            "date_published": "2025-02-11T12:11:06+00:00",
+            "authors": [],
+            "tags": [
+                "Containers"
+            ]
+        },
+        {
+            "id": "https://virtualize.link/Containers/vps-proxy/",
+            "url": "https://virtualize.link/Containers/vps-proxy/",
+            "title": "VPS Proxy",
+            "content_html": "<h1>VPS Proxy</h1>\n<p><img alt=\"VPS\" src=\"images/vps.png\"></p>\n<p>This setup allows you to hide your home IP, protect your privacy and protect your home server against DDOS attacks while...</p>",
+            "image": null,
+            "date_published": "2025-02-11T12:11:06+00:00",
+            "authors": [],
+            "tags": [
+                "Containers"
+            ]
+        },
+        {
+            "id": "https://virtualize.link/Containers/wireguard-hub/",
+            "url": "https://virtualize.link/Containers/wireguard-hub/",
+            "title": "Wireguard Hub",
+            "content_html": "<h1>Wireguard Hub</h1>\n<p><img alt=\"Hub\" src=\"images/hub.png\"></p>\n<p>Linuxserver's Wireguard container is extremely versatile, in this example we'll use it as a server that tunnels clien...</p>",
+            "image": null,
+            "date_published": "2025-02-11T12:11:06+00:00",
+            "authors": [],
+            "tags": [
+                "Containers"
+            ]
+        },
+        {
+            "id": "https://virtualize.link/Containers/yaml-anchors/",
+            "url": "https://virtualize.link/Containers/yaml-anchors/",
+            "title": "YAML Anchors",
+            "content_html": "<h1>YAML Anchors</h1>\n<p>Using YAML anchors is a great way to reduce configuration duplication and be able to add configuration to all containers in a single place.</p>\n<p>...</p>",
+            "image": null,
+            "date_published": "2025-02-11T12:11:06+00:00",
+            "authors": [],
+            "tags": [
+                "Containers"
+            ]
+        },
+        {
+            "id": "https://virtualize.link/Network/asus-vlans/",
+            "url": "https://virtualize.link/Network/asus-vlans/",
+            "title": "Asus VLANs",
+            "content_html": "<h1>Asus VLANs</h1>\n<p><img alt=\"asus-vlans\" src=\"images/asus_vlans.png\"></p>\n<h2>Reasons for using an Asus router</h2>\n<ul>\n<li>Not cloud connected</li>\n<li>Doesn't require a controller</li>\n<li>Supports mesh,...</li>\n</ul>",
+            "image": null,
+            "date_published": "2025-02-11T12:11:06+00:00",
+            "authors": [],
+            "tags": [
+                "Network"
+            ]
+        },
+        {
+            "id": "https://virtualize.link/Network/firehol/",
+            "url": "https://virtualize.link/Network/firehol/",
+            "title": "Firehol",
+            "content_html": "<h1>Firehol</h1>\n<p>Firehol blocklists are a collection of automatically updating ipsets from all available security IP Feeds, mainly related to on-line attacks, on-l...</p>",
+            "image": null,
+            "date_published": "2025-02-11T12:11:06+00:00",
+            "authors": [],
+            "tags": [
+                "Network"
+            ]
+        },
+        {
+            "id": "https://virtualize.link/Network/geoblock/",
+            "url": "https://virtualize.link/Network/geoblock/",
+            "title": "Geoblock",
+            "content_html": "<h1>Geoblock</h1>\n<h2>VPS</h2>\n<p>I've been dealing with constant attacks on a mail server on a VPS coming from 2 specific countries, the only solution that worked was com...</p>",
+            "image": null,
+            "date_published": "2025-02-11T12:11:06+00:00",
+            "authors": [],
+            "tags": [
+                "Network"
+            ]
+        },
+        {
+            "id": "https://virtualize.link/Network/hardcoded-dns/",
+            "url": "https://virtualize.link/Network/hardcoded-dns/",
+            "title": "Hardcoded DNS",
+            "content_html": "<h1>Hardcoded DNS</h1>\n<p>Smart home IoT devices are often configured with hardcoded DNS servers such as Google public DNS. 98% of smart assistants and 72% of smart T...</p>",
+            "image": null,
+            "date_published": "2025-02-11T12:11:06+00:00",
+            "authors": [],
+            "tags": [
+                "Network"
+            ]
+        },
+        {
+            "id": "https://virtualize.link/Network/opn-arp/",
+            "url": "https://virtualize.link/Network/opn-arp/",
+            "title": "OPN-Arp",
+            "content_html": "<h1>OPN-Arp</h1>\n<p>OPN-Arp on OPNSense allows you to send alerts when new devices are spotted on the network.</p>\n<p><img alt=\"opnarp\" src=\"images/opnarp.png\"></p>\n<h2>Setup</h2>\n<ul>\n<li>Install the ...</li>\n</ul>",
+            "image": null,
+            "date_published": "2025-02-11T12:11:06+00:00",
+            "authors": [],
+            "tags": [
+                "Network"
+            ]
+        },
+        {
+            "id": "https://virtualize.link/Network/split-dns/",
+            "url": "https://virtualize.link/Network/split-dns/",
+            "title": "Split DNS",
+            "content_html": "<h1>Split DNS</h1>\n<p><img alt=\"Split DNS\" src=\"images/split_dns_nat_reflection.png\"></p>\n<p>Spilt DNS allows you to give different answers to DNS requests for internal and external user...</p>",
+            "image": null,
+            "date_published": "2025-02-11T12:11:06+00:00",
+            "authors": [],
+            "tags": [
+                "Network"
+            ]
+        },
+        {
+            "id": "https://virtualize.link/Network/split-tunnel/",
+            "url": "https://virtualize.link/Network/split-tunnel/",
+            "title": "Split Tunnel",
+            "content_html": "<h1>Split Tunnel</h1>\n<p><img alt=\"split\" src=\"images/split.png\"></p>\n<p>This setup allows your phone to <strong>always</strong> be connected to <strong>both</strong> your VPN provider and to your home.</p>\n<h3>TLDR</h3>\n<p>...</p>",
+            "image": null,
+            "date_published": "2025-02-11T12:11:06+00:00",
+            "authors": [],
+            "tags": [
+                "Network"
+            ]
+        },
+        {
+            "id": "https://virtualize.link/Other/atuin/",
+            "url": "https://virtualize.link/Other/atuin/",
+            "title": "Atuin",
+            "content_html": "<h1>Atuin</h1>\n<p><a href=\"https://docs.atuin.sh/\">Atuin</a> replaces your existing shell history with a SQLite database, and records additional context for your commands. With ...</p>",
+            "image": null,
+            "date_published": "2025-02-11T12:11:06+00:00",
+            "authors": [],
+            "tags": [
+                "Other"
+            ]
+        },
+        {
+            "id": "https://virtualize.link/Other/brave/",
+            "url": "https://virtualize.link/Other/brave/",
+            "title": "Brave",
+            "content_html": "<h1>Brave</h1>\n<h2>Settings</h2>\n<p>brave://flags</p>\n<ul>\n<li>Enable First Party Storage Cleanup support: enabled</li>\n<li>Enable Brave Wallet: disabled</li>\n<li>Strict-Origin-Isolation: enabled...</li>\n</ul>",
+            "image": null,
+            "date_published": "2025-02-11T12:11:06+00:00",
+            "authors": [],
+            "tags": [
+                "Other"
+            ]
+        }
+    ]
+}

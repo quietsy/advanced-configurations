@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    
+    <title>Advanced Configurations</title>
+    <description>Advanced configurations for containers</description>
+    <link>https://virtualize.link/</link>
+    <atom:link href="https://virtualize.link/feed_rss_updated.xml" rel="self" type="application/rss+xml" />
+
+    
+    
+    <docs>https://github.com/quietsy/advanced-configurations</docs>
+    <language>en</language>
+
+    
+    <pubDate>Tue, 11 Feb 2025 12:13:12 -0000</pubDate>
+    <lastBuildDate>Tue, 11 Feb 2025 12:13:12 -0000</lastBuildDate>
+    <ttl>1440</ttl>
+
+    
+    <generator>MkDocs RSS plugin - v1.17.1</generator>
+
+    
+    
+    <image>
+      <url>https://virtualize.link/images/logo.png</url>
+      <title>Advanced Configurations</title>
+      <link>https://virtualize.link/</link>
+    </image>
+    
+
+    
+    
+    <item>
+      <title>Consolidating Proxies</title>
+      
+      
+      
+      
+        
+      <category>Containers</category>
+        
+      
+      <description>&lt;h1&gt;Consolidating Proxies&lt;/h1&gt;
+&lt;p&gt;You can consolidate the majority of internal nginx proxies using mappings, these mappings get resolved when the mapped variables are...&lt;/p&gt;</description>
+      <link>https://virtualize.link/Containers/consolidating-proxies/</link>
+      <pubDate>Tue, 11 Feb 2025 12:11:06 +0000</pubDate>
+      <source url="https://virtualize.link/feed_rss_updated.xml">Advanced Configurations</source>
+      
+      <guid isPermaLink="true">https://virtualize.link/Containers/consolidating-proxies/</guid>
+      
+    </item>
+    
+    <item>
+      <title>DNS for Containers</title>
+      
+      
+      
+      
+        
+      <category>Containers</category>
+        
+      
+      <description>&lt;h1&gt;DNS for Containers&lt;/h1&gt;
+&lt;h2&gt;Problem&lt;/h2&gt;
+&lt;p&gt;The common setup is to have a server with many containers, and a network DNS such as pihole or adguardhome.&lt;/p&gt;
+&lt;p&gt;The issue is t...&lt;/p&gt;</description>
+      <link>https://virtualize.link/Containers/container-dns/</link>
+      <pubDate>Tue, 11 Feb 2025 12:11:06 +0000</pubDate>
+      <source url="https://virtualize.link/feed_rss_updated.xml">Advanced Configurations</source>
+      
+      <guid isPermaLink="true">https://virtualize.link/Containers/container-dns/</guid>
+      
+    </item>
+    
+    <item>
+      <title>Optimizing Nextcloud</title>
+      
+      
+      
+      
+        
+      <category>Containers</category>
+        
+      
+      <description>&lt;h1&gt;Optimizing Nextcloud&lt;/h1&gt;
+&lt;p&gt;The following is a collection of ways to optimize Nextcloud&#39;s performance and responsiveness.&lt;/p&gt;
+&lt;h2&gt;Optimization Steps&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Use the [LSIO...&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <link>https://virtualize.link/Containers/optimizing-nextcloud/</link>
+      <pubDate>Tue, 11 Feb 2025 12:11:06 +0000</pubDate>
+      <source url="https://virtualize.link/feed_rss_updated.xml">Advanced Configurations</source>
+      
+      <guid isPermaLink="true">https://virtualize.link/Containers/optimizing-nextcloud/</guid>
+      
+    </item>
+    
+    <item>
+      <title>Piped</title>
+      
+      
+      
+      
+        
+      <category>Containers</category>
+        
+      
+      <description>&lt;h1&gt;Piped&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/TeamPiped/Piped&#34;&gt;Piped&lt;/a&gt; is an alternative YouTube frontend which is efficient by design.&lt;/p&gt;
+&lt;h2&gt;Compose&lt;/h2&gt;
+&lt;p&gt;Create the following conta...&lt;/p&gt;</description>
+      <link>https://virtualize.link/Containers/piped/</link>
+      <pubDate>Tue, 11 Feb 2025 12:11:06 +0000</pubDate>
+      <source url="https://virtualize.link/feed_rss_updated.xml">Advanced Configurations</source>
+      
+      <guid isPermaLink="true">https://virtualize.link/Containers/piped/</guid>
+      
+    </item>
+    
+    <item>
+      <title>Searx-NG</title>
+      
+      
+      
+      
+        
+      <category>Containers</category>
+        
+      
+      <description>&lt;h1&gt;Searx-NG&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/searxng/searxng&#34;&gt;SearXNG&lt;/a&gt; is a free metasearch engine with the aim of protecting the privacy of its users. To this end, Searx...&lt;/p&gt;</description>
+      <link>https://virtualize.link/Containers/searx-ng/</link>
+      <pubDate>Tue, 11 Feb 2025 12:11:06 +0000</pubDate>
+      <source url="https://virtualize.link/feed_rss_updated.xml">Advanced Configurations</source>
+      
+      <guid isPermaLink="true">https://virtualize.link/Containers/searx-ng/</guid>
+      
+    </item>
+    
+    <item>
+      <title>Simplelogin</title>
+      
+      
+      
+      
+        
+      <category>Containers</category>
+        
+      
+      <description>&lt;h1&gt;Simplelogin&lt;/h1&gt;
+&lt;h2&gt;Strategy&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;simplelogin&#34; src=&#34;images/simplelogin.png&#34;&gt;&lt;/p&gt;
+&lt;h2&gt;Notes&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.uceprotect.net/en/rblcheck.php&#34;&gt;Check the reputation&lt;/a&gt; of your VP...&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <link>https://virtualize.link/Containers/simplelogin/</link>
+      <pubDate>Tue, 11 Feb 2025 12:11:06 +0000</pubDate>
+      <source url="https://virtualize.link/feed_rss_updated.xml">Advanced Configurations</source>
+      
+      <guid isPermaLink="true">https://virtualize.link/Containers/simplelogin/</guid>
+      
+    </item>
+    
+    <item>
+      <title>SOCKS Proxy</title>
+      
+      
+      
+      
+        
+      <category>Containers</category>
+        
+      
+      <description>&lt;h1&gt;SOCKS Proxy&lt;/h1&gt;
+&lt;p&gt;&lt;img alt=&#34;socks&#34; src=&#34;images/socks.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;This setup allows you to route specific applications through randomized SOCKS proxies by your VPN provider without ...&lt;/p&gt;</description>
+      <link>https://virtualize.link/Containers/socks-proxy/</link>
+      <pubDate>Tue, 11 Feb 2025 12:11:06 +0000</pubDate>
+      <source url="https://virtualize.link/feed_rss_updated.xml">Advanced Configurations</source>
+      
+      <guid isPermaLink="true">https://virtualize.link/Containers/socks-proxy/</guid>
+      
+    </item>
+    
+    <item>
+      <title>VPN Route</title>
+      
+      
+      
+      
+        
+      <category>Containers</category>
+        
+      
+      <description>&lt;h1&gt;VPN Route&lt;/h1&gt;
+&lt;p&gt;&lt;img alt=&#34;VPN&#34; src=&#34;images/vpn.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;This setup allows you to route containers through a VPN and protect yourself from your ISP.&lt;/p&gt;
+&lt;p&gt;This guide is the basic step...&lt;/p&gt;</description>
+      <link>https://virtualize.link/Containers/vpn-route/</link>
+      <pubDate>Tue, 11 Feb 2025 12:11:06 +0000</pubDate>
+      <source url="https://virtualize.link/feed_rss_updated.xml">Advanced Configurations</source>
+      
+      <guid isPermaLink="true">https://virtualize.link/Containers/vpn-route/</guid>
+      
+    </item>
+    
+    <item>
+      <title>VPS Proxy</title>
+      
+      
+      
+      
+        
+      <category>Containers</category>
+        
+      
+      <description>&lt;h1&gt;VPS Proxy&lt;/h1&gt;
+&lt;p&gt;&lt;img alt=&#34;VPS&#34; src=&#34;images/vps.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;This setup allows you to hide your home IP, protect your privacy and protect your home server against DDOS attacks while...&lt;/p&gt;</description>
+      <link>https://virtualize.link/Containers/vps-proxy/</link>
+      <pubDate>Tue, 11 Feb 2025 12:11:06 +0000</pubDate>
+      <source url="https://virtualize.link/feed_rss_updated.xml">Advanced Configurations</source>
+      
+      <guid isPermaLink="true">https://virtualize.link/Containers/vps-proxy/</guid>
+      
+    </item>
+    
+    <item>
+      <title>Wireguard Hub</title>
+      
+      
+      
+      
+        
+      <category>Containers</category>
+        
+      
+      <description>&lt;h1&gt;Wireguard Hub&lt;/h1&gt;
+&lt;p&gt;&lt;img alt=&#34;Hub&#34; src=&#34;images/hub.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Linuxserver&#39;s Wireguard container is extremely versatile, in this example we&#39;ll use it as a server that tunnels clien...&lt;/p&gt;</description>
+      <link>https://virtualize.link/Containers/wireguard-hub/</link>
+      <pubDate>Tue, 11 Feb 2025 12:11:06 +0000</pubDate>
+      <source url="https://virtualize.link/feed_rss_updated.xml">Advanced Configurations</source>
+      
+      <guid isPermaLink="true">https://virtualize.link/Containers/wireguard-hub/</guid>
+      
+    </item>
+    
+    <item>
+      <title>YAML Anchors</title>
+      
+      
+      
+      
+        
+      <category>Containers</category>
+        
+      
+      <description>&lt;h1&gt;YAML Anchors&lt;/h1&gt;
+&lt;p&gt;Using YAML anchors is a great way to reduce configuration duplication and be able to add configuration to all containers in a single place.&lt;/p&gt;
+&lt;p&gt;...&lt;/p&gt;</description>
+      <link>https://virtualize.link/Containers/yaml-anchors/</link>
+      <pubDate>Tue, 11 Feb 2025 12:11:06 +0000</pubDate>
+      <source url="https://virtualize.link/feed_rss_updated.xml">Advanced Configurations</source>
+      
+      <guid isPermaLink="true">https://virtualize.link/Containers/yaml-anchors/</guid>
+      
+    </item>
+    
+    <item>
+      <title>Asus VLANs</title>
+      
+      
+      
+      
+        
+      <category>Network</category>
+        
+      
+      <description>&lt;h1&gt;Asus VLANs&lt;/h1&gt;
+&lt;p&gt;&lt;img alt=&#34;asus-vlans&#34; src=&#34;images/asus_vlans.png&#34;&gt;&lt;/p&gt;
+&lt;h2&gt;Reasons for using an Asus router&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Not cloud connected&lt;/li&gt;
+&lt;li&gt;Doesn&#39;t require a controller&lt;/li&gt;
+&lt;li&gt;Supports mesh,...&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <link>https://virtualize.link/Network/asus-vlans/</link>
+      <pubDate>Tue, 11 Feb 2025 12:11:06 +0000</pubDate>
+      <source url="https://virtualize.link/feed_rss_updated.xml">Advanced Configurations</source>
+      
+      <guid isPermaLink="true">https://virtualize.link/Network/asus-vlans/</guid>
+      
+    </item>
+    
+    <item>
+      <title>Firehol</title>
+      
+      
+      
+      
+        
+      <category>Network</category>
+        
+      
+      <description>&lt;h1&gt;Firehol&lt;/h1&gt;
+&lt;p&gt;Firehol blocklists are a collection of automatically updating ipsets from all available security IP Feeds, mainly related to on-line attacks, on-l...&lt;/p&gt;</description>
+      <link>https://virtualize.link/Network/firehol/</link>
+      <pubDate>Tue, 11 Feb 2025 12:11:06 +0000</pubDate>
+      <source url="https://virtualize.link/feed_rss_updated.xml">Advanced Configurations</source>
+      
+      <guid isPermaLink="true">https://virtualize.link/Network/firehol/</guid>
+      
+    </item>
+    
+    <item>
+      <title>Geoblock</title>
+      
+      
+      
+      
+        
+      <category>Network</category>
+        
+      
+      <description>&lt;h1&gt;Geoblock&lt;/h1&gt;
+&lt;h2&gt;VPS&lt;/h2&gt;
+&lt;p&gt;I&#39;ve been dealing with constant attacks on a mail server on a VPS coming from 2 specific countries, the only solution that worked was com...&lt;/p&gt;</description>
+      <link>https://virtualize.link/Network/geoblock/</link>
+      <pubDate>Tue, 11 Feb 2025 12:11:06 +0000</pubDate>
+      <source url="https://virtualize.link/feed_rss_updated.xml">Advanced Configurations</source>
+      
+      <guid isPermaLink="true">https://virtualize.link/Network/geoblock/</guid>
+      
+    </item>
+    
+    <item>
+      <title>Hardcoded DNS</title>
+      
+      
+      
+      
+        
+      <category>Network</category>
+        
+      
+      <description>&lt;h1&gt;Hardcoded DNS&lt;/h1&gt;
+&lt;p&gt;Smart home IoT devices are often configured with hardcoded DNS servers such as Google public DNS. 98% of smart assistants and 72% of smart T...&lt;/p&gt;</description>
+      <link>https://virtualize.link/Network/hardcoded-dns/</link>
+      <pubDate>Tue, 11 Feb 2025 12:11:06 +0000</pubDate>
+      <source url="https://virtualize.link/feed_rss_updated.xml">Advanced Configurations</source>
+      
+      <guid isPermaLink="true">https://virtualize.link/Network/hardcoded-dns/</guid>
+      
+    </item>
+    
+    <item>
+      <title>OPN-Arp</title>
+      
+      
+      
+      
+        
+      <category>Network</category>
+        
+      
+      <description>&lt;h1&gt;OPN-Arp&lt;/h1&gt;
+&lt;p&gt;OPN-Arp on OPNSense allows you to send alerts when new devices are spotted on the network.&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;opnarp&#34; src=&#34;images/opnarp.png&#34;&gt;&lt;/p&gt;
+&lt;h2&gt;Setup&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Install the ...&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <link>https://virtualize.link/Network/opn-arp/</link>
+      <pubDate>Tue, 11 Feb 2025 12:11:06 +0000</pubDate>
+      <source url="https://virtualize.link/feed_rss_updated.xml">Advanced Configurations</source>
+      
+      <guid isPermaLink="true">https://virtualize.link/Network/opn-arp/</guid>
+      
+    </item>
+    
+    <item>
+      <title>Split DNS</title>
+      
+      
+      
+      
+        
+      <category>Network</category>
+        
+      
+      <description>&lt;h1&gt;Split DNS&lt;/h1&gt;
+&lt;p&gt;&lt;img alt=&#34;Split DNS&#34; src=&#34;images/split_dns_nat_reflection.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Spilt DNS allows you to give different answers to DNS requests for internal and external user...&lt;/p&gt;</description>
+      <link>https://virtualize.link/Network/split-dns/</link>
+      <pubDate>Tue, 11 Feb 2025 12:11:06 +0000</pubDate>
+      <source url="https://virtualize.link/feed_rss_updated.xml">Advanced Configurations</source>
+      
+      <guid isPermaLink="true">https://virtualize.link/Network/split-dns/</guid>
+      
+    </item>
+    
+    <item>
+      <title>Split Tunnel</title>
+      
+      
+      
+      
+        
+      <category>Network</category>
+        
+      
+      <description>&lt;h1&gt;Split Tunnel&lt;/h1&gt;
+&lt;p&gt;&lt;img alt=&#34;split&#34; src=&#34;images/split.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;This setup allows your phone to &lt;strong&gt;always&lt;/strong&gt; be connected to &lt;strong&gt;both&lt;/strong&gt; your VPN provider and to your home.&lt;/p&gt;
+&lt;h3&gt;TLDR&lt;/h3&gt;
+&lt;p&gt;...&lt;/p&gt;</description>
+      <link>https://virtualize.link/Network/split-tunnel/</link>
+      <pubDate>Tue, 11 Feb 2025 12:11:06 +0000</pubDate>
+      <source url="https://virtualize.link/feed_rss_updated.xml">Advanced Configurations</source>
+      
+      <guid isPermaLink="true">https://virtualize.link/Network/split-tunnel/</guid>
+      
+    </item>
+    
+    <item>
+      <title>Atuin</title>
+      
+      
+      
+      
+        
+      <category>Other</category>
+        
+      
+      <description>&lt;h1&gt;Atuin&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.atuin.sh/&#34;&gt;Atuin&lt;/a&gt; replaces your existing shell history with a SQLite database, and records additional context for your commands. With ...&lt;/p&gt;</description>
+      <link>https://virtualize.link/Other/atuin/</link>
+      <pubDate>Tue, 11 Feb 2025 12:11:06 +0000</pubDate>
+      <source url="https://virtualize.link/feed_rss_updated.xml">Advanced Configurations</source>
+      
+      <guid isPermaLink="true">https://virtualize.link/Other/atuin/</guid>
+      
+    </item>
+    
+    <item>
+      <title>Brave</title>
+      
+      
+      
+      
+        
+      <category>Other</category>
+        
+      
+      <description>&lt;h1&gt;Brave&lt;/h1&gt;
+&lt;h2&gt;Settings&lt;/h2&gt;
+&lt;p&gt;brave://flags&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Enable First Party Storage Cleanup support: enabled&lt;/li&gt;
+&lt;li&gt;Enable Brave Wallet: disabled&lt;/li&gt;
+&lt;li&gt;Strict-Origin-Isolation: enabled...&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <link>https://virtualize.link/Other/brave/</link>
+      <pubDate>Tue, 11 Feb 2025 12:11:06 +0000</pubDate>
+      <source url="https://virtualize.link/feed_rss_updated.xml">Advanced Configurations</source>
+      
+      <guid isPermaLink="true">https://virtualize.link/Other/brave/</guid>
+      
+    </item>
+    
+  </channel>
+</rss>
