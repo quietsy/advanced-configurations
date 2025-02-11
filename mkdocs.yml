@@ -38,52 +38,59 @@ theme:
     text: Roboto
     code: Roboto Mono
 markdown_extensions:
+  - pymdownx.blocks.html
   - pymdownx.highlight
   - pymdownx.inlinehilite
   - pymdownx.superfences
   - mdx_truly_sane_lists
+extra:
+  social:
+    - icon: fontawesome/solid/rss 
+      link: /feed_rss_created.xml
+  homepage: https://virtualize.link
 plugins:
+  - tags
   - git-revision-date-localized:
       type: timeago
       fallback_to_build_date: true
       enable_creation_date: true
       enabled: true
   - search
-
-extra:
-  social:
-    - icon: fontawesome/solid/rss 
-      link: /feed_rss_created.xml
-  homepage: https://virtualize.link
-nav:
-  - Home: index.md
-  - Containers:
-    - Awesome LSIO: awesome-lsio.md
-    - Consolidating Proxies: consolidate.md
-    - DNS for Containers: container-dns.md
-    - Optimizing Nextcloud: nextcloud.md
-    - Piped: piped.md
-    - Searx: searx.md
-    - Securing SWAG: secure.md
-    - Simplelogin: simplelogin.md
-    - SOCKS Proxy: socks.md
-    - VPN Hub: hub.md
-    - VPN Route: vpn.md
-    - VPS Proxy: vps.md
-    - YAML Anchors: yaml-anchors.md
-  - Network:
-    - Asus VLANs: asus-vlans.md
-    - OPN-Arp: opnarp.md
-    - Hardcoded DNS: hardcoded-dns.md
-    - Split DNS: split-dns.md
-    - Split Tunnel: split.md
-    - Firehol: firehol.md
-    - Geoblock: geoblock.md
-  - Other:
-    - Setup Template: setup.md
-    - Phone: phone.md
-    - Atuin: atuin.md
-    - Brave: brave.md
-    - Tmux: tmux.md
-    - Smartd: smartd.md
-    - ZFS: zfs.md
+  - rss:
+      match_path: .*/.*.md 
+      date_from_meta:
+        as_creation: date
+      image: https://virtualize.link/images/logo.png
+      pretty_print: true
+      categories:
+        - categories
+        - tags 
+  - redirects:
+      redirect_maps:
+        'awesome-lsio.md': 'https://docs.linuxserver.io/images-by-category/'
+        'secure.md': 'https://www.linuxserver.io/blog/securing-swag'
+        'asus-vlans.md': 'Network/asus-vlans.md'
+        'atuin.md': 'Other/atuin.md'
+        'brave.md': 'Other/brave.md'
+        'consolidate.md': 'Containers/consolidating-proxies.md'
+        'container-dns.md': 'Containers/container-dns.md'
+        'firehol.md': 'Network/firehol.md'
+        'geoblock.md': 'Network/geoblock.md'
+        'hardcoded-dns.md': 'Network/hardcoded-dns.md'
+        'hub.md': 'Containers/wireguard-hub.md'
+        'nextcloud.md': 'Containers/optimizing-nextcloud.md'
+        'opnarp.md': 'Network/opn-arp.md'
+        'phone.md': 'Other/phone.md'
+        'piped.md': 'Containers/piped.md'
+        'searx.md': 'Containers/searx-ng.md'
+        'setup.md': 'Other/setup.md'
+        'simplelogin.md': 'Containers/simplelogin.md'
+        'smartd.md': 'Other/smartd.md'
+        'socks.md': 'Containers/socks-proxy.md'
+        'split-dns.md': 'Network/split-dns.md'
+        'split.md': 'Network/split-tunnel.md'
+        'tmux.md': 'Other/tmux.md'
+        'vpn.md': 'Containers/vpn-route.md'
+        'vps.md': 'Containers/vps-proxy.md'
+        'yaml-anchors.md': 'Containers/yaml-anchors.md'
+        'zfs.md': 'Other/zfs.md'

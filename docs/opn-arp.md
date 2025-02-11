@@ -1,3 +1,8 @@
+---
+tags:
+  - Network
+---
+
 # OPN-Arp
 
 OPN-Arp on OPNSense allows you to send alerts when new devices are spotted on the network.

@@ -1,6 +1,11 @@
-# Consolidating Internal SWAG proxies
+---
+tags:
+  - Containers
+---
 
-It's possible to consolidate the majority of internal nginx proxies using mappings, these mappings get resolved when the mapped variables are used.
+# Consolidating Proxies
+
+You can consolidate the majority of internal nginx proxies using mappings, these mappings get resolved when the mapped variables are used.
 
 **Note - This doesn't work for every app since some require special configuration, but it works for most of them.**
 

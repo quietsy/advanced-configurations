@@ -1,3 +1,8 @@
+---
+tags:
+  - Containers
+---
+
 # Wireguard Hub
 ![Hub](images/hub.png)
 

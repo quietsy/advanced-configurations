@@ -1,4 +1,9 @@
-# Piped - Getting Started
+---
+tags:
+  - Containers
+---
+
+# Piped
 
 [Piped](https://github.com/TeamPiped/Piped) is an alternative YouTube frontend which is efficient by design.
 

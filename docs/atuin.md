@@ -1,3 +1,8 @@
+---
+tags:
+  - Other
+---
+
 # Atuin
 
 [Atuin](https://docs.atuin.sh/) replaces your existing shell history with a SQLite database, and records additional context for your commands. With this context, Atuin gives you faster and better search of your shell history.

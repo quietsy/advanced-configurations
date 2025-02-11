@@ -1,4 +1,9 @@
-# Route Applications Through a SOCKS Proxy
+---
+tags:
+  - Containers
+---
+
+# SOCKS Proxy
 ![socks](images/socks.png)
 
 This setup allows you to route specific applications through randomized SOCKS proxies by your VPN provider without the entire devices having to connect to the VPN.

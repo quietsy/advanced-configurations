@@ -1,3 +1,8 @@
+---
+tags:
+  - Other
+---
+
 # ZFS
 
 The following creates a zfs pool with 2 mirrors of 2 disks each, with:

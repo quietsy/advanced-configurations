@@ -1,4 +1,9 @@
-# Always-on Split Tunnel
+---
+tags:
+  - Network
+---
+
+# Split Tunnel
 ![split](images/split.png)
 
 This setup allows your phone to **always** be connected to **both** your VPN provider and to your home.

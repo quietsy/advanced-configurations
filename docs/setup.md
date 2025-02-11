@@ -1,4 +1,11 @@
-# Setup Diagram Template
+---
+tags:
+  - Other
+---
+
+# Setup
+
+## Diagram Template
 
 Use the following template to create a diagram of your setup.
 

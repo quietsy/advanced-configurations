@@ -1,4 +1,11 @@
-# Periodic Phone Wipe Notes
+---
+tags:
+  - Other
+---
+
+# Phone
+
+## Periodic Phone Wipe Notes
 
 I got into the habit of wiping my phone every 6 months (takes about an hour) in order to:
 

@@ -1,6 +1,11 @@
-![Split DNS](images/split_dns_nat_reflection.png)
+---
+tags:
+  - Network
+---
 
 # Split DNS
+
+![Split DNS](images/split_dns_nat_reflection.png)
 
 Spilt DNS allows you to give different answers to DNS requests for internal and external users, so local requests for your server don't have to go via your router, it has several benefits:
 

@@ -1,3 +1,5 @@
 mkdocs-git-revision-date-localized-plugin
 mkdocs-material
+mkdocs-redirects
+mkdocs-rss-plugin
 mdx_truly_sane_lists

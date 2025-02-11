@@ -1,4 +1,11 @@
-# Brave Settings
+---
+tags:
+  - Other
+---
+
+# Brave
+
+## Settings
 
 brave://flags
 

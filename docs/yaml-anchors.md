@@ -1,3 +1,8 @@
+---
+tags:
+  - Containers
+---
+
 # YAML Anchors
 
 Using YAML anchors is a great way to reduce configuration duplication and be able to add configuration to all containers in a single place.
