@@ -13,8 +13,8 @@
     <language>en</language>
 
     
-    <pubDate>Wed, 19 Feb 2025 17:13:49 -0000</pubDate>
-    <lastBuildDate>Wed, 19 Feb 2025 17:13:49 -0000</lastBuildDate>
+    <pubDate>Wed, 19 Feb 2025 17:26:28 -0000</pubDate>
+    <lastBuildDate>Wed, 19 Feb 2025 17:26:28 -0000</lastBuildDate>
     <ttl>1440</ttl>
 
     
@@ -30,6 +30,32 @@
     
 
     
+    
+    <item>
+      <title>ZFS</title>
+      
+      
+      
+      
+        
+      <category>Other</category>
+        
+      
+      <description>&lt;h1&gt;ZFS&lt;/h1&gt;
+&lt;p&gt;The following creates a zfs pool with 2 mirrors of 2 disks each, with:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;LZ4 compression&lt;/li&gt;
+&lt;li&gt;Linux ACLs&lt;/li&gt;
+&lt;li&gt;Larger record size for media&lt;/li&gt;
+&lt;li&gt;Snapshots with...&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <link>https://virtualize.link/Other/zfs/</link>
+      <pubDate>Wed, 19 Feb 2025 17:26:00 +0000</pubDate>
+      <source url="https://virtualize.link/feed_rss_updated.xml">Advanced Configurations</source>
+      
+      <guid isPermaLink="true">https://virtualize.link/Other/zfs/</guid>
+      
+    </item>
     
     <item>
       <title>Consolidating Proxies</title>
@@ -448,26 +474,6 @@
       <source url="https://virtualize.link/feed_rss_updated.xml">Advanced Configurations</source>
       
       <guid isPermaLink="true">https://virtualize.link/Network/split-dns/</guid>
-      
-    </item>
-    
-    <item>
-      <title>Atuin</title>
-      
-      
-      
-      
-        
-      <category>Other</category>
-        
-      
-      <description>&lt;h1&gt;Atuin&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&#34;https://docs.atuin.sh/&#34;&gt;Atuin&lt;/a&gt; replaces your existing shell history with a SQLite database, and records additional context for your commands. With ...&lt;/p&gt;</description>
-      <link>https://virtualize.link/Other/atuin/</link>
-      <pubDate>Tue, 11 Feb 2025 12:11:06 +0000</pubDate>
-      <source url="https://virtualize.link/feed_rss_updated.xml">Advanced Configurations</source>
-      
-      <guid isPermaLink="true">https://virtualize.link/Other/atuin/</guid>
       
     </item>
     

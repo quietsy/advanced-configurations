@@ -9,6 +9,18 @@
     "language": "en",
     "items": [
         {
+            "id": "https://virtualize.link/Other/zfs/",
+            "url": "https://virtualize.link/Other/zfs/",
+            "title": "ZFS",
+            "content_html": "<h1>ZFS</h1>\n<p>The following creates a zfs pool with 2 mirrors of 2 disks each, with:</p>\n<ul>\n<li>LZ4 compression</li>\n<li>Linux ACLs</li>\n<li>Larger record size for media</li>\n<li>Snapshots with...</li>\n</ul>",
+            "image": null,
+            "date_modified": "2025-02-19T17:26:00+00:00",
+            "authors": [],
+            "tags": [
+                "Other"
+            ]
+        },
+        {
             "id": "https://virtualize.link/Containers/consolidating-proxies/",
             "url": "https://virtualize.link/Containers/consolidating-proxies/",
             "title": "Consolidating Proxies",
@@ -234,18 +246,6 @@
             "authors": [],
             "tags": [
                 "Network"
-            ]
-        },
-        {
-            "id": "https://virtualize.link/Other/atuin/",
-            "url": "https://virtualize.link/Other/atuin/",
-            "title": "Atuin",
-            "content_html": "<h1>Atuin</h1>\n<p><a href=\"https://docs.atuin.sh/\">Atuin</a> replaces your existing shell history with a SQLite database, and records additional context for your commands. With ...</p>",
-            "image": null,
-            "date_modified": "2025-02-11T12:11:06+00:00",
-            "authors": [],
-            "tags": [
-                "Other"
             ]
         }
     ]
