@@ -41,7 +41,7 @@ Decide on a layout create the zfs pool using the disk IDs:
 
 ```bash
 sudo mkdir -p /mnt/pool
-sudo zpool create -m /mnt/pool pool mirror /dev/disk/by-id/ata-WDC_WUH722020BLE6L4_8LG7V8BA /dev/disk/by-id/ata-WDC_WUH722020BLE6L4_8LG87T5A mirror /dev/disk/by-id/ata-WDC_WUH721816ALE6L4_2CGREXTB /dev/disk/by-id/ata-WDC_WUH721816ALE6L4_2CGPPSGB
+sudo zpool create -o ashift=12 -m /mnt/pool pool mirror /dev/disk/by-id/ata-WDC_WUH722020BLE6L4_8LG7V8BA /dev/disk/by-id/ata-WDC_WUH722020BLE6L4_8LG87T5A mirror /dev/disk/by-id/ata-WDC_WUH721816ALE6L4_2CGREXTB /dev/disk/by-id/ata-WDC_WUH721816ALE6L4_2CGPPSGB
 ```
 
 ## Configuration
