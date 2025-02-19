@@ -4,13 +4,13 @@ hide:
   - toc
 ---
 #
-/// html | div[style='float: left; width: 25%;']
+/// html | div[style='float: left; margin-right: 50px;']
 <!-- material/tags { include: [Containers] } -->
 ///
-/// html | div[style='float: left;width: 20%;']
+/// html | div[style='float: left; margin-right: 50px;']
 <!-- material/tags { include: [Network] } -->
 ///
-/// html | div[style='float: left;width: 20%;']
+/// html | div[style='float: left;']
 <!-- material/tags { include: [Other] } -->
 ///
 /// html | div[style='clear: both;']
