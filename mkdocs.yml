@@ -1,6 +1,6 @@
 site_name: Advanced Configurations
 site_description: Advanced configurations for containers
-site_url: https://virtualize.link
+site_url: https://virtualize.link/
 edit_uri: ""
 repo_url: https://github.com/quietsy/advanced-configurations
 theme:
