@@ -38,12 +38,6 @@ tags:
     ```
 
 - Setting up [Crowdsec](https://www.linuxserver.io/blog/blocking-malicious-connections-with-crowdsec-and-swag), [Geoblock](../Network/geoblock.md), and [Firehol](../Network/firehol.md) is highly recommended.
-- After upgrading simplelogin run:
-
-    ```bash
-    docker exec slapp alembic upgrade head
-    ```
-
 - [Check the dmarc](https://www.learndmarc.com/) once you finish setting everything up.
 - [Check the spammyness](https://www.mail-tester.com/) once you finish setting everything up.
 
