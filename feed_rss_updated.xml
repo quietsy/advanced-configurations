@@ -13,8 +13,8 @@
     <language>en</language>
 
     
-    <pubDate>Sat, 01 Mar 2025 14:03:00 -0000</pubDate>
-    <lastBuildDate>Sat, 01 Mar 2025 14:03:00 -0000</lastBuildDate>
+    <pubDate>Sun, 02 Mar 2025 15:41:03 -0000</pubDate>
+    <lastBuildDate>Sun, 02 Mar 2025 15:41:03 -0000</lastBuildDate>
     <ttl>1440</ttl>
 
     
@@ -30,6 +30,31 @@
     
 
     
+    
+    <item>
+      <title>Simplelogin</title>
+      
+      
+      
+      
+        
+      <category>Containers</category>
+        
+      
+      <description>&lt;h1&gt;Simplelogin&lt;/h1&gt;
+&lt;h2&gt;Strategy&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;simplelogin&#34; src=&#34;images/simplelogin.png&#34;&gt;&lt;/p&gt;
+&lt;h2&gt;Notes&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.uceprotect.net/en/rblcheck.php&#34;&gt;Check the reputation&lt;/a&gt; of your VP...&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <link>https://virtualize.link/Containers/simplelogin/</link>
+      <pubDate>Sun, 02 Mar 2025 15:40:40 +0000</pubDate>
+      <source url="https://virtualize.link/feed_rss_updated.xml">Advanced Configurations</source>
+      
+      <guid isPermaLink="true">https://virtualize.link/Containers/simplelogin/</guid>
+      
+    </item>
     
     <item>
       <title>Asus VLANs</title>
@@ -100,31 +125,6 @@
       <source url="https://virtualize.link/feed_rss_updated.xml">Advanced Configurations</source>
       
       <guid isPermaLink="true">https://virtualize.link/Containers/consolidating-proxies/</guid>
-      
-    </item>
-    
-    <item>
-      <title>Simplelogin</title>
-      
-      
-      
-      
-        
-      <category>Containers</category>
-        
-      
-      <description>&lt;h1&gt;Simplelogin&lt;/h1&gt;
-&lt;h2&gt;Strategy&lt;/h2&gt;
-&lt;p&gt;&lt;img alt=&#34;simplelogin&#34; src=&#34;images/simplelogin.png&#34;&gt;&lt;/p&gt;
-&lt;h2&gt;Notes&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.uceprotect.net/en/rblcheck.php&#34;&gt;Check the reputation&lt;/a&gt; of your VP...&lt;/li&gt;
-&lt;/ul&gt;</description>
-      <link>https://virtualize.link/Containers/simplelogin/</link>
-      <pubDate>Tue, 11 Feb 2025 12:56:28 +0000</pubDate>
-      <source url="https://virtualize.link/feed_rss_updated.xml">Advanced Configurations</source>
-      
-      <guid isPermaLink="true">https://virtualize.link/Containers/simplelogin/</guid>
       
     </item>
     
