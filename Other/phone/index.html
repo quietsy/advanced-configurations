@@ -23,7 +23,7 @@
         <link rel="alternate" type="application/rss+xml" title="RSS feed of updated content" href="../../feed_rss_updated.xml">
       
       <link rel="icon" href="../../images/logo.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.7">
     
     
       
@@ -1033,6 +1033,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#private-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      Private Space
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1203,6 +1212,15 @@
   <a href="#apps" class="md-nav__link">
     <span class="md-ellipsis">
       Apps
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#private-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      Private Space
     </span>
   </a>
   
@@ -1486,8 +1504,13 @@
 </li>
 </ul>
 <h2 id="apps">Apps</h2>
-<p>App store priority for installation: google play store &gt; obtainium (github) &gt; obtainium (f-droid)</p>
+<p>App store priority for installation: accrescent &gt; obtainium + appverifier (github) &gt; obtainium (f-droid)</p>
 <ul>
+<li>Appverifier<ul>
+<li>Permissions: none</li>
+<li>Background usage: optimized</li>
+</ul>
+</li>
 <li>Audiobookshelf<ul>
 <li>Permissions: network</li>
 <li>Background usage: optimized</li>
@@ -1514,11 +1537,6 @@
 <li>Background usage: unrestricted</li>
 </ul>
 </li>
-<li>Discord<ul>
-<li>Permissions: network, notifications</li>
-<li>Background usage: optimized</li>
-</ul>
-</li>
 <li>Finamp (music)<ul>
 <li>Permissions: network</li>
 <li>Background usage: optimized</li>
@@ -1534,29 +1552,9 @@
 <li>Background usage: off</li>
 </ul>
 </li>
-<li>FUTO keyboard<ul>
-<li>Permissions: microphone</li>
-<li>Background usage: optimized</li>
-</ul>
-</li>
 <li>Gadgetbridge (cloudless gadgets)<ul>
 <li>Permissions: calendar, call logs, contacts, location, nearby devices, network, notifications, phone, sensors, sms</li>
 <li>Background usage: unrestricted</li>
-</ul>
-</li>
-<li>Google Play Services (sandboxed)<ul>
-<li>Permissions: network</li>
-<li>Background usage: unrestricted</li>
-</ul>
-</li>
-<li>Google Play Store (sandboxed)<ul>
-<li>Permissions: network, notifications</li>
-<li>Background usage: optimized</li>
-</ul>
-</li>
-<li>Google Services Framework (sandboxed)<ul>
-<li>Permissions: network</li>
-<li>Background usage: optimized</li>
 </ul>
 </li>
 <li>Immich (photos)<ul>
@@ -1569,11 +1567,6 @@
 <li>Background usage: unrestricted</li>
 </ul>
 </li>
-<li>Lawnchair (launcher)<ul>
-<li>Permissions: nearby devices</li>
-<li>Background usage: optimized</li>
-</ul>
-</li>
 <li>LibreTube (youtube)<ul>
 <li>Permissions: network</li>
 <li>Background usage: unrestricted</li>
@@ -1582,6 +1575,11 @@
 <li>Linphone (voip)<ul>
 <li>Permissions: contacts, microphone, network, notifications, phone, sensors</li>
 <li>Background usage: unrestricted</li>
+</ul>
+</li>
+<li>Molly<ul>
+<li>Permissions: contacts, network, notifications, phone, sensors</li>
+<li>Background usage: optimized</li>
 </ul>
 </li>
 <li>Nextcloud news (rss reader)<ul>
@@ -1619,11 +1617,6 @@
 <li>Background usage: optimized</li>
 </ul>
 </li>
-<li>Pixel Camera<ul>
-<li>Permissions: camera, microphone, notifications, photos and videos (storage scope /DCIM/), sensors</li>
-<li>Background usage: optimized</li>
-</ul>
-</li>
 <li>Proton calendar<ul>
 <li>Permissions: network, notifications</li>
 <li>Background usage: optimized</li>
@@ -1631,11 +1624,6 @@
 </li>
 <li>Proton mail<ul>
 <li>Permissions: network, notifications</li>
-<li>Background usage: optimized</li>
-</ul>
-</li>
-<li>Signal<ul>
-<li>Permissions: contacts, network, notifications, phone, sensors</li>
 <li>Background usage: optimized</li>
 </ul>
 </li>
@@ -1654,11 +1642,6 @@
 <li>Background usage: optimized</li>
 </ul>
 </li>
-<li>VLC<ul>
-<li>Permissions: network</li>
-<li>Background usage: optimized</li>
-</ul>
-</li>
 <li>Wireguard (vpn)<ul>
 <li>Permissions: network</li>
 <li>Background usage: optimized</li>
@@ -1671,6 +1654,35 @@
 <li>Call recordings</li>
 <li>Snapshots</li>
 <li>Backup</li>
+</ul>
+</li>
+</ul>
+<h2 id="private-space">Private Space</h2>
+<p>For apps that require google play store.</p>
+<ul>
+<li>Discord<ul>
+<li>Permissions: network, notifications</li>
+<li>Background usage: optimized</li>
+</ul>
+</li>
+<li>Google Play Services (sandboxed)<ul>
+<li>Permissions: network</li>
+<li>Background usage: unrestricted</li>
+</ul>
+</li>
+<li>Google Play Store (sandboxed)<ul>
+<li>Permissions: network, notifications</li>
+<li>Background usage: optimized</li>
+</ul>
+</li>
+<li>Google Services Framework (sandboxed)<ul>
+<li>Permissions: network</li>
+<li>Background usage: optimized</li>
+</ul>
+</li>
+<li>Wireguard (vpn)<ul>
+<li>Permissions: network</li>
+<li>Background usage: optimized</li>
 </ul>
 </li>
 </ul>
@@ -1696,7 +1708,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2025-02-11T12:56:28+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2025-02-11</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="March 7, 2025 10:19:19"><span class="timeago" datetime="2025-03-07T10:19:19+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="March 7, 2025 10:19:19">2025-03-07</span>
   </span>
 
     
@@ -1706,7 +1718,7 @@
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2022-03-26T07:41:53+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2022-03-26</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="March 26, 2022 07:41:53"><span class="timeago" datetime="2022-03-26T07:41:53+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="March 26, 2022 07:41:53">2022-03-26</span>
   </span>
 
     

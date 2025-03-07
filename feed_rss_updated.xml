@@ -13,8 +13,8 @@
     <language>en</language>
 
     
-    <pubDate>Sun, 02 Mar 2025 15:41:03 -0000</pubDate>
-    <lastBuildDate>Sun, 02 Mar 2025 15:41:03 -0000</lastBuildDate>
+    <pubDate>Fri, 07 Mar 2025 10:19:39 -0000</pubDate>
+    <lastBuildDate>Fri, 07 Mar 2025 10:19:39 -0000</lastBuildDate>
     <ttl>1440</ttl>
 
     
@@ -30,6 +30,31 @@
     
 
     
+    
+    <item>
+      <title>Phone</title>
+      
+      
+      
+      
+        
+      <category>Other</category>
+        
+      
+      <description>&lt;h1&gt;Phone&lt;/h1&gt;
+&lt;h2&gt;Periodic Phone Wipe Notes&lt;/h2&gt;
+&lt;p&gt;I got into the habit of wiping my phone every 6 months (takes about an hour) in order to:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Streamline the process&lt;/li&gt;
+&lt;li&gt;...&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <link>https://virtualize.link/Other/phone/</link>
+      <pubDate>Fri, 07 Mar 2025 10:19:19 +0000</pubDate>
+      <source url="https://virtualize.link/feed_rss_updated.xml">Advanced Configurations</source>
+      
+      <guid isPermaLink="true">https://virtualize.link/Other/phone/</guid>
+      
+    </item>
     
     <item>
       <title>Simplelogin</title>
@@ -169,31 +194,6 @@
       <source url="https://virtualize.link/feed_rss_updated.xml">Advanced Configurations</source>
       
       <guid isPermaLink="true">https://virtualize.link/Network/split-tunnel/</guid>
-      
-    </item>
-    
-    <item>
-      <title>Phone</title>
-      
-      
-      
-      
-        
-      <category>Other</category>
-        
-      
-      <description>&lt;h1&gt;Phone&lt;/h1&gt;
-&lt;h2&gt;Periodic Phone Wipe Notes&lt;/h2&gt;
-&lt;p&gt;I got into the habit of wiping my phone every 6 months (takes about an hour) in order to:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Streamline the process&lt;/li&gt;
-&lt;li&gt;...&lt;/li&gt;
-&lt;/ul&gt;</description>
-      <link>https://virtualize.link/Other/phone/</link>
-      <pubDate>Tue, 11 Feb 2025 12:56:28 +0000</pubDate>
-      <source url="https://virtualize.link/feed_rss_updated.xml">Advanced Configurations</source>
-      
-      <guid isPermaLink="true">https://virtualize.link/Other/phone/</guid>
       
     </item>
     
