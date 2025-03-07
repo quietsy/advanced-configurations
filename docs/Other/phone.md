@@ -183,8 +183,11 @@ My phone is a Pixel 8 with [GrapheneOS](https://grapheneos.org/), it has an [alw
 
 ## Apps
 
-App store priority for installation: google play store > obtainium (github) > obtainium (f-droid)
+App store priority for installation: accrescent > obtainium + appverifier (github) > obtainium (f-droid)
 
+- Appverifier
+  - Permissions: none
+  - Background usage: optimized
 - Audiobookshelf
   - Permissions: network
   - Background usage: optimized
@@ -201,9 +204,6 @@ App store priority for installation: google play store > obtainium (github) > ob
 - Davx5 (sync contacts)
   - Permissions: calendar, contacts, network, notifications
   - Background usage: unrestricted
-- Discord
-  - Permissions: network, notifications
-  - Background usage: optimized
 - Finamp (music)
   - Permissions: network
   - Background usage: optimized
@@ -213,36 +213,24 @@ App store priority for installation: google play store > obtainium (github) > ob
 - Floccus (bookmark sync)
   - Permissions: network
   - Background usage: off
-- FUTO keyboard
-  - Permissions: microphone
-  - Background usage: optimized
 - Gadgetbridge (cloudless gadgets)
   - Permissions: calendar, call logs, contacts, location, nearby devices, network, notifications, phone, sensors, sms
   - Background usage: unrestricted
-- Google Play Services (sandboxed)
-  - Permissions: network
-  - Background usage: unrestricted
-- Google Play Store (sandboxed)
-  - Permissions: network, notifications
-  - Background usage: optimized
-- Google Services Framework (sandboxed)
-  - Permissions: network
-  - Background usage: optimized
 - Immich (photos)
   - Permissions: network
   - Background usage: optimized
 - Jellyfin (media)
   - Permissions: network
   - Background usage: unrestricted
-- Lawnchair (launcher)
-  - Permissions: nearby devices
-  - Background usage: optimized
 - LibreTube (youtube)
   - Permissions: network
   - Background usage: unrestricted
 - Linphone (voip)
   - Permissions: contacts, microphone, network, notifications, phone, sensors
   - Background usage: unrestricted
+- Molly
+  - Permissions: contacts, network, notifications, phone, sensors
+  - Background usage: optimized
 - Nextcloud news (rss reader)
   - Permissions: network
   - Background usage: none
@@ -264,17 +252,11 @@ App store priority for installation: google play store > obtainium (github) > ob
 - OSS document scanner
   - Permissions: none
   - Background usage: optimized
-- Pixel Camera
-  - Permissions: camera, microphone, notifications, photos and videos (storage scope /DCIM/), sensors
-  - Background usage: optimized
 - Proton calendar
   - Permissions: network, notifications
   - Background usage: optimized
 - Proton mail
   - Permissions: network, notifications
-  - Background usage: optimized
-- Signal
-  - Permissions: contacts, network, notifications, phone, sensors
   - Background usage: optimized
 - SimpleLogin
   - Permissions: network
@@ -284,9 +266,6 @@ App store priority for installation: google play store > obtainium (github) > ob
   - Background usage: optimized
 - Vanadium (browser)
   - Permissions: network, notifications
-  - Background usage: optimized
-- VLC
-  - Permissions: network
   - Background usage: optimized
 - Wireguard (vpn)
   - Permissions: network
@@ -298,3 +277,23 @@ App store priority for installation: google play store > obtainium (github) > ob
   - Call recordings
   - Snapshots
   - Backup
+
+## Private Space
+
+For apps that require google play store.
+
+- Discord
+  - Permissions: network, notifications
+  - Background usage: optimized
+- Google Play Services (sandboxed)
+  - Permissions: network
+  - Background usage: unrestricted
+- Google Play Store (sandboxed)
+  - Permissions: network, notifications
+  - Background usage: optimized
+- Google Services Framework (sandboxed)
+  - Permissions: network
+  - Background usage: optimized
+- Wireguard (vpn)
+  - Permissions: network
+  - Background usage: optimized
