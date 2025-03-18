@@ -8,7 +8,7 @@ Docker server storage can be divided into 3 buckets:
 
 ## NVMe
 
-Fast storage, ideally on high endurance NVMe, ideally in a ZFS mirror.
+Fast storage, ideally on high endurance NVMe, ideally in a ZFS mirror with snapshots.
 
 Contains:
 
@@ -37,7 +37,7 @@ Contains:
 
 ## HDD
 
-Slow storage, ideally in a ZFS mirror/raidz.
+Slow storage, ideally in a ZFS mirror/raidz with snapshots.
 
 Contains:
 
