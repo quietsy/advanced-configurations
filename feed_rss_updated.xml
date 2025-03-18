@@ -13,8 +13,8 @@
     <language>en</language>
 
     
-    <pubDate>Fri, 07 Mar 2025 10:19:39 -0000</pubDate>
-    <lastBuildDate>Fri, 07 Mar 2025 10:19:39 -0000</lastBuildDate>
+    <pubDate>Tue, 18 Mar 2025 17:54:12 -0000</pubDate>
+    <lastBuildDate>Tue, 18 Mar 2025 17:54:12 -0000</lastBuildDate>
     <ttl>1440</ttl>
 
     
@@ -30,6 +30,29 @@
     
 
     
+    
+    <item>
+      <title>Docker Server Storage</title>
+      
+      
+      
+      
+        
+      
+      <description>&lt;h1&gt;Docker Server Storage&lt;/h1&gt;
+&lt;p&gt;Docker server storage can be divided into 3 buckets:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;NVMe - fast storage for important data.&lt;/li&gt;
+&lt;li&gt;SSD - disposable data.&lt;/li&gt;
+&lt;li&gt;HDD - slo...&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <link>https://virtualize.link/Containers/docker-server-storage/</link>
+      <pubDate>Tue, 18 Mar 2025 17:53:48 +0000</pubDate>
+      <source url="https://virtualize.link/feed_rss_updated.xml">Advanced Configurations</source>
+      
+      <guid isPermaLink="true">https://virtualize.link/Containers/docker-server-storage/</guid>
+      
+    </item>
     
     <item>
       <title>Phone</title>
@@ -453,27 +476,6 @@
       <source url="https://virtualize.link/feed_rss_updated.xml">Advanced Configurations</source>
       
       <guid isPermaLink="true">https://virtualize.link/Network/opn-arp/</guid>
-      
-    </item>
-    
-    <item>
-      <title>Split DNS</title>
-      
-      
-      
-      
-        
-      <category>Network</category>
-        
-      
-      <description>&lt;h1&gt;Split DNS&lt;/h1&gt;
-&lt;p&gt;&lt;img alt=&#34;Split DNS&#34; src=&#34;images/split_dns_nat_reflection.png&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Spilt DNS allows you to give different answers to DNS requests for internal and external user...&lt;/p&gt;</description>
-      <link>https://virtualize.link/Network/split-dns/</link>
-      <pubDate>Tue, 11 Feb 2025 12:11:06 +0000</pubDate>
-      <source url="https://virtualize.link/feed_rss_updated.xml">Advanced Configurations</source>
-      
-      <guid isPermaLink="true">https://virtualize.link/Network/split-dns/</guid>
       
     </item>
     

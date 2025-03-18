@@ -13,8 +13,8 @@
     <language>en</language>
 
     
-    <pubDate>Fri, 07 Mar 2025 10:19:39 -0000</pubDate>
-    <lastBuildDate>Fri, 07 Mar 2025 10:19:39 -0000</lastBuildDate>
+    <pubDate>Tue, 18 Mar 2025 17:54:12 -0000</pubDate>
+    <lastBuildDate>Tue, 18 Mar 2025 17:54:12 -0000</lastBuildDate>
     <ttl>1440</ttl>
 
     
@@ -30,6 +30,29 @@
     
 
     
+    
+    <item>
+      <title>Docker Server Storage</title>
+      
+      
+      
+      
+        
+      
+      <description>&lt;h1&gt;Docker Server Storage&lt;/h1&gt;
+&lt;p&gt;Docker server storage can be divided into 3 buckets:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;NVMe - fast storage for important data.&lt;/li&gt;
+&lt;li&gt;SSD - disposable data.&lt;/li&gt;
+&lt;li&gt;HDD - slo...&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <link>https://virtualize.link/Containers/docker-server-storage/</link>
+      <pubDate>Tue, 18 Mar 2025 17:53:48 +0000</pubDate>
+      <source url="https://virtualize.link/feed_rss_created.xml">Advanced Configurations</source>
+      
+      <guid isPermaLink="true">https://virtualize.link/Containers/docker-server-storage/</guid>
+      
+    </item>
     
     <item>
       <title>Consolidating Proxies</title>
@@ -443,32 +466,6 @@
       <source url="https://virtualize.link/feed_rss_created.xml">Advanced Configurations</source>
       
       <guid isPermaLink="true">https://virtualize.link/Other/atuin/</guid>
-      
-    </item>
-    
-    <item>
-      <title>Brave</title>
-      
-      
-      
-      
-        
-      <category>Other</category>
-        
-      
-      <description>&lt;h1&gt;Brave&lt;/h1&gt;
-&lt;h2&gt;Settings&lt;/h2&gt;
-&lt;p&gt;brave://flags&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Enable First Party Storage Cleanup support: enabled&lt;/li&gt;
-&lt;li&gt;Enable Brave Wallet: disabled&lt;/li&gt;
-&lt;li&gt;Strict-Origin-Isolation: enabled...&lt;/li&gt;
-&lt;/ul&gt;</description>
-      <link>https://virtualize.link/Other/brave/</link>
-      <pubDate>Tue, 11 Feb 2025 12:11:06 +0000</pubDate>
-      <source url="https://virtualize.link/feed_rss_created.xml">Advanced Configurations</source>
-      
-      <guid isPermaLink="true">https://virtualize.link/Other/brave/</guid>
       
     </item>
     

@@ -9,6 +9,16 @@
     "language": "en",
     "items": [
         {
+            "id": "https://virtualize.link/Containers/docker-server-storage/",
+            "url": "https://virtualize.link/Containers/docker-server-storage/",
+            "title": "Docker Server Storage",
+            "content_html": "<h1>Docker Server Storage</h1>\n<p>Docker server storage can be divided into 3 buckets:</p>\n<ul>\n<li>NVMe - fast storage for important data.</li>\n<li>SSD - disposable data.</li>\n<li>HDD - slo...</li>\n</ul>",
+            "image": null,
+            "date_modified": "2025-03-18T17:53:48+00:00",
+            "authors": [],
+            "tags": []
+        },
+        {
             "id": "https://virtualize.link/Other/phone/",
             "url": "https://virtualize.link/Other/phone/",
             "title": "Phone",
@@ -229,18 +239,6 @@
             "url": "https://virtualize.link/Network/opn-arp/",
             "title": "OPN-Arp",
             "content_html": "<h1>OPN-Arp</h1>\n<p>OPN-Arp on OPNSense allows you to send alerts when new devices are spotted on the network.</p>\n<p><img alt=\"opnarp\" src=\"images/opnarp.png\"></p>\n<h2>Setup</h2>\n<ul>\n<li>Install the ...</li>\n</ul>",
-            "image": null,
-            "date_modified": "2025-02-11T12:11:06+00:00",
-            "authors": [],
-            "tags": [
-                "Network"
-            ]
-        },
-        {
-            "id": "https://virtualize.link/Network/split-dns/",
-            "url": "https://virtualize.link/Network/split-dns/",
-            "title": "Split DNS",
-            "content_html": "<h1>Split DNS</h1>\n<p><img alt=\"Split DNS\" src=\"images/split_dns_nat_reflection.png\"></p>\n<p>Spilt DNS allows you to give different answers to DNS requests for internal and external user...</p>",
             "image": null,
             "date_modified": "2025-02-11T12:11:06+00:00",
             "authors": [],
