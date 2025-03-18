@@ -1,3 +1,8 @@
+---
+tags:
+  - Containers
+---
+
 # Docker Server Storage
 
 Docker server storage can be divided into 3 buckets:
