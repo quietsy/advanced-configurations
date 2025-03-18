@@ -16,7 +16,9 @@
             "image": null,
             "date_published": "2025-03-18T17:53:48+00:00",
             "authors": [],
-            "tags": []
+            "tags": [
+                "Containers"
+            ]
         },
         {
             "id": "https://virtualize.link/Containers/consolidating-proxies/",

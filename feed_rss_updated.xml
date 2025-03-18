@@ -13,8 +13,8 @@
     <language>en</language>
 
     
-    <pubDate>Tue, 18 Mar 2025 17:55:34 -0000</pubDate>
-    <lastBuildDate>Tue, 18 Mar 2025 17:55:34 -0000</lastBuildDate>
+    <pubDate>Tue, 18 Mar 2025 18:00:17 -0000</pubDate>
+    <lastBuildDate>Tue, 18 Mar 2025 18:00:17 -0000</lastBuildDate>
     <ttl>1440</ttl>
 
     
@@ -38,6 +38,8 @@
       
       
         
+      <category>Containers</category>
+        
       
       <description>&lt;h1&gt;Docker Server Storage&lt;/h1&gt;
 &lt;p&gt;Docker server storage can be divided into 3 buckets:&lt;/p&gt;
@@ -47,7 +49,7 @@
 &lt;li&gt;HDD - slo...&lt;/li&gt;
 &lt;/ul&gt;</description>
       <link>https://virtualize.link/Containers/docker-server-storage/</link>
-      <pubDate>Tue, 18 Mar 2025 17:55:09 +0000</pubDate>
+      <pubDate>Tue, 18 Mar 2025 17:59:53 +0000</pubDate>
       <source url="https://virtualize.link/feed_rss_updated.xml">Advanced Configurations</source>
       
       <guid isPermaLink="true">https://virtualize.link/Containers/docker-server-storage/</guid>

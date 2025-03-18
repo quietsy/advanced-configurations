@@ -14,9 +14,11 @@
             "title": "Docker Server Storage",
             "content_html": "<h1>Docker Server Storage</h1>\n<p>Docker server storage can be divided into 3 buckets:</p>\n<ul>\n<li>NVMe - fast storage for important data.</li>\n<li>SSD - disposable data.</li>\n<li>HDD - slo...</li>\n</ul>",
             "image": null,
-            "date_modified": "2025-03-18T17:55:09+00:00",
+            "date_modified": "2025-03-18T17:59:53+00:00",
             "authors": [],
-            "tags": []
+            "tags": [
+                "Containers"
+            ]
         },
         {
             "id": "https://virtualize.link/Other/phone/",
