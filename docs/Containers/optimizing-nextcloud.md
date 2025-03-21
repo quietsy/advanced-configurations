@@ -307,3 +307,14 @@ A step by step guide for setting up:
   docker exec nextcloud occ config:system:set enabledPreviewProviders 2 --value='OC\\Preview\\MP4'
   docker exec nextcloud occ config:system:set preview_imaginary_url --value='http://imaginary:9000'
   ```
+
+## Maintenance
+
+- Manually pull new images and recreate the containers every few weeks.
+- Check `docker logs mariadb` for upgrade instructions.
+- Run the following commands.
+  ```bash
+  docker exec nextcloud occ maintenance:repair --include-expensive
+  docker exec nextcloud occ db:add-missing-indices
+  docker exec nextcloud occ app:update --all
+  ```
