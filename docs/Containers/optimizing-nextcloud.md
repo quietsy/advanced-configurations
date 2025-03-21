@@ -5,6 +5,7 @@ tags:
 # Optimizing Nextcloud
 
 A step by step guide for setting up:
+
 - [SWAG](https://github.com/linuxserver/docker-swag) reverse proxy via cloudflare
 - [Nextcloud](https://github.com/linuxserver/docker-nextcloud)
 - Redis
