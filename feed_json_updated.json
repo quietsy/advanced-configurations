@@ -14,7 +14,7 @@
             "title": "Optimizing Nextcloud",
             "content_html": "<h1>Optimizing Nextcloud</h1>\n<p>A step by step guide for setting up:</p>\n<ul>\n<li><a href=\"https://github.com/linuxserver/docker-swag\">SWAG</a> reverse proxy via cloudflare</li>\n<li>[Nextcloud]...</li>\n</ul>",
             "image": null,
-            "date_modified": "2025-03-21T18:19:46+00:00",
+            "date_modified": "2025-03-21T18:42:09+00:00",
             "authors": [],
             "tags": [
                 "Containers"
