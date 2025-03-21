@@ -48,7 +48,7 @@
             "id": "https://virtualize.link/Containers/optimizing-nextcloud/",
             "url": "https://virtualize.link/Containers/optimizing-nextcloud/",
             "title": "Optimizing Nextcloud",
-            "content_html": "<h1>Optimizing Nextcloud</h1>\n<p>The following is a collection of ways to optimize Nextcloud's performance and responsiveness.</p>\n<h2>Optimization Steps</h2>\n<ul>\n<li>Use the [LSIO...</li>\n</ul>",
+            "content_html": "<h1>Optimizing Nextcloud</h1>\n<p>A step by step guide for setting up:\n- <a href=\"https://github.com/linuxserver/docker-swag\">SWAG</a> reverse proxy via cloudflare\n- [Nextcloud](...</p>",
             "image": null,
             "date_published": "2025-02-11T12:11:06+00:00",
             "authors": [],

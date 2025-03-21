@@ -13,8 +13,8 @@
     <language>en</language>
 
     
-    <pubDate>Tue, 18 Mar 2025 18:00:17 -0000</pubDate>
-    <lastBuildDate>Tue, 18 Mar 2025 18:00:17 -0000</lastBuildDate>
+    <pubDate>Fri, 21 Mar 2025 18:05:27 -0000</pubDate>
+    <lastBuildDate>Fri, 21 Mar 2025 18:05:27 -0000</lastBuildDate>
     <ttl>1440</ttl>
 
     
@@ -30,6 +30,28 @@
     
 
     
+    
+    <item>
+      <title>Optimizing Nextcloud</title>
+      
+      
+      
+      
+        
+      <category>Containers</category>
+        
+      
+      <description>&lt;h1&gt;Optimizing Nextcloud&lt;/h1&gt;
+&lt;p&gt;A step by step guide for setting up:
+- &lt;a href=&#34;https://github.com/linuxserver/docker-swag&#34;&gt;SWAG&lt;/a&gt; reverse proxy via cloudflare
+- [Nextcloud](...&lt;/p&gt;</description>
+      <link>https://virtualize.link/Containers/optimizing-nextcloud/</link>
+      <pubDate>Fri, 21 Mar 2025 18:05:07 +0000</pubDate>
+      <source url="https://virtualize.link/feed_rss_updated.xml">Advanced Configurations</source>
+      
+      <guid isPermaLink="true">https://virtualize.link/Containers/optimizing-nextcloud/</guid>
+      
+    </item>
     
     <item>
       <title>Docker Server Storage</title>
@@ -241,30 +263,6 @@
       <source url="https://virtualize.link/feed_rss_updated.xml">Advanced Configurations</source>
       
       <guid isPermaLink="true">https://virtualize.link/Containers/container-dns/</guid>
-      
-    </item>
-    
-    <item>
-      <title>Optimizing Nextcloud</title>
-      
-      
-      
-      
-        
-      <category>Containers</category>
-        
-      
-      <description>&lt;h1&gt;Optimizing Nextcloud&lt;/h1&gt;
-&lt;p&gt;The following is a collection of ways to optimize Nextcloud&#39;s performance and responsiveness.&lt;/p&gt;
-&lt;h2&gt;Optimization Steps&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Use the [LSIO...&lt;/li&gt;
-&lt;/ul&gt;</description>
-      <link>https://virtualize.link/Containers/optimizing-nextcloud/</link>
-      <pubDate>Tue, 11 Feb 2025 12:11:06 +0000</pubDate>
-      <source url="https://virtualize.link/feed_rss_updated.xml">Advanced Configurations</source>
-      
-      <guid isPermaLink="true">https://virtualize.link/Containers/optimizing-nextcloud/</guid>
       
     </item>
     

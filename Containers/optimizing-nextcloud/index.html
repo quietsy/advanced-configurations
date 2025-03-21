@@ -523,27 +523,63 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#optimization-steps" class="md-nav__link">
+  <a href="#swag" class="md-nav__link">
     <span class="md-ellipsis">
-      Optimization Steps
+      SWAG
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#example-nextcloud-config" class="md-nav__link">
+  <a href="#nextcloud" class="md-nav__link">
     <span class="md-ellipsis">
-      Example Nextcloud Config
+      Nextcloud
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#example-compose" class="md-nav__link">
+  <a href="#collabora" class="md-nav__link">
     <span class="md-ellipsis">
-      Example Compose
+      Collabora
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notify-push" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notify Push
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#talk-high-performance-backend" class="md-nav__link">
+    <span class="md-ellipsis">
+      Talk High Performance Backend
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whiteboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Whiteboard
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#imaginary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Imaginary
     </span>
   </a>
   
@@ -1168,27 +1204,63 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#optimization-steps" class="md-nav__link">
+  <a href="#swag" class="md-nav__link">
     <span class="md-ellipsis">
-      Optimization Steps
+      SWAG
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#example-nextcloud-config" class="md-nav__link">
+  <a href="#nextcloud" class="md-nav__link">
     <span class="md-ellipsis">
-      Example Nextcloud Config
+      Nextcloud
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#example-compose" class="md-nav__link">
+  <a href="#collabora" class="md-nav__link">
     <span class="md-ellipsis">
-      Example Compose
+      Collabora
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notify-push" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notify Push
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#talk-high-performance-backend" class="md-nav__link">
+    <span class="md-ellipsis">
+      Talk High Performance Backend
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whiteboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Whiteboard
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#imaginary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Imaginary
     </span>
   </a>
   
@@ -1221,111 +1293,290 @@
 
 
 <h1 id="optimizing-nextcloud">Optimizing Nextcloud</h1>
-<p>The following is a collection of ways to optimize Nextcloud's performance and responsiveness.</p>
-<h2 id="optimization-steps">Optimization Steps</h2>
+<p>A step by step guide for setting up:
+- <a href="https://github.com/linuxserver/docker-swag">SWAG</a> reverse proxy via cloudflare
+- <a href="https://github.com/linuxserver/docker-nextcloud">Nextcloud</a>
+- Redis
+- <a href="https://github.com/linuxserver/docker-mariadb">Mariadb</a>
+- Collabora
+- Notify push
+- Talk high performance backend
+- Whiteboard
+- Imaginary</p>
+<blockquote>
+<p>[!IMPORTANT]
+Replace all occurences of <code>domain.com</code> with your domain.</p>
+</blockquote>
+<h2 id="swag">SWAG</h2>
 <ul>
-<li>Use the <a href="https://github.com/linuxserver/docker-nextcloud">LSIO image</a>, not the official</li>
-<li>Use the latest tag which includes php8</li>
-<li>Enable redis</li>
-<li>Use mariadb (alpine) or postgres</li>
-<li>Use nextcloud v22 or higher</li>
-<li>Use imaginary to speed up thumbnail creation</li>
-<li>Add the following to <code>/config/php/php-local.ini</code></li>
+<li>Create a <a href="https://dash.cloudflare.com">Cloudflare</a> account and set it as the nameserver for your domain.</li>
+<li>Create DNS records for <code>domain.com</code> and <code>*.domain.com</code> with your home's WAN IP, disable the orange cloud.</li>
+<li>Port forward <code>443</code> to your server on your home router.</li>
+<li>Add SWAG to your docker compose and start it.
+    <div class="highlight"><pre><span></span><code><span class="nt">swag</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lscr.io/linuxserver/swag:latest</span>
+<span class="w">  </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">swag</span>
+<span class="w">  </span><span class="nt">cap_add</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NET_ADMIN</span>
+<span class="w">  </span><span class="nt">environment</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PUID=1000</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PGID=1000</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TZ=Etc/UTC</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">URL=domain.com</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">VALIDATION=dns</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SUBDOMAINS=wildcard</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DNSPLUGIN=cloudflare</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PROPAGATION=60</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SWAG_AUTORELOAD=true</span>
+<span class="w">  </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/path/to/swag:/config</span>
+<span class="w">  </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">443:443</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80:80</span>
+<span class="w">  </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unless-stopped</span>
+</code></pre></div></li>
+<li>Generate a Cloudflare <a href="https://dash.cloudflare.com/profile/api-tokens">API token</a> with <code>DNS:Read, DNS:Edit</code> permissions to <code>domain.com</code> and copy the token.</li>
+<li>Edit <code>/path/to/swag/dns-conf/cloudflare.ini</code>, delete everything and paste the following with your token:
+  <div class="highlight"><pre><span></span><code><span class="na">dns_cloudflare_api_token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">token</span>
+</code></pre></div></li>
+<li>Rename <code>/path/to/swag/nginx/proxy-confs/nextcloud.subdomain.conf.sample</code> to <code>nextcloud.subdomain.conf</code>.</li>
+<li>Edit <code>/path/to/swag/nginx/ssl.conf</code> and uncomment HSTS and all the additional headers on the bottom.</li>
+<li>Restart SWAG and make sure that <code>domain.com</code> shows the welcome page with a valid certificate.</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="na">memory_limit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">-1</span>
-<span class="na">opcache.enable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1</span>
-<span class="na">opcache.enable_cli</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1</span>
-<span class="na">opcache.interned_strings_buffer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">16</span>
-<span class="na">opcache.max_accelerated_files</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">130987</span>
-<span class="na">opcache.memory_consumption</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">256</span>
-<span class="na">opcache.save_comments</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1</span>
-<span class="na">opcache.revalidate_freq</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1</span>
-</code></pre></div>
+<h2 id="nextcloud">Nextcloud</h2>
 <ul>
-<li>Add the following to <code>/config/php/www2.conf</code>
-<div class="highlight"><pre><span></span><code><span class="na">pm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">dynamic</span>
+<li>Add <a href="https://github.com/linuxserver/docker-nextcloud">Nextcloud</a>, <a href="https://github.com/linuxserver/docker-mariadb">Mariadb</a>, and Redis to your docker compose and start them.
+    <div class="highlight"><pre><span></span><code><span class="nt">nextcloud</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lscr.io/linuxserver/nextcloud:latest</span>
+<span class="w">  </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nextcloud</span>
+<span class="w">  </span><span class="nt">environment</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PUID=1000</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PGID=1000</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TZ=Etc/UTC</span>
+<span class="w">  </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/path/to/nextcloud/config:/config</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/path/to/nextcloud/data:/data</span>
+<span class="w">  </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unless-stopped</span>
+<span class="w">  </span><span class="nt">depends_on</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mariadb</span>
+<span class="nt">mariadb</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lscr.io/linuxserver/mariadb:latest</span>
+<span class="w">  </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mariadb</span>
+<span class="w">  </span><span class="nt">environment</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PUID=1000</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PGID=1000</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TZ=Etc/UTC</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MYSQL_ROOT_PASSWORD=nextcloud_root_password</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MYSQL_DATABASE=nextcloud_db</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MYSQL_USER=nextcloud_user</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MYSQL_PASSWORD=nextcloud_password</span>
+<span class="w">  </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/path/to/mariadb:/config</span>
+<span class="w">  </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unless-stopped</span>
+<span class="nt">redis</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">redis:alpine</span>
+<span class="w">  </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">redis</span>
+<span class="w">  </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unless-stopped</span>
+</code></pre></div></li>
+<li>Navigate to <code>https://nextcloud.domain.com</code> and fill out the details for Nextcloud and Mariadb.<p><img alt="Nextcloud" src="../images/nextcloud.png" /></p>
+</li>
+</ul>
+<ul>
+<li>Select recommended apps to install.</li>
+<li>Run the following commands.
+    <div class="highlight"><pre><span></span><code>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>nextcloud<span class="w"> </span>occ<span class="w"> </span>app:disable<span class="w"> </span>richdocumentscode
+docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>nextcloud<span class="w"> </span>occ<span class="w"> </span>maintenance:repair<span class="w"> </span>--include-expensive
+docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>nextcloud<span class="w"> </span>occ<span class="w"> </span>db:add-missing-indices
+docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-u<span class="w"> </span>abc<span class="w"> </span>nextcloud<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>/config/log/nextcloud
+docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>nextcloud<span class="w"> </span>occ<span class="w"> </span>config:system:set<span class="w"> </span>overwrite.cli.url<span class="w"> </span>--value<span class="o">=</span><span class="s1">&#39;https://nextcloud.domain.com&#39;</span>
+docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>nextcloud<span class="w"> </span>occ<span class="w"> </span>config:system:set<span class="w"> </span>memcache.local<span class="w"> </span>--value<span class="o">=</span><span class="s1">&#39;\\OC\\Memcache\\APCu&#39;</span>
+docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>nextcloud<span class="w"> </span>occ<span class="w"> </span>config:system:set<span class="w"> </span>memcache.locking<span class="w"> </span>--value<span class="o">=</span><span class="s1">&#39;\\OC\\Memcache\\Redis&#39;</span>
+docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>nextcloud<span class="w"> </span>occ<span class="w"> </span>config:system:set<span class="w"> </span>memcache.distributed<span class="w"> </span>--value<span class="o">=</span><span class="s1">&#39;\\OC\\Memcache\\Redis&#39;</span>
+docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>nextcloud<span class="w"> </span>occ<span class="w"> </span>config:system:set<span class="w"> </span>logfile<span class="w"> </span>--value<span class="o">=</span><span class="s1">&#39;/config/log/nextcloud/nextcloud.log&#39;</span>
+docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>nextcloud<span class="w"> </span>occ<span class="w"> </span>config:system:set<span class="w"> </span>trusted_proxies<span class="w"> </span><span class="m">0</span><span class="w"> </span>--value<span class="o">=</span><span class="s1">&#39;172.16.0.0/12&#39;</span>
+docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>nextcloud<span class="w"> </span>occ<span class="w"> </span>config:system:set<span class="w"> </span>trusted_proxies<span class="w"> </span><span class="m">1</span><span class="w"> </span>--value<span class="o">=</span><span class="s1">&#39;127.0.0.1&#39;</span>
+docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>nextcloud<span class="w"> </span>occ<span class="w"> </span>config:system:set<span class="w"> </span>trusted_proxies<span class="w"> </span><span class="m">2</span><span class="w"> </span>--value<span class="o">=</span><span class="s1">&#39;::1&#39;</span>
+docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>nextcloud<span class="w"> </span>occ<span class="w"> </span>config:system:set<span class="w"> </span>redis<span class="w"> </span>host<span class="w"> </span>--value<span class="o">=</span><span class="s1">&#39;redis&#39;</span>
+docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>nextcloud<span class="w"> </span>occ<span class="w"> </span>config:system:set<span class="w"> </span>redis<span class="w"> </span>port<span class="w"> </span>--value<span class="o">=</span><span class="m">6379</span><span class="w"> </span>--type<span class="o">=</span>integer
+docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>nextcloud<span class="w"> </span>occ<span class="w"> </span>config:system:set<span class="w"> </span>loglevel<span class="w"> </span>--value<span class="o">=</span><span class="m">2</span><span class="w"> </span>--type<span class="o">=</span>integer
+docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>nextcloud<span class="w"> </span>occ<span class="w"> </span>config:system:set<span class="w"> </span>log_rotate_size<span class="w"> </span>--value<span class="o">=</span><span class="m">10485760</span><span class="w"> </span>--type<span class="o">=</span>integer
+docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>nextcloud<span class="w"> </span>occ<span class="w"> </span>config:system:set<span class="w"> </span>maintenance_window_start<span class="w"> </span>--value<span class="o">=</span><span class="m">1</span><span class="w"> </span>--type<span class="o">=</span>integer
+docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>nextcloud<span class="w"> </span>occ<span class="w"> </span>config:system:set<span class="w"> </span>filesystem_check_changes<span class="w"> </span>--value<span class="o">=</span><span class="m">1</span><span class="w"> </span>--type<span class="o">=</span>integer
+docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>nextcloud<span class="w"> </span>occ<span class="w"> </span>config:system:set<span class="w"> </span>filelocking.enabled<span class="w"> </span>--value<span class="o">=</span><span class="nb">true</span><span class="w"> </span>--type<span class="o">=</span>boolean
+</code></pre></div></li>
+<li>Add the following to <code>/path/to/nextcloud/config/php/www2.conf</code>.
+  <div class="highlight"><pre><span></span><code><span class="na">pm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">dynamic</span>
 <span class="na">pm.max_children</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">120</span>
 <span class="na">pm.start_servers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">12</span>
 <span class="na">pm.min_spare_servers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">6</span>
 <span class="na">pm.max_spare_servers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">18</span>
 </code></pre></div></li>
-<li>Disable Dark Reader extension on it, if you use it</li>
-<li>For Nextcloud to identify filesystem changes, add the following to the config:
-<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="s1">&#39;filesystem_check_changes&#39;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span>
+<li>Restart Nextcloud to apply the changes.</li>
+</ul>
+<h2 id="collabora">Collabora</h2>
+<ul>
+<li>Add Collabora to your docker compose and start it.
+    <div class="highlight"><pre><span></span><code><span class="nt">collabora</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">collabora/code</span>
+<span class="w">  </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">collabora</span>
+<span class="w">  </span><span class="nt">environment</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DONT_GEN_SSL_CERT=1</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aliasgroup1=https://nextcloud.domain.com</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dictionaries=en_US</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">server_name=nextcloud.domain.com</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">extra_params=--o:security.capabilities=false --o:ssl.enable=false --o:ssl.termination=true --o:logging.level=warning --o:net.post_allow.host[0]=.+ --o:home_mode.enable=true --o:mount_jail_tree=false --o:mount_namespaces=false  --o:remote_font_config.url=https://nextcloud.domain.com/apps/richdocuments/settings/fonts.json</span>
+<span class="w">  </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unless-stopped</span>
+<span class="w">  </span><span class="nt">cap_add</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SYS_CHROOT</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MKNOD</span>
 </code></pre></div></li>
-<li>Move <code>/config</code> to a fast disk such as nvme and mount it from there</li>
-<li>After the initial run move <code>/data/appdata_INSTANCEID</code> to a fast disk such as nvme and mount it from there, add the following under <code>volumes:</code>: (the ID in the directory names will be different)
-<div class="highlight"><pre><span></span><code><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/path/to/appdata/appdata_ocytnd8b2l1b:/data/appdata_ocytnd8b2l1b</span>
+<li>Add the following locations to <code>/path/to/swag/nginx/proxy-confs/nextcloud.subdomain.conf</code> inside the <code>server</code> section.
+    <div class="highlight"><pre><span></span><code><span class="k">location</span><span class="w"> </span><span class="s">^~</span><span class="w"> </span><span class="s">/browser/</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kn">include</span><span class="w"> </span><span class="s">/config/nginx/proxy.conf</span><span class="p">;</span>
+<span class="w">    </span><span class="kn">include</span><span class="w"> </span><span class="s">/config/nginx/resolver.conf</span><span class="p">;</span>
+<span class="w">    </span><span class="kn">set</span><span class="w"> </span><span class="nv">$upstream_app</span><span class="w"> </span><span class="s">collabora</span><span class="p">;</span>
+<span class="w">    </span><span class="kn">set</span><span class="w"> </span><span class="nv">$upstream_port</span><span class="w"> </span><span class="mi">9980</span><span class="p">;</span>
+<span class="w">    </span><span class="kn">set</span><span class="w"> </span><span class="nv">$upstream_proto</span><span class="w"> </span><span class="s">http</span><span class="p">;</span>
+<span class="w">    </span><span class="kn">proxy_pass</span><span class="w"> </span><span class="nv">$upstream_proto://$upstream_app:$upstream_port</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">location</span><span class="w"> </span><span class="s">^~</span><span class="w"> </span><span class="s">/hosting/</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kn">include</span><span class="w"> </span><span class="s">/config/nginx/proxy.conf</span><span class="p">;</span>
+<span class="w">    </span><span class="kn">include</span><span class="w"> </span><span class="s">/config/nginx/resolver.conf</span><span class="p">;</span>
+<span class="w">    </span><span class="kn">set</span><span class="w"> </span><span class="nv">$upstream_app</span><span class="w"> </span><span class="s">collabora</span><span class="p">;</span>
+<span class="w">    </span><span class="kn">set</span><span class="w"> </span><span class="nv">$upstream_port</span><span class="w"> </span><span class="mi">9980</span><span class="p">;</span>
+<span class="w">    </span><span class="kn">set</span><span class="w"> </span><span class="nv">$upstream_proto</span><span class="w"> </span><span class="s">http</span><span class="p">;</span>
+<span class="w">    </span><span class="kn">proxy_pass</span><span class="w"> </span><span class="nv">$upstream_proto://$upstream_app:$upstream_port</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">location</span><span class="w"> </span><span class="s">^~</span><span class="w"> </span><span class="s">/cool/</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kn">include</span><span class="w"> </span><span class="s">/config/nginx/proxy.conf</span><span class="p">;</span>
+<span class="w">    </span><span class="kn">include</span><span class="w"> </span><span class="s">/config/nginx/resolver.conf</span><span class="p">;</span>
+<span class="w">    </span><span class="kn">set</span><span class="w"> </span><span class="nv">$upstream_app</span><span class="w"> </span><span class="s">collabora</span><span class="p">;</span>
+<span class="w">    </span><span class="kn">set</span><span class="w"> </span><span class="nv">$upstream_port</span><span class="w"> </span><span class="mi">9980</span><span class="p">;</span>
+<span class="w">    </span><span class="kn">set</span><span class="w"> </span><span class="nv">$upstream_proto</span><span class="w"> </span><span class="s">http</span><span class="p">;</span>
+<span class="w">    </span><span class="kn">proxy_pass</span><span class="w"> </span><span class="nv">$upstream_proto://$upstream_app:$upstream_port</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></li>
+<li>Run the following commands.
+    <div class="highlight"><pre><span></span><code>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>nextcloud<span class="w"> </span>occ<span class="w"> </span>app:enable<span class="w"> </span>richdocuments
+docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>nextcloud<span class="w"> </span>occ<span class="w"> </span>config:app:set<span class="w"> </span>richdocuments<span class="w"> </span>wopi_url<span class="w"> </span>--value<span class="w"> </span>https://nextcloud.domain.com
+docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>nextcloud<span class="w"> </span>occ<span class="w"> </span>config:app:set<span class="w"> </span>richdocuments<span class="w"> </span>wopi_allowlist<span class="w"> </span>--value<span class="o">=</span><span class="m">0</span>.0.0.0/0
+docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>nextcloud<span class="w"> </span>occ<span class="w"> </span>config:app:set<span class="w"> </span>richdocuments<span class="w"> </span>doc_format<span class="w"> </span>--value<span class="o">=</span>ooxml
+</code></pre></div></li>
+<li>Disable Collabora's dark mode under View &gt; Dark Mode.</li>
+</ul>
+<h2 id="notify-push">Notify Push</h2>
+<ul>
+<li>Add the following environment variable to Nextcloud's docker compose and recreate it.
+    <div class="highlight"><pre><span></span><code><span class="nt">environment</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DOCKER_MODS=linuxserver/mods:nextcloud-notify-push</span>
 </code></pre></div></li>
 </ul>
-<h2 id="example-nextcloud-config">Example Nextcloud Config</h2>
-<p>Located in <code>/config/www/nextcloud/config/config.php</code>
-<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="s1">&#39;dbname&#39;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s1">&#39;nextcloud&#39;</span><span class="p">,</span>
-<span class="w">  </span><span class="s1">&#39;dbhost&#39;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s1">&#39;mariadb&#39;</span><span class="p">,</span>
-<span class="w">  </span><span class="s1">&#39;dbport&#39;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">,</span>
-<span class="w">  </span><span class="s1">&#39;dbtableprefix&#39;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s1">&#39;oc_&#39;</span><span class="p">,</span>
-<span class="w">  </span><span class="s1">&#39;mysql.utf8mb4&#39;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<span class="w">  </span><span class="s1">&#39;dbuser&#39;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s1">&#39;nextcloud_user&#39;</span><span class="p">,</span>
-<span class="w">  </span><span class="s1">&#39;dbpassword&#39;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s1">&#39;DATABASE_PASSWORD&#39;</span><span class="p">,</span>
-<span class="w">  </span><span class="s1">&#39;trusted_proxies&#39;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;172.16.0.0/12&#39;</span><span class="p">],</span>
-<span class="w">  </span><span class="s1">&#39;filesystem_check_changes&#39;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span>
-<span class="w">  </span><span class="s1">&#39;memcache.local&#39;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s1">&#39;\\OC\\Memcache\\APCu&#39;</span><span class="p">,</span>
-<span class="w">  </span><span class="s1">&#39;memcache.distributed&#39;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s1">&#39;\\OC\\Memcache\\Redis&#39;</span><span class="p">,</span>
-<span class="w">  </span><span class="s1">&#39;memcache.locking&#39;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s1">&#39;\\OC\\Memcache\\Redis&#39;</span><span class="p">,</span>
-<span class="w">  </span><span class="s1">&#39;enable_previews&#39;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<span class="w">  </span><span class="s1">&#39;enabledPreviewProviders&#39;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span>
-<span class="w">  </span><span class="nx">array</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="mf">0</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s1">&#39;OC\\Preview\\Imaginary&#39;</span><span class="p">,</span>
-<span class="w">    </span><span class="mf">1</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s1">&#39;OC\\Preview\\Movie&#39;</span><span class="p">,</span>
-<span class="w">    </span><span class="mf">2</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s1">&#39;OC\\Preview\\MP4&#39;</span><span class="p">,</span>
-<span class="w">  </span><span class="p">),</span>
-<span class="w">  </span><span class="s1">&#39;preview_imaginary_url&#39;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s1">&#39;http://imaginary:9000&#39;</span><span class="p">,</span>
-<span class="w">  </span><span class="s1">&#39;redis&#39;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span>
-<span class="w">  </span><span class="nx">array</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="s1">&#39;host&#39;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s1">&#39;redis&#39;</span><span class="p">,</span>
-<span class="w">    </span><span class="s1">&#39;port&#39;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="mf">6379</span><span class="p">,</span>
-<span class="w">  </span><span class="p">),</span>
-</code></pre></div></p>
-<h2 id="example-compose">Example Compose</h2>
-<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="nt">nextcloud</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/linuxserver/nextcloud:latest</span>
-<span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nextcloud</span>
-<span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PUID=1000</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PGID=1000</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TZ=Europe/London</span>
-<span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/path/to/appdata:/config</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/path/to/data:/data</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/path/to/appdata/appdata_ocytnd8b2l1b:/data/appdata_ocytnd8b2l1b</span>
-<span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unless-stopped</span>
-<span class="w">    </span><span class="nt">depends_on</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mariadb</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">redis</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">imaginary</span>
-<span class="w">  </span><span class="nt">imaginary</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nextcloud/aio-imaginary:latest</span>
-<span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">imaginary</span>
-<span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unless-stopped</span>
-<span class="w">  </span><span class="nt">redis</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">redis:alpine</span>
-<span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">redis</span>
-<span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unless-stopped</span>
-<span class="w">  </span><span class="nt">mariadb</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/linuxserver/mariadb</span>
-<span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mariadb</span>
-<span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PUID=1000</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PGID=1000</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TZ=Europe/London</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MYSQL_DATABASE=nextcloud</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MYSQL_USER=nextcloud_user</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MYSQL_PASSWORD=DATABASE_PASSWORD</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MYSQL_ROOT_PASSWORD=ROOT_ACCESS_PASSWORD</span>
-<span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/path/to/appdata:/config</span>
-<span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unless-stopped</span>
-</code></pre></div>
+<h2 id="talk-high-performance-backend">Talk High Performance Backend</h2>
+<ul>
+<li>Generate 3 secrets using the following command and paste them to the compose below.
+    <div class="highlight"><pre><span></span><code>openssl<span class="w"> </span>rand<span class="w"> </span>-hex<span class="w"> </span><span class="m">32</span>
+</code></pre></div></li>
+<li>Add the High Performance Backend to your docker compose and start it.
+    <div class="highlight"><pre><span></span><code><span class="nt">talk</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nextcloud/aio-talk:latest</span>
+<span class="w">  </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">talk</span>
+<span class="w">  </span><span class="nt">init</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3478:3478/tcp</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3478:3478/udp</span>
+<span class="w">  </span><span class="nt">environment</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NC_DOMAIN=nextcloud.domain.com</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TALK_HOST=talk.domain.com</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TZ=Etc/UTC</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TALK_PORT=3478</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TURN_SECRET=secret</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SIGNALING_SECRET=secret</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">INTERNAL_SECRET=secret</span>
+<span class="w">  </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unless-stopped</span>
+</code></pre></div></li>
+<li>Paste the following to the bottom of <code>/path/to/swag/nginx/proxy-confs/nextcloud.subdomain.conf</code>.
+    <div class="highlight"><pre><span></span><code><span class="k">server</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kn">listen</span><span class="w"> </span><span class="mi">443</span><span class="w"> </span><span class="s">ssl</span><span class="p">;</span>
+<span class="w">    </span><span class="kn">listen</span><span class="w"> </span><span class="s">[::]:443</span><span class="w"> </span><span class="s">ssl</span><span class="p">;</span>
+<span class="w">    </span><span class="kn">server_name</span><span class="w"> </span><span class="s">talk.*</span><span class="p">;</span>
+<span class="w">    </span><span class="kn">include</span><span class="w"> </span><span class="s">/config/nginx/ssl.conf</span><span class="p">;</span>
+<span class="w">    </span><span class="kn">client_max_body_size</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kn">location</span><span class="w"> </span><span class="s">/</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kn">include</span><span class="w"> </span><span class="s">/config/nginx/proxy.conf</span><span class="p">;</span>
+<span class="w">        </span><span class="kn">include</span><span class="w"> </span><span class="s">/config/nginx/resolver.conf</span><span class="p">;</span>
+<span class="w">        </span><span class="kn">set</span><span class="w"> </span><span class="nv">$upstream_app</span><span class="w"> </span><span class="s">talk</span><span class="p">;</span>
+<span class="w">        </span><span class="kn">set</span><span class="w"> </span><span class="nv">$upstream_port</span><span class="w"> </span><span class="mi">8081</span><span class="p">;</span>
+<span class="w">        </span><span class="kn">set</span><span class="w"> </span><span class="nv">$upstream_proto</span><span class="w"> </span><span class="s">http</span><span class="p">;</span>
+<span class="w">        </span><span class="kn">proxy_pass</span><span class="w"> </span><span class="nv">$upstream_proto://$upstream_app:$upstream_port</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></li>
+</ul>
+<ul>
+<li>Run the following commands using the secrets generated earlier.
+  <div class="highlight"><pre><span></span><code>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>nextcloud<span class="w"> </span>occ<span class="w"> </span>talk:signaling:add<span class="w"> </span>--verify<span class="w"> </span>https://talk.domain.com<span class="w"> </span>SIGNALING_SECRET
+docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>nextcloud<span class="w"> </span>occ<span class="w"> </span>talk:stun:add<span class="w"> </span>talk.domain.com:3478
+docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>nextcloud<span class="w"> </span>occ<span class="w"> </span>talk:turn:add<span class="w"> </span>--secret<span class="w"> </span>TURN_SECRET<span class="w"> </span>turn<span class="w"> </span>talk.domain.com:3478<span class="w"> </span>udp,tcp
+</code></pre></div></li>
+<li>Optionally port forward <code>3478</code> on your router to expose it.</li>
+</ul>
+<h2 id="whiteboard">Whiteboard</h2>
+<ul>
+<li>Generate a secret using the following command and paste it below.
+    <div class="highlight"><pre><span></span><code>openssl<span class="w"> </span>rand<span class="w"> </span>-hex<span class="w"> </span><span class="m">32</span>
+</code></pre></div></li>
+<li>Add Whiteboard to your docker compose and start it.
+    <div class="highlight"><pre><span></span><code><span class="nt">whiteboard</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/nextcloud-releases/whiteboard:release</span>
+<span class="w">  </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">whiteboard</span>
+<span class="w">  </span><span class="nt">environment</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NEXTCLOUD_URL=https://nextcloud.domain.com</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">STORAGE_STRATEGY=redis</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">REDIS_HOST=redis</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">JWT_SECRET_KEY=secret</span>
+<span class="w">  </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unless-stopped</span>
+</code></pre></div></li>
+<li>Paste the following to the bottom of <code>/path/to/swag/nginx/proxy-confs/nextcloud.subdomain.conf</code>.
+    <div class="highlight"><pre><span></span><code><span class="k">server</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kn">listen</span><span class="w"> </span><span class="mi">443</span><span class="w"> </span><span class="s">ssl</span><span class="p">;</span>
+<span class="w">    </span><span class="kn">listen</span><span class="w"> </span><span class="s">[::]:443</span><span class="w"> </span><span class="s">ssl</span><span class="p">;</span>
+<span class="w">    </span><span class="kn">server_name</span><span class="w"> </span><span class="s">whiteboard.*</span><span class="p">;</span>
+<span class="w">    </span><span class="kn">include</span><span class="w"> </span><span class="s">/config/nginx/ssl.conf</span><span class="p">;</span>
+<span class="w">    </span><span class="kn">client_max_body_size</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kn">location</span><span class="w"> </span><span class="s">/</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kn">include</span><span class="w"> </span><span class="s">/config/nginx/proxy.conf</span><span class="p">;</span>
+<span class="w">        </span><span class="kn">include</span><span class="w"> </span><span class="s">/config/nginx/resolver.conf</span><span class="p">;</span>
+<span class="w">        </span><span class="kn">set</span><span class="w"> </span><span class="nv">$upstream_app</span><span class="w"> </span><span class="s">whiteboard</span><span class="p">;</span>
+<span class="w">        </span><span class="kn">set</span><span class="w"> </span><span class="nv">$upstream_port</span><span class="w"> </span><span class="mi">3002</span><span class="p">;</span>
+<span class="w">        </span><span class="kn">set</span><span class="w"> </span><span class="nv">$upstream_proto</span><span class="w"> </span><span class="s">http</span><span class="p">;</span>
+<span class="w">        </span><span class="kn">proxy_pass</span><span class="w"> </span><span class="nv">$upstream_proto://$upstream_app:$upstream_port</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></li>
+<li>Run the following commands.
+  <div class="highlight"><pre><span></span><code>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>nextcloud<span class="w"> </span>occ<span class="w"> </span>app:enable<span class="w"> </span>whiteboard
+docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>nextcloud<span class="w"> </span>occ<span class="w"> </span>config:app:set<span class="w"> </span>whiteboard<span class="w"> </span>collabBackendUrl<span class="w"> </span>--value<span class="o">=</span><span class="s2">&quot;https://whiteboard.domain.com&quot;</span>
+docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>nextcloud<span class="w"> </span>occ<span class="w"> </span>config:app:set<span class="w"> </span>whiteboard<span class="w"> </span>jwt_secret_key<span class="w"> </span>--value<span class="o">=</span><span class="s2">&quot;secret&quot;</span>
+</code></pre></div></li>
+</ul>
+<h2 id="imaginary">Imaginary</h2>
+<ul>
+<li>Add Imaginary to your docker compose and start it.
+    <div class="highlight"><pre><span></span><code><span class="nt">imaginary</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nextcloud/aio-imaginary:latest</span>
+<span class="w">  </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">imaginary</span>
+<span class="w">  </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unless-stopped</span>
+</code></pre></div></li>
+<li>Run the following commands.
+  <div class="highlight"><pre><span></span><code>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>nextcloud<span class="w"> </span>occ<span class="w"> </span>config:system:set<span class="w"> </span>enable_previews<span class="w"> </span>--value<span class="o">=</span><span class="nb">true</span><span class="w"> </span>--type<span class="o">=</span>boolean
+docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>nextcloud<span class="w"> </span>occ<span class="w"> </span>config:system:set<span class="w"> </span>enabledPreviewProviders<span class="w"> </span><span class="m">0</span><span class="w"> </span>--value<span class="o">=</span><span class="s1">&#39;OC\\Preview\\Imaginary&#39;</span>
+docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>nextcloud<span class="w"> </span>occ<span class="w"> </span>config:system:set<span class="w"> </span>enabledPreviewProviders<span class="w"> </span><span class="m">1</span><span class="w"> </span>--value<span class="o">=</span><span class="s1">&#39;OC\\Preview\\Movie&#39;</span>
+docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>nextcloud<span class="w"> </span>occ<span class="w"> </span>config:system:set<span class="w"> </span>enabledPreviewProviders<span class="w"> </span><span class="m">2</span><span class="w"> </span>--value<span class="o">=</span><span class="s1">&#39;OC\\Preview\\MP4&#39;</span>
+docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>nextcloud<span class="w"> </span>occ<span class="w"> </span>config:system:set<span class="w"> </span>preview_imaginary_url<span class="w"> </span>--value<span class="o">=</span><span class="s1">&#39;http://imaginary:9000&#39;</span>
+</code></pre></div></li>
+</ul>
 
 
 
@@ -1348,7 +1599,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="February 11, 2025 12:11:06"><span class="timeago" datetime="2025-02-11T12:11:06+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="February 11, 2025 12:11:06">2025-02-11</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="March 21, 2025 18:05:07"><span class="timeago" datetime="2025-03-21T18:05:07+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="March 21, 2025 18:05:07">2025-03-21</span>
   </span>
 
     

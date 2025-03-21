@@ -9,6 +9,18 @@
     "language": "en",
     "items": [
         {
+            "id": "https://virtualize.link/Containers/optimizing-nextcloud/",
+            "url": "https://virtualize.link/Containers/optimizing-nextcloud/",
+            "title": "Optimizing Nextcloud",
+            "content_html": "<h1>Optimizing Nextcloud</h1>\n<p>A step by step guide for setting up:\n- <a href=\"https://github.com/linuxserver/docker-swag\">SWAG</a> reverse proxy via cloudflare\n- [Nextcloud](...</p>",
+            "image": null,
+            "date_modified": "2025-03-21T18:05:07+00:00",
+            "authors": [],
+            "tags": [
+                "Containers"
+            ]
+        },
+        {
             "id": "https://virtualize.link/Containers/docker-server-storage/",
             "url": "https://virtualize.link/Containers/docker-server-storage/",
             "title": "Docker Server Storage",
@@ -109,18 +121,6 @@
             "url": "https://virtualize.link/Containers/container-dns/",
             "title": "DNS for Containers",
             "content_html": "<h1>DNS for Containers</h1>\n<h2>Problem</h2>\n<p>The common setup is to have a server with many containers, and a network DNS such as pihole or adguardhome.</p>\n<p>The issue is t...</p>",
-            "image": null,
-            "date_modified": "2025-02-11T12:11:06+00:00",
-            "authors": [],
-            "tags": [
-                "Containers"
-            ]
-        },
-        {
-            "id": "https://virtualize.link/Containers/optimizing-nextcloud/",
-            "url": "https://virtualize.link/Containers/optimizing-nextcloud/",
-            "title": "Optimizing Nextcloud",
-            "content_html": "<h1>Optimizing Nextcloud</h1>\n<p>The following is a collection of ways to optimize Nextcloud's performance and responsiveness.</p>\n<h2>Optimization Steps</h2>\n<ul>\n<li>Use the [LSIO...</li>\n</ul>",
             "image": null,
             "date_modified": "2025-02-11T12:11:06+00:00",
             "authors": [],
