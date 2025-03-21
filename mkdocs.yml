@@ -20,6 +20,7 @@ theme:
         icon: material/weather-night
         name: Switch to dark mode
   features:
+    - content.code.copy
     - navigation.instant
     - search.suggest
     - navigation.tabs
