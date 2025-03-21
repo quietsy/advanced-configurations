@@ -13,8 +13,8 @@
     <language>en</language>
 
     
-    <pubDate>Fri, 21 Mar 2025 18:14:42 -0000</pubDate>
-    <lastBuildDate>Fri, 21 Mar 2025 18:14:42 -0000</lastBuildDate>
+    <pubDate>Fri, 21 Mar 2025 18:20:11 -0000</pubDate>
+    <lastBuildDate>Fri, 21 Mar 2025 18:20:11 -0000</lastBuildDate>
     <ttl>1440</ttl>
 
     
@@ -42,11 +42,13 @@
         
       
       <description>&lt;h1&gt;Optimizing Nextcloud&lt;/h1&gt;
-&lt;p&gt;A step by step guide for setting up:
-- &lt;a href=&#34;https://github.com/linuxserver/docker-swag&#34;&gt;SWAG&lt;/a&gt; reverse proxy via cloudflare
-- [Nextcloud](...&lt;/p&gt;</description>
+&lt;p&gt;A step by step guide for setting up:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/linuxserver/docker-swag&#34;&gt;SWAG&lt;/a&gt; reverse proxy via cloudflare&lt;/li&gt;
+&lt;li&gt;[Nextcloud]...&lt;/li&gt;
+&lt;/ul&gt;</description>
       <link>https://virtualize.link/Containers/optimizing-nextcloud/</link>
-      <pubDate>Fri, 21 Mar 2025 18:09:27 +0000</pubDate>
+      <pubDate>Fri, 21 Mar 2025 18:19:46 +0000</pubDate>
       <source url="https://virtualize.link/feed_rss_updated.xml">Advanced Configurations</source>
       
       <guid isPermaLink="true">https://virtualize.link/Containers/optimizing-nextcloud/</guid>
