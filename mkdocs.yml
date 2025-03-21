@@ -44,6 +44,8 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.superfences
   - mdx_truly_sane_lists
+  - admonition
+  - pymdownx.details
 extra:
   social:
     - icon: fontawesome/solid/rss 
