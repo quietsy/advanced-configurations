@@ -15,8 +15,9 @@ A step by step guide for setting up:
 - Whiteboard
 - Imaginary
 
-> [!IMPORTANT]
-> Replace all occurences of `domain.com` with your domain.
+!!! warning ""
+
+    Replace all occurences of `domain.com` with your domain.
 
 ## SWAG
 
