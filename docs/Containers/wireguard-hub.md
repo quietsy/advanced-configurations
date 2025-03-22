@@ -42,8 +42,10 @@ Replace `CHANGETHIS` with your LAN subnet under `wireguard/templates/server.conf
     !!! warning ""
 
         Remove all occurrences of IPv6 from the client confs such as:
-        `Address = 1.2.3.4/32,abcd:76ee:e68f:a993:3791:5363:bd0b:asdf/128` to `Address = 1.2.3.4/32`.
-        `AllowedIPs = 0.0.0.0/0,::/0` to `AllowedIPs = 0.0.0.0/0`.
+
+        - `Address = 1.2.3.4/32,abcd:76ee:e68f:a993:3791:5363:bd0b:asdf/128` to `Address = 1.2.3.4/32`.
+        
+        - `AllowedIPs = 0.0.0.0/0,::/0` to `AllowedIPs = 0.0.0.0/0`.
 
 ### Wireguard Server Container
 
