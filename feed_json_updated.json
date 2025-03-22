@@ -14,7 +14,7 @@
             "title": "Wireguard Hub",
             "content_html": "<h1>Wireguard Hub</h1>\n<p><img alt=\"Hub\" src=\"images/hub.png\"></p>\n<p>Linuxserver's Wireguard container is extremely versatile, in this example we'll use it as a server that tunnels clien...</p>",
             "image": null,
-            "date_modified": "2025-03-22T18:25:52+00:00",
+            "date_modified": "2025-03-22T18:55:45+00:00",
             "authors": [],
             "tags": [
                 "Containers"
