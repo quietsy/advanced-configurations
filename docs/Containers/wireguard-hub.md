@@ -34,11 +34,16 @@ Replace `CHANGETHIS` with your LAN subnet under `wireguard/templates/server.conf
 
 ### Client Tunnels
 
-* Obtain 2 wireguard vpn configurations from your vpn provider (mullvad and torguard have been tested).
+* Obtain 2 **different** wireguard vpn configurations from your vpn provider (mullvad and torguard have been tested).
 * Replace `CHANGETHIS` with your vpn configurations under:
   * `wireguard/wg_confs/wg1.conf`
   * `wireguard/wg_confs/wg2.conf`
 
+    !!! warning ""
+
+        Remove all occurrences of IPv6 from the client confs such as:
+          - `Address = 1.2.3.4/32,abcd:76ee:e68f:a993:3791:5363:bd0b:asdf/128` to `Address = 1.2.3.4/32`
+          - `AllowedIPs = 0.0.0.0/0,::/0` to `AllowedIPs = 0.0.0.0/0`
 
 ### Wireguard Server Container
 
