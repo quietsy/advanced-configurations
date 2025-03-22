@@ -9,6 +9,18 @@
     "language": "en",
     "items": [
         {
+            "id": "https://virtualize.link/Containers/wireguard-hub/",
+            "url": "https://virtualize.link/Containers/wireguard-hub/",
+            "title": "Wireguard Hub",
+            "content_html": "<h1>Wireguard Hub</h1>\n<p><img alt=\"Hub\" src=\"images/hub.png\"></p>\n<p>Linuxserver's Wireguard container is extremely versatile, in this example we'll use it as a server that tunnels clien...</p>",
+            "image": null,
+            "date_modified": "2025-03-22T18:20:35+00:00",
+            "authors": [],
+            "tags": [
+                "Containers"
+            ]
+        },
+        {
             "id": "https://virtualize.link/Containers/optimizing-nextcloud/",
             "url": "https://virtualize.link/Containers/optimizing-nextcloud/",
             "title": "Optimizing Nextcloud",
@@ -85,18 +97,6 @@
             "url": "https://virtualize.link/Containers/consolidating-proxies/",
             "title": "Consolidating Proxies",
             "content_html": "<h1>Consolidating Proxies</h1>\n<p>You can consolidate the majority of internal nginx proxies using mappings, these mappings get resolved when the mapped variables are...</p>",
-            "image": null,
-            "date_modified": "2025-02-11T12:56:28+00:00",
-            "authors": [],
-            "tags": [
-                "Containers"
-            ]
-        },
-        {
-            "id": "https://virtualize.link/Containers/wireguard-hub/",
-            "url": "https://virtualize.link/Containers/wireguard-hub/",
-            "title": "Wireguard Hub",
-            "content_html": "<h1>Wireguard Hub</h1>\n<p><img alt=\"Hub\" src=\"images/hub.png\"></p>\n<p>Linuxserver's Wireguard container is extremely versatile, in this example we'll use it as a server that tunnels clien...</p>",
             "image": null,
             "date_modified": "2025-02-11T12:56:28+00:00",
             "authors": [],

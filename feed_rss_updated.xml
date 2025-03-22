@@ -13,8 +13,8 @@
     <language>en</language>
 
     
-    <pubDate>Fri, 21 Mar 2025 18:42:34 -0000</pubDate>
-    <lastBuildDate>Fri, 21 Mar 2025 18:42:34 -0000</lastBuildDate>
+    <pubDate>Sat, 22 Mar 2025 18:20:59 -0000</pubDate>
+    <lastBuildDate>Sat, 22 Mar 2025 18:20:59 -0000</lastBuildDate>
     <ttl>1440</ttl>
 
     
@@ -30,6 +30,27 @@
     
 
     
+    
+    <item>
+      <title>Wireguard Hub</title>
+      
+      
+      
+      
+        
+      <category>Containers</category>
+        
+      
+      <description>&lt;h1&gt;Wireguard Hub&lt;/h1&gt;
+&lt;p&gt;&lt;img alt=&#34;Hub&#34; src=&#34;images/hub.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Linuxserver&#39;s Wireguard container is extremely versatile, in this example we&#39;ll use it as a server that tunnels clien...&lt;/p&gt;</description>
+      <link>https://virtualize.link/Containers/wireguard-hub/</link>
+      <pubDate>Sat, 22 Mar 2025 18:20:35 +0000</pubDate>
+      <source url="https://virtualize.link/feed_rss_updated.xml">Advanced Configurations</source>
+      
+      <guid isPermaLink="true">https://virtualize.link/Containers/wireguard-hub/</guid>
+      
+    </item>
     
     <item>
       <title>Optimizing Nextcloud</title>
@@ -199,27 +220,6 @@
       <source url="https://virtualize.link/feed_rss_updated.xml">Advanced Configurations</source>
       
       <guid isPermaLink="true">https://virtualize.link/Containers/consolidating-proxies/</guid>
-      
-    </item>
-    
-    <item>
-      <title>Wireguard Hub</title>
-      
-      
-      
-      
-        
-      <category>Containers</category>
-        
-      
-      <description>&lt;h1&gt;Wireguard Hub&lt;/h1&gt;
-&lt;p&gt;&lt;img alt=&#34;Hub&#34; src=&#34;images/hub.png&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Linuxserver&#39;s Wireguard container is extremely versatile, in this example we&#39;ll use it as a server that tunnels clien...&lt;/p&gt;</description>
-      <link>https://virtualize.link/Containers/wireguard-hub/</link>
-      <pubDate>Tue, 11 Feb 2025 12:56:28 +0000</pubDate>
-      <source url="https://virtualize.link/feed_rss_updated.xml">Advanced Configurations</source>
-      
-      <guid isPermaLink="true">https://virtualize.link/Containers/wireguard-hub/</guid>
       
     </item>
     
