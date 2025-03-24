@@ -13,8 +13,8 @@
     <language>en</language>
 
     
-    <pubDate>Mon, 24 Mar 2025 18:00:23 -0000</pubDate>
-    <lastBuildDate>Mon, 24 Mar 2025 18:00:23 -0000</lastBuildDate>
+    <pubDate>Mon, 24 Mar 2025 18:48:38 -0000</pubDate>
+    <lastBuildDate>Mon, 24 Mar 2025 18:48:38 -0000</lastBuildDate>
     <ttl>1440</ttl>
 
     
@@ -30,6 +30,32 @@
     
 
     
+    
+    <item>
+      <title>ZFS</title>
+      
+      
+      
+      
+        
+      <category>Other</category>
+        
+      
+      <description>&lt;h1&gt;ZFS&lt;/h1&gt;
+&lt;p&gt;The following creates a zfs pool with 2 mirrors of 2 disks each, with:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;LZ4 compression&lt;/li&gt;
+&lt;li&gt;Linux ACLs&lt;/li&gt;
+&lt;li&gt;Larger record size for media&lt;/li&gt;
+&lt;li&gt;Snapshots with...&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <link>https://virtualize.link/Other/zfs/</link>
+      <pubDate>Mon, 24 Mar 2025 18:48:18 +0000</pubDate>
+      <source url="https://virtualize.link/feed_rss_updated.xml">Advanced Configurations</source>
+      
+      <guid isPermaLink="true">https://virtualize.link/Other/zfs/</guid>
+      
+    </item>
     
     <item>
       <title>Atuin</title>
@@ -215,32 +241,6 @@
       <source url="https://virtualize.link/feed_rss_updated.xml">Advanced Configurations</source>
       
       <guid isPermaLink="true">https://virtualize.link/Network/asus-vlans/</guid>
-      
-    </item>
-    
-    <item>
-      <title>ZFS</title>
-      
-      
-      
-      
-        
-      <category>Other</category>
-        
-      
-      <description>&lt;h1&gt;ZFS&lt;/h1&gt;
-&lt;p&gt;The following creates a zfs pool with 2 mirrors of 2 disks each, with:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;LZ4 compression&lt;/li&gt;
-&lt;li&gt;Linux ACLs&lt;/li&gt;
-&lt;li&gt;Larger record size for media&lt;/li&gt;
-&lt;li&gt;Snapshots with...&lt;/li&gt;
-&lt;/ul&gt;</description>
-      <link>https://virtualize.link/Other/zfs/</link>
-      <pubDate>Wed, 19 Feb 2025 17:26:00 +0000</pubDate>
-      <source url="https://virtualize.link/feed_rss_updated.xml">Advanced Configurations</source>
-      
-      <guid isPermaLink="true">https://virtualize.link/Other/zfs/</guid>
       
     </item>
     
