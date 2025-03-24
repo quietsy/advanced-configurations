@@ -98,8 +98,8 @@ Test the alerts:
 ```bash
 cd /tmp
 dd if=/dev/zero of=sparse_file bs=1 count=0 seek=512M
-zpool create test /tmp/sparse_file
-zpool scrub test
+sudo zpool create test /tmp/sparse_file
+sudo zpool scrub test
 ```
 
 Remove the test file:
