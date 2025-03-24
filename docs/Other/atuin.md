@@ -97,6 +97,12 @@ atuin import auto
 atuin sync -f
 ```
 
+After registration, Atuin will generate an encryption key for you and store it locally. This is needed for logging in to other machines, and can be seen with:
+
+```bash
+atuin key
+```
+
 ## New Machine
 
 ```bash
