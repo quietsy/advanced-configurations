@@ -13,8 +13,8 @@
     <language>en</language>
 
     
-    <pubDate>Sun, 23 Mar 2025 10:58:08 -0000</pubDate>
-    <lastBuildDate>Sun, 23 Mar 2025 10:58:08 -0000</lastBuildDate>
+    <pubDate>Mon, 24 Mar 2025 18:00:23 -0000</pubDate>
+    <lastBuildDate>Mon, 24 Mar 2025 18:00:23 -0000</lastBuildDate>
     <ttl>1440</ttl>
 
     
@@ -30,6 +30,26 @@
     
 
     
+    
+    <item>
+      <title>Atuin</title>
+      
+      
+      
+      
+        
+      <category>Other</category>
+        
+      
+      <description>&lt;h1&gt;Atuin&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.atuin.sh/&#34;&gt;Atuin&lt;/a&gt; replaces your existing shell history with a SQLite database, and records additional context for your commands. With ...&lt;/p&gt;</description>
+      <link>https://virtualize.link/Other/atuin/</link>
+      <pubDate>Mon, 24 Mar 2025 18:00:02 +0000</pubDate>
+      <source url="https://virtualize.link/feed_rss_updated.xml">Advanced Configurations</source>
+      
+      <guid isPermaLink="true">https://virtualize.link/Other/atuin/</guid>
+      
+    </item>
     
     <item>
       <title>Canary</title>
@@ -454,26 +474,6 @@
       <source url="https://virtualize.link/feed_rss_updated.xml">Advanced Configurations</source>
       
       <guid isPermaLink="true">https://virtualize.link/Network/geoblock/</guid>
-      
-    </item>
-    
-    <item>
-      <title>Hardcoded DNS</title>
-      
-      
-      
-      
-        
-      <category>Network</category>
-        
-      
-      <description>&lt;h1&gt;Hardcoded DNS&lt;/h1&gt;
-&lt;p&gt;Smart home IoT devices are often configured with hardcoded DNS servers such as Google public DNS. 98% of smart assistants and 72% of smart T...&lt;/p&gt;</description>
-      <link>https://virtualize.link/Network/hardcoded-dns/</link>
-      <pubDate>Tue, 11 Feb 2025 12:11:06 +0000</pubDate>
-      <source url="https://virtualize.link/feed_rss_updated.xml">Advanced Configurations</source>
-      
-      <guid isPermaLink="true">https://virtualize.link/Network/hardcoded-dns/</guid>
       
     </item>
     

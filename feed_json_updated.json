@@ -9,6 +9,18 @@
     "language": "en",
     "items": [
         {
+            "id": "https://virtualize.link/Other/atuin/",
+            "url": "https://virtualize.link/Other/atuin/",
+            "title": "Atuin",
+            "content_html": "<h1>Atuin</h1>\n<p><a href=\"https://docs.atuin.sh/\">Atuin</a> replaces your existing shell history with a SQLite database, and records additional context for your commands. With ...</p>",
+            "image": null,
+            "date_modified": "2025-03-24T18:00:02+00:00",
+            "authors": [],
+            "tags": [
+                "Other"
+            ]
+        },
+        {
             "id": "https://virtualize.link/Containers/canary/",
             "url": "https://virtualize.link/Containers/canary/",
             "title": "Canary",
@@ -229,18 +241,6 @@
             "url": "https://virtualize.link/Network/geoblock/",
             "title": "Geoblock",
             "content_html": "<h1>Geoblock</h1>\n<h2>VPS</h2>\n<p>I've been dealing with constant attacks on a mail server on a VPS coming from 2 specific countries, the only solution that worked was com...</p>",
-            "image": null,
-            "date_modified": "2025-02-11T12:11:06+00:00",
-            "authors": [],
-            "tags": [
-                "Network"
-            ]
-        },
-        {
-            "id": "https://virtualize.link/Network/hardcoded-dns/",
-            "url": "https://virtualize.link/Network/hardcoded-dns/",
-            "title": "Hardcoded DNS",
-            "content_html": "<h1>Hardcoded DNS</h1>\n<p>Smart home IoT devices are often configured with hardcoded DNS servers such as Google public DNS. 98% of smart assistants and 72% of smart T...</p>",
             "image": null,
             "date_modified": "2025-02-11T12:11:06+00:00",
             "authors": [],
