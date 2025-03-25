@@ -308,6 +308,32 @@ A step by step guide for setting up:
   docker exec nextcloud occ config:system:set preview_imaginary_url --value='http://imaginary:9000'
   ```
 
+## Diagrams
+
+- Add draw.io to your docker compose and start it.
+    ```yaml
+    drawio:
+      image: jgraph/drawio:alpine
+      container_name: drawio
+      restart: unless-stopped
+    ```
+- Add the following locations to `/path/to/swag/nginx/proxy-confs/nextcloud.subdomain.conf` inside the `server` section.
+    ```nginx
+    location ^~ /draw/ {
+        include /config/nginx/proxy.conf;
+        include /config/nginx/resolver.conf;
+        set $upstream_app drawio;
+        set $upstream_port 8080;
+        set $upstream_proto http;
+        proxy_pass $upstream_proto://$upstream_app:$upstream_port;
+    }
+    ```
+- Run the following commands.
+  ```bash
+  docker exec nextcloud occ app:enable drawio
+  docker exec nextcloud occ config:app:set drawio DrawioUrl --value="https://nextcloud.domain.com/draw"
+  ```
+
 ## Maintenance
 
 - Manually pull new images and recreate the containers every few weeks.
