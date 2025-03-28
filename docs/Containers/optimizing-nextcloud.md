@@ -15,6 +15,8 @@ A step by step guide for setting up:
 - Talk high performance backend
 - Whiteboard
 - Imaginary
+- Draw.io
+- Maintenance
 
 !!! warning ""
 
