@@ -26,7 +26,7 @@ DEVICESCAN -a -S on -s (S/../.././03|L/../01/./02) -W 10,50,70 -m <nomailer> -M 
 - `-s` - Run Self-Tests or Offline Immediate Tests, at scheduled times.
 - `S/../.././03` - Runs a short test daily at 3AM.
 - `L/../01/./02` - Runs a long test on the first of every month at 2AM.
-- `-W 10,50,60` - Tracks disk temperatures and alerts if they rise too quickly or hit a high limit. The following will log changes of 10 degrees or more, log when temp reaches 50 degrees, and log/email a warning when temp reaches 60.
+- `-W 10,50,70` - Tracks disk temperatures and alerts if they rise too quickly or hit a high limit. The following will log changes of 10 degrees or more, log when temp reaches 50 degrees, and log/email a warning when temp reaches 70.
 - `-m <nomailer> -M exec /home/user/ntfy.sh` - Run a shell script instead of the default mail command for alerts.
 - `-M test` - Test the notification script, remove after testing.
 
