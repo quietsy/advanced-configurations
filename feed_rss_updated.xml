@@ -13,8 +13,8 @@
     <language>en</language>
 
     
-    <pubDate>Mon, 05 May 2025 15:30:50 -0000</pubDate>
-    <lastBuildDate>Mon, 05 May 2025 15:30:50 -0000</lastBuildDate>
+    <pubDate>Mon, 12 May 2025 17:50:06 -0000</pubDate>
+    <lastBuildDate>Mon, 12 May 2025 17:50:06 -0000</lastBuildDate>
     <ttl>1440</ttl>
 
     
@@ -30,6 +30,27 @@
     
 
     
+    
+    <item>
+      <title>VPS Proxy</title>
+      
+      
+      
+      
+        
+      <category>Containers</category>
+        
+      
+      <description>&lt;h1&gt;VPS Proxy&lt;/h1&gt;
+&lt;p&gt;&lt;img alt=&#34;VPS&#34; src=&#34;images/vps.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;This setup allows you to hide your home IP, protect your privacy and protect your home server against DDOS attacks while...&lt;/p&gt;</description>
+      <link>https://virtualize.link/Containers/vps-proxy/</link>
+      <pubDate>Mon, 12 May 2025 17:49:44 +0000</pubDate>
+      <source url="https://virtualize.link/feed_rss_updated.xml">Advanced Configurations</source>
+      
+      <guid isPermaLink="true">https://virtualize.link/Containers/vps-proxy/</guid>
+      
+    </item>
     
     <item>
       <title>Smartd</title>
@@ -411,27 +432,6 @@
       <source url="https://virtualize.link/feed_rss_updated.xml">Advanced Configurations</source>
       
       <guid isPermaLink="true">https://virtualize.link/Containers/vpn-route/</guid>
-      
-    </item>
-    
-    <item>
-      <title>VPS Proxy</title>
-      
-      
-      
-      
-        
-      <category>Containers</category>
-        
-      
-      <description>&lt;h1&gt;VPS Proxy&lt;/h1&gt;
-&lt;p&gt;&lt;img alt=&#34;VPS&#34; src=&#34;images/vps.png&#34;&gt;&lt;/p&gt;
-&lt;p&gt;This setup allows you to hide your home IP, protect your privacy and protect your home server against DDOS attacks while...&lt;/p&gt;</description>
-      <link>https://virtualize.link/Containers/vps-proxy/</link>
-      <pubDate>Tue, 11 Feb 2025 12:11:06 +0000</pubDate>
-      <source url="https://virtualize.link/feed_rss_updated.xml">Advanced Configurations</source>
-      
-      <guid isPermaLink="true">https://virtualize.link/Containers/vps-proxy/</guid>
       
     </item>
     

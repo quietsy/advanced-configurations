@@ -9,6 +9,18 @@
     "language": "en",
     "items": [
         {
+            "id": "https://virtualize.link/Containers/vps-proxy/",
+            "url": "https://virtualize.link/Containers/vps-proxy/",
+            "title": "VPS Proxy",
+            "content_html": "<h1>VPS Proxy</h1>\n<p><img alt=\"VPS\" src=\"images/vps.png\"></p>\n<p>This setup allows you to hide your home IP, protect your privacy and protect your home server against DDOS attacks while...</p>",
+            "image": null,
+            "date_modified": "2025-05-12T17:49:44+00:00",
+            "authors": [],
+            "tags": [
+                "Containers"
+            ]
+        },
+        {
             "id": "https://virtualize.link/Other/smartd/",
             "url": "https://virtualize.link/Other/smartd/",
             "title": "Smartd",
@@ -205,18 +217,6 @@
             "url": "https://virtualize.link/Containers/vpn-route/",
             "title": "VPN Route",
             "content_html": "<h1>VPN Route</h1>\n<p><img alt=\"VPN\" src=\"images/vpn.png\"></p>\n<p>This setup allows you to route containers through a VPN and protect yourself from your ISP.</p>\n<p>This guide is the basic step...</p>",
-            "image": null,
-            "date_modified": "2025-02-11T12:11:06+00:00",
-            "authors": [],
-            "tags": [
-                "Containers"
-            ]
-        },
-        {
-            "id": "https://virtualize.link/Containers/vps-proxy/",
-            "url": "https://virtualize.link/Containers/vps-proxy/",
-            "title": "VPS Proxy",
-            "content_html": "<h1>VPS Proxy</h1>\n<p><img alt=\"VPS\" src=\"images/vps.png\"></p>\n<p>This setup allows you to hide your home IP, protect your privacy and protect your home server against DDOS attacks while...</p>",
             "image": null,
             "date_modified": "2025-02-11T12:11:06+00:00",
             "authors": [],
