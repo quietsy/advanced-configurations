@@ -244,8 +244,8 @@ Create a file called `nginx.conf` in your Home SWAG under `config/fail2ban/actio
 actionstart = touch /config/nginx/blocklist.conf
 actionstop = 
 actioncheck = 
-actionban = grep -qxF "deny <ip>;" /config/nginx/blocklist.conf || echo "deny <ip>;" >> /config/nginx/blocklist.conf && /bin/s6-svc -r /var/run/s6/services/nginx
-actionunban = sed -i '/deny <ip>;/d' /config/nginx/blocklist.conf && /bin/s6-svc -r /var/run/s6/services/nginx
+actionban = grep -qxF "deny <ip>;" /config/nginx/blocklist.conf || echo "deny <ip>;" >> /config/nginx/blocklist.conf
+actionunban = sed -i '/deny <ip>;/d' /config/nginx/blocklist.conf
 
 [Init]
 
