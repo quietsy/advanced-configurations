@@ -20,7 +20,7 @@ A step by step guide for setting up:
 
 !!! warning ""
 
-    Replace all occurences of `domain.com` with your domain.
+    Replace all occurences of `domain.com` where highlighted with your domain.
 
 ## SWAG
 
@@ -28,7 +28,7 @@ A step by step guide for setting up:
 - Create DNS records for `domain.com` and `*.domain.com` with your home's WAN IP, disable the orange cloud.
 - Port forward `443` to your server on your home router.
 - Add SWAG to your docker compose and start it.
-    ```yaml
+    ```yaml hl_lines="10"
     swag:
       image: lscr.io/linuxserver/swag:latest
       container_name: swag
@@ -102,7 +102,7 @@ A step by step guide for setting up:
 
 - Select recommended apps to install.
 - Run the following commands.
-    ```bash
+    ```bash hl_lines="5"
     docker exec nextcloud occ app:disable richdocumentscode
     docker exec nextcloud occ maintenance:repair --include-expensive
     docker exec nextcloud occ db:add-missing-indices
@@ -136,7 +136,7 @@ A step by step guide for setting up:
 ## Collabora
 
 - Add Collabora to your docker compose and start it.
-    ```yaml
+    ```yaml hl_lines="6 8 9"
     collabora:
       image: collabora/code
       container_name: collabora
@@ -179,7 +179,7 @@ A step by step guide for setting up:
     }
     ```
 - Run the following commands.
-    ```bash
+    ```bash hl_lines="2"
     docker exec nextcloud occ app:enable richdocuments
     docker exec nextcloud occ config:app:set richdocuments wopi_url --value https://nextcloud.domain.com
     docker exec nextcloud occ config:app:set richdocuments wopi_allowlist --value=0.0.0.0/0
@@ -202,7 +202,7 @@ A step by step guide for setting up:
     openssl rand -hex 32
     ```
 - Add the High Performance Backend to your docker compose and start it.
-    ```yaml
+    ```yaml hl_lines="9 10"
     talk:
       image: nextcloud/aio-talk:latest
       container_name: talk
@@ -241,7 +241,7 @@ A step by step guide for setting up:
     ```
 
 - Run the following commands using the secrets generated earlier.
-  ```bash
+  ```bash hl_lines="1 2 3"
   docker exec nextcloud occ talk:signaling:add --verify https://talk.domain.com SIGNALING_SECRET
   docker exec nextcloud occ talk:stun:add talk.domain.com:3478
   docker exec nextcloud occ talk:turn:add --secret TURN_SECRET turn talk.domain.com:3478 udp,tcp
@@ -255,7 +255,7 @@ A step by step guide for setting up:
     openssl rand -hex 32
     ```
 - Add Whiteboard to your docker compose and start it.
-    ```yaml
+    ```yaml hl_lines="5"
     whiteboard:
       image: ghcr.io/nextcloud-releases/whiteboard:release
       container_name: whiteboard
@@ -286,7 +286,7 @@ A step by step guide for setting up:
     }
     ```
 - Run the following commands.
-  ```bash
+  ```bash hl_lines="2"
   docker exec nextcloud occ app:enable whiteboard
   docker exec nextcloud occ config:app:set whiteboard collabBackendUrl --value="https://whiteboard.domain.com"
   docker exec nextcloud occ config:app:set whiteboard jwt_secret_key --value="secret"
@@ -331,7 +331,7 @@ A step by step guide for setting up:
     }
     ```
 - Run the following commands.
-  ```bash
+  ```bash hl_lines="2"
   docker exec nextcloud occ app:enable drawio
   docker exec nextcloud occ config:app:set drawio DrawioUrl --value="https://nextcloud.domain.com/draw"
   ```
