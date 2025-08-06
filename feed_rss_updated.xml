@@ -13,12 +13,12 @@
     <language>en</language>
 
     
-    <pubDate>Mon, 12 May 2025 17:50:06 -0000</pubDate>
-    <lastBuildDate>Mon, 12 May 2025 17:50:06 -0000</lastBuildDate>
+    <pubDate>Wed, 06 Aug 2025 09:35:31 -0000</pubDate>
+    <lastBuildDate>Wed, 06 Aug 2025 09:35:31 -0000</lastBuildDate>
     <ttl>1440</ttl>
 
     
-    <generator>MkDocs RSS plugin - v1.17.1</generator>
+    <generator>MkDocs RSS plugin - v1.17.3</generator>
 
     
     
@@ -30,6 +30,30 @@
     
 
     
+    
+    <item>
+      <title>Optimizing Nextcloud</title>
+      
+      
+      
+      
+        
+      <category>Containers</category>
+        
+      
+      <description>&lt;h1&gt;Optimizing Nextcloud&lt;/h1&gt;
+&lt;p&gt;A step by step guide for setting up:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/linuxserver/docker-swag&#34;&gt;SWAG&lt;/a&gt; reverse proxy via cloudflare&lt;/li&gt;
+&lt;li&gt;[Nextcloud]...&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <link>https://virtualize.link/Containers/optimizing-nextcloud/</link>
+      <pubDate>Wed, 06 Aug 2025 09:35:06 +0000</pubDate>
+      <source url="https://virtualize.link/feed_rss_updated.xml">Advanced Configurations</source>
+      
+      <guid isPermaLink="true">https://virtualize.link/Containers/optimizing-nextcloud/</guid>
+      
+    </item>
     
     <item>
       <title>VPS Proxy</title>
@@ -69,30 +93,6 @@
       <source url="https://virtualize.link/feed_rss_updated.xml">Advanced Configurations</source>
       
       <guid isPermaLink="true">https://virtualize.link/Other/smartd/</guid>
-      
-    </item>
-    
-    <item>
-      <title>Optimizing Nextcloud</title>
-      
-      
-      
-      
-        
-      <category>Containers</category>
-        
-      
-      <description>&lt;h1&gt;Optimizing Nextcloud&lt;/h1&gt;
-&lt;p&gt;A step by step guide for setting up:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/linuxserver/docker-swag&#34;&gt;SWAG&lt;/a&gt; reverse proxy via cloudflare&lt;/li&gt;
-&lt;li&gt;[Nextcloud]...&lt;/li&gt;
-&lt;/ul&gt;</description>
-      <link>https://virtualize.link/Containers/optimizing-nextcloud/</link>
-      <pubDate>Fri, 28 Mar 2025 12:58:47 +0000</pubDate>
-      <source url="https://virtualize.link/feed_rss_updated.xml">Advanced Configurations</source>
-      
-      <guid isPermaLink="true">https://virtualize.link/Containers/optimizing-nextcloud/</guid>
       
     </item>
     
