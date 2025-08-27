@@ -12,6 +12,13 @@ OPN-Arp on OPNSense allows you to send alerts when new devices are spotted on th
 ## Setup
 
 - Install the `opn-arp` plugin via the [community repo](https://www.routerperformance.net/opnsense-repo/)
+- Create a file under `/usr/local/etc/rc.syshook.d/start/99-opnarp`:
+
+    ```sh
+    #!/bin/sh
+
+    chmod +x /usr/local/etc/rc.d/opnarp
+    ```
 - Enable OPN-Arp under Services > OPN-Arp
 - Enable Monit under Services > Monit
 - Add a new entry under Service Tests Settings:
@@ -28,11 +35,11 @@ OPN-Arp on OPNSense allows you to send alerts when new devices are spotted on th
   - Mail Format: `From: your@email.com`
 - Fill the mail server details under general (only for email alerts)
 
-## Gotify Alerts
+## Alerts
 
 - Connect to OPNSense via SSH
-- Execute `touch /root/gotify.sh && chmod +x /root/gotify.sh`
-- Paste the following script into `/root/gotify.sh`:
+- Execute `touch /root/alert.sh && chmod +x /root/alert.sh`
+- Paste the following script into `/root/alert.sh`:
 
     ```bash
     #!/usr/local/bin/bash
@@ -48,17 +55,13 @@ OPN-Arp on OPNSense allows you to send alerts when new devices are spotted on th
             msg=$MONIT_DESCRIPTION
     fi
 
-    curl -X POST "https://gotify.domain.com/message?token=yourtoken" -F "title=$title" -F "message=$msg"
+    # gotify
+    # curl -X POST "https://gotify.domain.com/message?token=yourtoken" -F "title=$title" -F "message=$msg"
+    # ntfy
+    # curl -X POST "https://ntfy.domain.com/topic" -H "Title: $title" -d "$msg"
     ```
 
-- Edit `gotify.domain.com` and `yourtoken` accordingly
-- Create a file under `/usr/local/etc/rc.syshook.d/start/99-opnarp`:
-
-    ```sh
-    #!/bin/sh
-
-    chmod +x /usr/local/etc/rc.d/opnarp
-    ```
+- Uncomment one of the curl commands for ntfy/gotify, edit the domain and `yourtoken` accordingly.
 
 - Test it by running:
   
