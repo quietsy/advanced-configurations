@@ -19,6 +19,7 @@ OPN-Arp on OPNSense allows you to send alerts when new devices are spotted on th
 
     chmod +x /usr/local/etc/rc.d/opnarp
     ```
+
 - Enable OPN-Arp under Services > OPN-Arp
 - Enable Monit under Services > Monit
 - Add a new entry under Service Tests Settings:
