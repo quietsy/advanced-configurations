@@ -13,8 +13,8 @@
     <language>en</language>
 
     
-    <pubDate>Wed, 06 Aug 2025 09:35:31 -0000</pubDate>
-    <lastBuildDate>Wed, 06 Aug 2025 09:35:31 -0000</lastBuildDate>
+    <pubDate>Wed, 27 Aug 2025 14:42:22 -0000</pubDate>
+    <lastBuildDate>Wed, 27 Aug 2025 14:42:22 -0000</lastBuildDate>
     <ttl>1440</ttl>
 
     
@@ -30,6 +30,31 @@
     
 
     
+    
+    <item>
+      <title>OPN-Arp</title>
+      
+      
+      
+      
+        
+      <category>Network</category>
+        
+      
+      <description>&lt;h1&gt;OPN-Arp&lt;/h1&gt;
+&lt;p&gt;OPN-Arp on OPNSense allows you to send alerts when new devices are spotted on the network.&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;opnarp&#34; src=&#34;images/opnarp.png&#34;&gt;&lt;/p&gt;
+&lt;h2&gt;Setup&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Install the ...&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <link>https://virtualize.link/Network/opn-arp/</link>
+      <pubDate>Wed, 27 Aug 2025 14:41:56 +0000</pubDate>
+      <source url="https://virtualize.link/feed_rss_updated.xml">Advanced Configurations</source>
+      
+      <guid isPermaLink="true">https://virtualize.link/Network/opn-arp/</guid>
+      
+    </item>
     
     <item>
       <title>Optimizing Nextcloud</title>
@@ -453,26 +478,6 @@
       <source url="https://virtualize.link/feed_rss_updated.xml">Advanced Configurations</source>
       
       <guid isPermaLink="true">https://virtualize.link/Containers/yaml-anchors/</guid>
-      
-    </item>
-    
-    <item>
-      <title>Firehol</title>
-      
-      
-      
-      
-        
-      <category>Network</category>
-        
-      
-      <description>&lt;h1&gt;Firehol&lt;/h1&gt;
-&lt;p&gt;Firehol blocklists are a collection of automatically updating ipsets from all available security IP Feeds, mainly related to on-line attacks, on-l...&lt;/p&gt;</description>
-      <link>https://virtualize.link/Network/firehol/</link>
-      <pubDate>Tue, 11 Feb 2025 12:11:06 +0000</pubDate>
-      <source url="https://virtualize.link/feed_rss_updated.xml">Advanced Configurations</source>
-      
-      <guid isPermaLink="true">https://virtualize.link/Network/firehol/</guid>
       
     </item>
     

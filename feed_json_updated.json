@@ -9,6 +9,18 @@
     "language": "en",
     "items": [
         {
+            "id": "https://virtualize.link/Network/opn-arp/",
+            "url": "https://virtualize.link/Network/opn-arp/",
+            "title": "OPN-Arp",
+            "content_html": "<h1>OPN-Arp</h1>\n<p>OPN-Arp on OPNSense allows you to send alerts when new devices are spotted on the network.</p>\n<p><img alt=\"opnarp\" src=\"images/opnarp.png\"></p>\n<h2>Setup</h2>\n<ul>\n<li>Install the ...</li>\n</ul>",
+            "image": null,
+            "date_modified": "2025-08-27T14:41:56+00:00",
+            "authors": [],
+            "tags": [
+                "Network"
+            ]
+        },
+        {
             "id": "https://virtualize.link/Containers/optimizing-nextcloud/",
             "url": "https://virtualize.link/Containers/optimizing-nextcloud/",
             "title": "Optimizing Nextcloud",
@@ -234,18 +246,6 @@
             "authors": [],
             "tags": [
                 "Containers"
-            ]
-        },
-        {
-            "id": "https://virtualize.link/Network/firehol/",
-            "url": "https://virtualize.link/Network/firehol/",
-            "title": "Firehol",
-            "content_html": "<h1>Firehol</h1>\n<p>Firehol blocklists are a collection of automatically updating ipsets from all available security IP Feeds, mainly related to on-line attacks, on-l...</p>",
-            "image": null,
-            "date_modified": "2025-02-11T12:11:06+00:00",
-            "authors": [],
-            "tags": [
-                "Network"
             ]
         }
     ]
