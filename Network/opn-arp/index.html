@@ -1276,26 +1276,34 @@
 <h2 id="setup">Setup</h2>
 <ul>
 <li>Install the <code>opn-arp</code> plugin via the <a href="https://www.routerperformance.net/opnsense-repo/">community repo</a></li>
-<li>Create a file under <code>/usr/local/etc/rc.syshook.d/start/99-opnarp</code>:<p><div class="highlight"><pre><span></span><code><span class="ch">#!/bin/sh</span>
+<li>Create a file under <code>/usr/local/etc/rc.syshook.d/start/99-opnarp</code>:<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/sh</span>
 
 chmod<span class="w"> </span>+x<span class="w"> </span>/usr/local/etc/rc.d/opnarp
 </code></pre></div>
-- Enable OPN-Arp under Services &gt; OPN-Arp
-- Enable Monit under Services &gt; Monit
-- Add a new entry under Service Tests Settings:
-- Name: <code>MAC pair</code>
-- Condition: <code>content = "MAC pair"</code>
-- Action: <code>Alert</code> for an email alert or <code>Execute</code> and <code>/root/gotify.sh</code> for gotify (script below)
-- Add a new entry under Service Settings:
-- Name: <code>MAC_PAIR</code>
-- Type: <code>File</code>
-- Path: <code>/var/log/system/latest.log</code>
-- Tests: <code>MAC Pair</code>
-- Add a new entry under Alert Settings: (only for email alerts)
-- Recipient: <code>your@email.com</code>
-- Mail Format: <code>From: your@email.com</code>
-- Fill the mail server details under general (only for email alerts)</p>
 </li>
+</ul>
+<ul>
+<li>Enable OPN-Arp under Services &gt; OPN-Arp</li>
+<li>Enable Monit under Services &gt; Monit</li>
+<li>Add a new entry under Service Tests Settings:<ul>
+<li>Name: <code>MAC pair</code></li>
+<li>Condition: <code>content = "MAC pair"</code></li>
+<li>Action: <code>Alert</code> for an email alert or <code>Execute</code> and <code>/root/gotify.sh</code> for gotify (script below)</li>
+</ul>
+</li>
+<li>Add a new entry under Service Settings:<ul>
+<li>Name: <code>MAC_PAIR</code></li>
+<li>Type: <code>File</code></li>
+<li>Path: <code>/var/log/system/latest.log</code></li>
+<li>Tests: <code>MAC Pair</code></li>
+</ul>
+</li>
+<li>Add a new entry under Alert Settings: (only for email alerts)<ul>
+<li>Recipient: <code>your@email.com</code></li>
+<li>Mail Format: <code>From: your@email.com</code></li>
+</ul>
+</li>
+<li>Fill the mail server details under general (only for email alerts)</li>
 </ul>
 <h2 id="alerts">Alerts</h2>
 <ul>
@@ -1353,7 +1361,7 @@ chmod<span class="w"> </span>+x<span class="w"> </span>/usr/local/etc/rc.d/opnar
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="August 27, 2025 14:41:56 UTC"><span class="timeago" datetime="2025-08-27T14:41:56+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="August 27, 2025 14:41:56 UTC">2025-08-27</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="August 27, 2025 14:50:55 UTC"><span class="timeago" datetime="2025-08-27T14:50:55+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="August 27, 2025 14:50:55 UTC">2025-08-27</span>
   </span>
 
     

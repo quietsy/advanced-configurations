@@ -14,7 +14,7 @@
             "title": "OPN-Arp",
             "content_html": "<h1>OPN-Arp</h1>\n<p>OPN-Arp on OPNSense allows you to send alerts when new devices are spotted on the network.</p>\n<p><img alt=\"opnarp\" src=\"images/opnarp.png\"></p>\n<h2>Setup</h2>\n<ul>\n<li>Install the ...</li>\n</ul>",
             "image": null,
-            "date_modified": "2025-08-27T14:41:56+00:00",
+            "date_modified": "2025-08-27T14:50:55+00:00",
             "authors": [],
             "tags": [
                 "Network"
